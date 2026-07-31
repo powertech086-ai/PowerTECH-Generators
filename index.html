@@ -1,321 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Power Tech Generators | Pakistan's #1 Generator Company</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Power Tech Generators - Pakistan's #1 Diesel Generator Company Since 1986. Premium sales, rental & maintenance from 13 KVA to 1250 KVA.">
+    <meta name="keywords" content="Diesel Generator Karachi, Generator Pakistan, Perkins Dealer, Cummins Generator, Generator Rental, Power Tech">
+    <title>Power Tech Generators | Pakistan's #1 Generator Company Since 1986</title>
     
-    body {
-      background: #0A1628;
-      color: #FFFFFF;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
-    /* Loading Screen */
-    .loader-wrapper {
-      position: fixed; inset: 0; background: #0A1628;
-      z-index: 99999; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-    }
-    
-    /* 🔴 LOADING SCREEN MEIN LOGO KA SIZE CONTROL */
-    .loader-logo {
-      width: 220px;  /* Apni logo ke hisaab se adjust karein */
-      height: auto;
-      margin-bottom: 30px;
-    }
-    
-    /* Navigation */
-    .navbar {
-      background: rgba(10, 22, 40, 0.95) !important;
-      backdrop-filter: blur(20px);
-      padding: 15px 0;
-    }
-    
-    /* 🔴 NAVBAR MEIN LOGO KA SIZE CONTROL */
-    .navbar-logo {
-      height: 50px;  /* Apni logo ke hisaab se adjust karein */
-      width: auto;
-    }
-    
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #060E1A, #0F1F3D);
-      display: flex;
-      align-items: center;
-      padding: 100px 0;
-    }
-    
-    .btn-gold {
-      background: linear-gradient(135deg, #B8960C, #D4AF37);
-      color: white;
-      padding: 15px 35px;
-      border-radius: 50px;
-      font-weight: 700;
-      border: none;
-      text-decoration: none;
-      display: inline-block;
-    }
-    
-    .btn-gold:hover {
-      background: linear-gradient(135deg, #D4AF37, #F0D77B);
-      color: #000;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(212,175,55,0.4);
-    }
-    
-    .stat-box {
-      background: rgba(255,255,255,0.05);
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #D4AF37;
-    }
-    
-    .brand-logo {
-      height: 40px;
-      filter: brightness(0) invert(1);
-      opacity: 0.7;
-    }
-    
-    /* 🔴 FOOTER MEIN LOGO KA SIZE CONTROL */
-    .footer-logo {
-      height: 60px;  /* Apni logo ke hisaab se adjust karein */
-      width: auto;
-      margin-bottom: 20px;
-    }
-    
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .navbar-logo {
-        height: 40px;
-      }
-      .stat-number {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+    <style>
+        :root {
+            --dark-navy: #0A1628;
+            --navy: #0F1F3D;
+            --golden: #D4AF37;
+            --golden-light: #F0D77B;
+            --white: #FFFFFF;
+            --gray: #C8D0D8;
+            --gray-dark: #3A4556;
+            --accent-blue: #1E5FBB;
+            --gradient-dark: linear-gradient(135deg, #060E1A 0%, #0F1F3D 50%, #0A1628 100%);
+            --gradient-gold: linear-gradient(135deg, #B8960C, #D4AF37);
+            --shadow-card: 0 10px 40px rgba(0,0,0,0.3);
+            --shadow-gold: 0 10px 30px rgba(212,175,55,0.3);
+            --radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: var(--dark-navy);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        /* ========== PRELOADER ========== */
+        .preloader {
+            position: fixed; inset: 0; background: var(--dark-navy);
+            z-index: 99999; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; transition: 0.6s;
+        }
+        .preloader img { width: 200px; margin-bottom: 30px; }
+        .preloader-bar { width: 250px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+        .preloader-bar-fill { width: 0; height: 100%; background: var(--gradient-gold); animation: loadBar 2s ease forwards; }
+        @keyframes loadBar { to { width: 100%; } }
+        
+        /* ========== NAVIGATION ========== */
+        .navbar {
+            background: rgba(10, 22, 40, 0.92) !important;
+            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(212,175,55,0.15);
+            padding: 12px 0; transition: var(--transition); z-index: 1000;
+        }
+        .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
+        .navbar-brand img { height: 48px; transition: var(--transition); }
+        .navbar.scrolled .navbar-brand img { height: 40px; }
+        
+        .nav-link {
+            font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
+            letter-spacing: 1px; padding: 10px 16px !important;
+            color: var(--gray) !important; transition: var(--transition); position: relative;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--golden-light) !important; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: 5px; left: 50%;
+            transform: translateX(-50%); width: 0; height: 2px;
+            background: var(--golden); transition: width 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 60%; }
+        
+        .navbar-toggler { border: 2px solid var(--golden); padding: 8px 10px; border-radius: 8px; }
+        .navbar-toggler i { color: var(--golden); font-size: 1.3rem; }
+        
+        /* ========== BUTTONS ========== */
+        .btn-gold {
+            background: var(--gradient-gold); color: var(--white);
+            padding: 14px 32px; border-radius: 50px; font-weight: 700;
+            text-decoration: none; display: inline-flex; align-items: center;
+            gap: 8px; transition: var(--transition); border: none; cursor: pointer;
+            font-size: 0.9rem; letter-spacing: 0.5px;
+        }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); color: var(--dark-navy); }
+        
+        .btn-outline {
+            background: transparent; border: 2px solid var(--white);
+            color: var(--white); padding: 14px 32px; border-radius: 50px;
+            font-weight: 700; text-decoration: none; display: inline-flex;
+            align-items: center; gap: 8px; transition: var(--transition);
+        }
+        .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
+        
+        /* ========== HERO SECTION ========== */
+        .hero-section {
+            min-height: 100vh; display: flex; align-items: center;
+            background: var(--gradient-dark); position: relative; overflow: hidden;
+            padding: 120px 0 80px;
+        }
+        .hero-bg-pattern {
+            position: absolute; inset: 0; opacity: 0.05;
+            background: radial-gradient(circle at 30% 50%, var(--accent-blue) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 20%, var(--golden) 0%, transparent 40%);
+        }
+        
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(212,175,55,0.1); color: var(--golden-light);
+            padding: 10px 24px; border-radius: 50px; font-weight: 700;
+            font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 24px;
+            border: 1px solid rgba(212,175,55,0.3);
+        }
+        
+        .hero-title {
+            font-family: 'Outfit', sans-serif; font-weight: 900;
+            font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.15;
+            margin-bottom: 20px; color: var(--white);
+        }
+        .hero-title span { color: var(--golden-light); }
+        
+        .hero-desc {
+            font-size: 1.15rem; color: var(--gray); max-width: 550px;
+            margin-bottom: 32px; line-height: 1.8;
+        }
+        
+        .hero-image img {
+            width: 100%; max-width: 550px;
+            filter: drop-shadow(0 20px 50px rgba(212,175,55,0.2));
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        
+        /* ========== ANIMATED COUNTER STATS ========== */
+        .stats-row { margin-top: 50px; }
+        .stat-item {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius); padding: 30px 20px; text-align: center;
+            transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .stat-item::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--gradient-gold); transform: scaleX(0); transition: transform 0.6s ease;
+        }
+        .stat-item:hover::before { transform: scaleX(1); }
+        .stat-item:hover {
+            background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3);
+            transform: translateY(-8px); box-shadow: var(--shadow-gold);
+        }
+        .stat-number {
+            font-size: 3rem; font-weight: 900; color: var(--golden-light);
+            font-family: 'Outfit', sans-serif; line-height: 1;
+            display: flex; align-items: baseline; justify-content: center; gap: 2px;
+        }
+        .stat-suffix { font-size: 2rem; }
+        .stat-label {
+            font-size: 0.85rem; color: var(--gray); font-weight: 600;
+            margin-top: 8px; text-transform: uppercase; letter-spacing: 1.5px;
+        }
+        .stat-icon {
+            font-size: 1.5rem; color: var(--golden-light);
+            margin-bottom: 10px; opacity: 0.6;
+        }
+        
+        /* ========== BRAND STRIP ========== */
+        .brand-strip {
+            background: rgba(255,255,255,0.02); padding: 35px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .brand-logo-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.6; transition: var(--transition); }
+        .brand-logo-img:hover { opacity: 1; transform: scale(1.1); }
+        .brand-text { color: var(--white); font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; opacity: 0.6; transition: var(--transition); }
+        .brand-text:hover { opacity: 1; color: var(--golden-light); }
+        
+        /* ========== SECTIONS ========== */
+        .section-padding { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-label {
+            color: var(--golden-light); font-weight: 700; letter-spacing: 3px;
+            font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px;
+        }
+        .section-title {
+            font-family: 'Outfit', sans-serif; font-weight: 800;
+            font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white);
+        }
+        .section-title span { color: var(--golden-light); }
+        
+        /* ========== SERVICE CARDS ========== */
+        .service-card {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px; padding: 45px 35px; transition: var(--transition);
+            height: 100%; text-align: center; position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
+            background: var(--gradient-gold); transform: scaleX(0); transition: transform 0.4s ease;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover {
+            background: rgba(212,175,55,0.05); border-color: rgba(212,175,55,0.4);
+            transform: translateY(-10px); box-shadow: var(--shadow-card);
+        }
+        .service-icon {
+            width: 80px; height: 80px; border-radius: 20px; display: flex;
+            align-items: center; justify-content: center; font-size: 2rem;
+            margin: 0 auto 25px;
+        }
+        .service-card h4 { font-weight: 700; margin-bottom: 15px; font-size: 1.3rem; }
+        .service-card p { color: var(--gray); margin-bottom: 25px; }
+        
+        /* ========== CLIENT LOGOS ========== */
+        .client-logo-img {
+            height: 55px; filter: brightness(0) invert(1); opacity: 0.5;
+            transition: var(--transition); object-fit: contain;
+        }
+        .client-logo-img:hover { opacity: 1; transform: scale(1.15); }
+        
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
+            border: 1px solid rgba(212,175,55,0.2); border-radius: 24px;
+            padding: 60px; text-align: center;
+        }
+        
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #060E1A; border-top: 1px solid rgba(212,175,55,0.15);
+            padding: 70px 0 30px;
+        }
+        .footer-logo-img { height: 55px; margin-bottom: 20px; }
+        .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; }
+        .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 4px 0; font-size: 0.95rem; }
+        .footer a:hover { color: var(--golden-light); padding-left: 5px; }
+        .footer .social-icons a {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 42px; height: 42px; background: rgba(255,255,255,0.05);
+            border-radius: 50%; color: var(--white); font-size: 1rem;
+            transition: var(--transition); margin-right: 8px; text-decoration: none;
+        }
+        .footer .social-icons a:hover { background: var(--golden); color: var(--dark-navy); transform: translateY(-3px); }
+        .footer hr { border-color: rgba(255,255,255,0.08); margin: 30px 0; }
+        
+        /* ========== FLOATING BUTTONS ========== */
+        .float-btn {
+            position: fixed; z-index: 999; width: 55px; height: 55px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: var(--transition);
+            right: 20px; cursor: pointer; animation: pulseBtn 2s infinite;
+        }
+        @keyframes pulseBtn {
+            0%, 100% { box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
+            50% { box-shadow: 0 8px 35px rgba(212,175,55,0.5); }
+        }
+        .float-wa { bottom: 90px; background: #25D366; color: white; font-size: 24px; }
+        .float-call { bottom: 155px; background: var(--accent-blue); color: white; font-size: 20px; }
+        .float-top { bottom: 25px; background: var(--golden); color: #000; font-size: 20px; display: none; }
+        .float-btn:hover { transform: scale(1.15); animation: none; }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(10,22,40,0.98); backdrop-filter: blur(20px);
+                padding: 20px; border-radius: 16px; margin-top: 10px;
+                border: 1px solid rgba(212,175,55,0.2);
+            }
+            .hero-section { padding: 100px 0 50px; text-align: center; }
+            .hero-desc { margin: 0 auto 32px; }
+            .hero-image { margin-top: 40px; }
+            .hero-image img { max-width: 350px; margin: 0 auto; }
+            .cta-section { padding: 30px 20px; }
+            .section-padding { padding: 60px 0; }
+            .stat-number { font-size: 2.2rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- ==================== LOADING SCREEN ==================== -->
-  <div class="loader-wrapper" id="loader">
-    <!-- 
-    🔴🔴🔴 YAHAN APNI COMPANY LOGO LAGAYEIN 🔴🔴🔴
-    Tareeqa: src="images/power-tech-logo.png" likhein
-    Agar aapne alag naam rakha hai to woh naam likhein
-    -->
-    <img src="images/power-tech-logo.png" alt="Power Tech Generators" class="loader-logo">
-    <div style="color: #D4AF37; font-weight: 700; letter-spacing: 3px; margin-top: 20px;">
-      PREMIUM GENERATORS SINCE 1986
+    <!-- ========== PRELOADER ========== -->
+    <div class="preloader" id="preloader">
+        <img src="images/power-tech-logo.png" alt="Power Tech" onerror="this.src='https://placehold.co/200x80/0A1628/D4AF37?text=POWER+TECH'">
+        <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+        <p style="color:#D4AF37; margin-top:15px; letter-spacing:3px; font-weight:600; font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
     </div>
-  </div>
 
-  <!-- ==================== NAVIGATION ==================== -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <!-- 
-        🔴🔴🔴 YAHAN APNI COMPANY LOGO LAGAYEIN 🔴🔴🔴
-        Tareeqa: src="images/power-tech-logo.png" likhein
-        -->
-        <img src="images/power-tech-logo.png" alt="Power Tech" class="navbar-logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span style="color: #D4AF37; font-size: 1.5rem;">☰</span>
-      </button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Generators</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Rental</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
-        </ul>
-        <a href="tel:+923223619827" class="btn-gold ms-3">
-          <i class="fas fa-phone-alt me-2"></i>0322 3619827
-        </a>
-      </div>
-    </div>
-  </nav>
+    <!-- ========== FLOATING BUTTONS ========== -->
+    <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+923223619827" class="float-btn float-call" title="Call Now"><i class="fas fa-phone-alt"></i></a>
+    <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top"><i class="fas fa-arrow-up"></i></div>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <div style="background: rgba(212,175,55,0.1); color: #D4AF37; display: inline-block; padding: 10px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; margin-bottom: 25px; border: 1px solid rgba(212,175,55,0.3);">
-            ⚡ PAKISTAN'S #1 GENERATOR COMPANY
-          </div>
-          <h1 style="font-family: 'Outfit', sans-serif; font-size: 4rem; font-weight: 900; line-height: 1.1;">
-            Powering <span style="color: #D4AF37;">Pakistan</span> Since 1986
-          </h1>
-          <p style="font-size: 1.3rem; color: #C8D0D8; margin: 25px 0;">
-            Premium Diesel Generators from 13 KVA to 1250 KVA
-          </p>
-          <div class="d-flex gap-3 flex-wrap">
-            <a href="https://wa.me/923223619827" class="btn-gold">
-              <i class="fab fa-whatsapp me-2"></i>WhatsApp: 0322 3619827
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/power-tech-logo.png" alt="Power Tech" onerror="this.src='https://placehold.co/160x48/0A1628/D4AF37?text=POWER+TECH'">
             </a>
-            <a href="mailto:powertech086@gmail.com" style="background: transparent; border: 2px solid white; color: white; padding: 15px 35px; border-radius: 50px; font-weight: 700; text-decoration: none;">
-              <i class="fas fa-envelope me-2"></i>powertech086@gmail.com
-            </a>
-          </div>
-          
-          <!-- Stats -->
-          <div class="row mt-5 g-3">
-            <div class="col-6 col-md-3">
-              <div class="stat-box">
-                <div class="stat-number">40+</div>
-                <div style="color: #C8D0D8;">Years</div>
-              </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Generators</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
             </div>
-            <div class="col-6 col-md-3">
-              <div class="stat-box">
-                <div class="stat-number">10,000+</div>
-                <div style="color: #C8D0D8;">Projects</div>
-              </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="hero-badge">⚡ PAKISTAN'S #1 GENERATOR COMPANY</div>
+                    <h1 class="hero-title">Powering <span>Pakistan</span><br>Since 1986</h1>
+                    <p class="hero-desc">
+                        Premium Diesel Generators from 13 KVA to 1250 KVA. Sales, Rental, Maintenance & 24/7 Emergency Support across Karachi.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+                        <a href="products.html" class="btn-outline"><i class="fas fa-cogs"></i> View Generators</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="1200">
+                    <div class="hero-image text-center">
+                        <img src="images/hero-generator.png" alt="Diesel Generator" onerror="this.src='https://placehold.co/500x500/0A1628/D4AF37?text=GENERATOR'">
+                    </div>
+                </div>
             </div>
-            <div class="col-6 col-md-3">
-              <div class="stat-box">
-                <div class="stat-number">25,000+</div>
-                <div style="color: #C8D0D8;">Clients</div>
-              </div>
+            
+            <!-- ========== ANIMATED COUNTER STATS ========== -->
+            <div class="row g-3 stats-row" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="40">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-tools"></i></div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="10000">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="25000">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-headset"></i></div>
+                        <div class="stat-number">
+                            <span>24</span><span class="stat-suffix">/7</span>
+                        </div>
+                        <div class="stat-label">Emergency Support</div>
+                    </div>
+                </div>
             </div>
-            <div class="col-6 col-md-3">
-              <div class="stat-box">
-                <div class="stat-number">24/7</div>
-                <div style="color: #C8D0D8;">Support</div>
-              </div>
+        </div>
+    </section>
+
+    <!-- ========== BRAND PARTNERS ========== -->
+    <div class="brand-strip">
+        <div class="container">
+            <div class="d-flex justify-content-around align-items-center flex-wrap" style="gap: 30px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Caterpillar_logo.svg/2560px-Caterpillar_logo.svg.png" alt="Caterpillar" class="brand-logo-img" style="height:35px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cummins_logo.svg/2560px-Cummins_logo.svg.png" alt="Cummins" class="brand-logo-img" style="height:30px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Perkins_Engines_logo.svg/2560px-Perkins_Engines_logo.svg.png" alt="Perkins" class="brand-logo-img" style="height:28px;">
+                <span class="brand-text">FG WILSON</span>
+                <span class="brand-text">DENYO</span>
+                <span class="brand-text">JOHN DEERE</span>
             </div>
-          </div>
         </div>
-        
-        <div class="col-lg-5 text-center d-none d-lg-block">
-          <!-- Generator Image/Illustration -->
-          <img src="https://placehold.co/500x500/0A1628/D4AF37?text=GENERATOR" alt="Generator" style="width: 100%; max-width: 500px;">
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- ==================== BRAND PARTNERS ==================== -->
-  <div style="background: rgba(255,255,255,0.02); padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-    <div class="container">
-      <div class="d-flex justify-content-around align-items-center flex-wrap" style="gap: 30px;">
-        <!-- Brand Logos (Yeh already uploaded hain internet se) -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Caterpillar_logo.svg/2560px-Caterpillar_logo.svg.png" alt="Caterpillar" class="brand-logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cummins_logo.svg/2560px-Cummins_logo.svg.png" alt="Cummins" class="brand-logo" style="height: 35px;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Perkins_Engines_logo.svg/2560px-Perkins_Engines_logo.svg.png" alt="Perkins" class="brand-logo" style="height: 30px;">
-        <span style="color: white; font-weight: 800; letter-spacing: 2px; font-size: 1.3rem;">FG WILSON</span>
-        <span style="color: white; font-weight: 800; letter-spacing: 2px; font-size: 1.3rem;">DENYO</span>
-      </div>
-    </div>
-  </div>
+    <!-- ========== SERVICES ========== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">OUR SERVICES</div>
+                <h2 class="section-title">Complete Generator <span>Solutions</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-card">
+                        <div class="service-icon" style="background:rgba(212,175,55,0.12); color:#D4AF37;"><i class="fas fa-shopping-cart"></i></div>
+                        <h4>Generator Sales</h4>
+                        <p>Brand new diesel generators from 13 KVA to 1250 KVA. Authorized dealer of Perkins, Cummins, Caterpillar & more.</p>
+                        <a href="products.html" class="btn-gold">View Inventory <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-card">
+                        <div class="service-icon" style="background:rgba(30,95,187,0.12); color:#1E5FBB;"><i class="fas fa-clock"></i></div>
+                        <h4>Generator Rental</h4>
+                        <p>Flexible daily, weekly & monthly rental plans for events, construction sites & emergency backup power.</p>
+                        <a href="services.html" class="btn-gold">Rent Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon" style="background:rgba(220,53,69,0.12); color:#DC3545;"><i class="fas fa-tools"></i></div>
+                        <h4>Maintenance & AMC</h4>
+                        <p>Preventive & corrective maintenance. Annual service contracts with 24/7 emergency breakdown support.</p>
+                        <a href="contact.html" class="btn-gold">Get AMC <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ==================== CLIENT LOGOS SECTION ==================== -->
-  <section style="padding: 80px 0;">
-    <div class="container">
-      <h2 style="text-align: center; font-family: 'Outfit', sans-serif; font-size: 2.5rem; margin-bottom: 20px;">
-        Our <span style="color: #D4AF37;">Prestigious Clients</span>
-      </h2>
-      <p style="text-align: center; color: #C8D0D8; margin-bottom: 40px;">
-        🔴 Apne client logos <strong>"images/clients/"</strong> folder mein dal kar yahan lagayein
-      </p>
-      <div class="row g-4 justify-content-center">
-        <!-- 
-        🔴🔴🔴 CLIENT LOGOS YAHAN LAGAYEIN 🔴🔴🔴
-        Har client ke liye naya div banayein aur src mein apni client logo ka path dein
-        Example: src="images/clients/abn-amro-bank.png"
-        -->
-        <div class="col-6 col-md-3 col-lg-2 text-center">
-          <img src="images/clients/client-1.png" alt="Client 1" style="height: 50px; filter: brightness(0) invert(1); opacity: 0.7;">
+    <!-- ========== CLIENT LOGOS ========== -->
+    <section style="background:rgba(255,255,255,0.02); padding:80px 0;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">TRUSTED BY</div>
+                <h2 class="section-title">Our <span>Prestigious Clients</span></h2>
+            </div>
+            <div class="row justify-content-center g-4">
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="images/clients/client-1.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+1'">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/clients/client-2.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+2'">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/clients/client-3.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+3'">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/clients/client-4.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+4'">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="images/clients/client-5.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+5'">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="images/clients/client-6.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+6'">
+                </div>
+            </div>
         </div>
-        <div class="col-6 col-md-3 col-lg-2 text-center">
-          <img src="images/clients/client-2.png" alt="Client 2" style="height: 50px; filter: brightness(0) invert(1); opacity: 0.7;">
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 text-center">
-          <img src="images/clients/client-3.png" alt="Client 3" style="height: 50px; filter: brightness(0) invert(1); opacity: 0.7;">
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 text-center">
-          <img src="images/clients/client-4.png" alt="Client 4" style="height: 50px; filter: brightness(0) invert(1); opacity: 0.7;">
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 text-center">
-          <img src="images/clients/client-5.png" alt="Client 5" style="height: 50px; filter: brightness(0) invert(1); opacity: 0.7;">
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 text-center">
-          <img src="images/clients/client-6.png" alt="Client 6" style="height: 50px; filter: brightness(0) invert(1); opacity: 0.7;">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer style="background: #060E1A; padding: 60px 0 20px; border-top: 1px solid rgba(212,175,55,0.2);">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <!-- 
-          🔴🔴🔴 YAHAN FOOTER MEIN LOGO LAGAYEIN 🔴🔴🔴
-          -->
-          <img src="images/power-tech-logo.png" alt="Power Tech" class="footer-logo">
-          <p style="color: #C8D0D8;">Pakistan's most trusted generator company since 1986.</p>
-          <div style="display: flex; gap: 15px; margin-top: 15px;">
-            <a href="https://www.facebook.com/PTGPakistan/" style="color: white; font-size: 1.3rem;"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/ptgpakistan/" style="color: white; font-size: 1.3rem;"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.pinterest.com/powertech086/" style="color: white; font-size: 1.3rem;"><i class="fab fa-pinterest"></i></a>
-            <a href="https://www.youtube.com/@powertechgenerators" style="color: white; font-size: 1.3rem;"><i class="fab fa-youtube"></i></a>
-          </div>
+    <!-- ========== CTA ========== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-section" data-aos="fade-up">
+                <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:2.2rem;">Need a <span style="color:#D4AF37;">Generator?</span></h2>
+                <p style="color:var(--gray); max-width:600px; margin:20px auto;">Contact us today for a free consultation and quote. Our experts are ready to help 24/7.</p>
+                <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+                    <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
+                    <a href="https://wa.me/923223619827" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:powertech086@gmail.com" class="btn-outline"><i class="fas fa-envelope"></i> powertech086@gmail.com</a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <h5 style="color: #D4AF37; font-weight: 700;">Contact</h5>
-          <p style="color: #C8D0D8;"><i class="fas fa-phone-alt me-2" style="color: #D4AF37;"></i> 0322 3619827</p>
-          <p style="color: #C8D0D8;"><i class="fas fa-envelope me-2" style="color: #D4AF37;"></i> powertech086@gmail.com</p>
-          <p style="color: #C8D0D8;"><i class="fas fa-map-marker-alt me-2" style="color: #D4AF37;"></i> Karachi, Pakistan</p>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 style="color: #D4AF37; font-weight: 700;">Quick Links</h5>
-          <p><a href="#" style="color: #C8D0D8; text-decoration: none;">Home</a></p>
-          <p><a href="#" style="color: #C8D0D8; text-decoration: none;">About Us</a></p>
-          <p><a href="#" style="color: #C8D0D8; text-decoration: none;">Generators</a></p>
-          <p><a href="#" style="color: #C8D0D8; text-decoration: none;">Contact</a></p>
-        </div>
-      </div>
-      <hr style="border-color: rgba(255,255,255,0.1);">
-      <p style="text-align: center; color: #C8D0D8;">© 2025 Power Tech Generators. All rights reserved.</p>
-    </div>
-  </footer>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Page Loader
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('loader').style.opacity = '0';
-        document.getElementById('loader').style.transition = '0.5s';
-        setTimeout(function() {
-          document.getElementById('loader').style.display = 'none';
-        }, 500);
-      }, 1500);
-    });
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="images/power-tech-logo.png" alt="Power Tech" class="footer-logo-img" onerror="this.src='https://placehold.co/180x55/060E1A/D4AF37?text=POWER+TECH'">
+                    <p style="color:var(--gray);">Pakistan's most trusted diesel generator company. Serving industries, businesses & homes since 1986.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.pinterest.com/powertech086/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.youtube.com/@powertechgenerators" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6>Quick Links</h6>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="products.html">Generators</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6>Services</h6>
+                    <a href="products.html">Generator Sales</a>
+                    <a href="services.html">Rental</a>
+                    <a href="services.html">Maintenance</a>
+                    <a href="services.html">AMC Contracts</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6>Contact</h6>
+                    <p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i> 0322 3619827</p>
+                    <p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i> powertech086@gmail.com</p>
+                    <p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i> Karachi, Pakistan</p>
+                </div>
+            </div>
+            <hr>
+            <p style="color:var(--gray); text-align:center; margin:0; font-size:0.9rem;">© 2025 Power Tech Generators. All Rights Reserved. | Pakistan's #1 Generator Company</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
-    // Initialize AOS
-    AOS.init({ duration: 1000, once: true });
-  </script>
+    <script>
+        // ========== PRELOADER ==========
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                setTimeout(() => preloader.style.display = 'none', 500);
+            }, 1800);
+        });
+        
+        // ========== AOS INIT ==========
+        AOS.init({ duration: 1000, once: true });
+        
+        // ========== NAVBAR SCROLL ==========
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                backToTop.style.display = 'flex';
+            } else {
+                navbar.classList.remove('scrolled');
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        // ========== ACTIVE NAV LINK ==========
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+        
+        // ========== 🔥 ANIMATED COUNTER - SCROLL PE RUN HOGA ==========
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // Animation speed (lower = faster)
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target.toLocaleString(); // Format with commas
+                    }
+                };
+                updateCount();
+            });
+        }
+        
+        // Intersection Observer - Jab stats section dikhe tab counter chale
+        const statsSection = document.querySelector('.stats-row');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target); // Sirf ek baar chalega
+                    }
+                });
+            }, { threshold: 0.3 }); // 30% visible hone pe trigger
+            
+            observer.observe(statsSection);
+        }
+        
+        // ========== SMOOTH SCROLL FOR ALL ANCHOR LINKS ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
