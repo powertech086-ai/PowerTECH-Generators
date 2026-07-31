@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Power Tech Generators - Pakistan's #1 Generator Company. Call 0322 3619827, Email powertech086@gmail.com. Visit our office in Karachi. 24/7 emergency support.">
+    <meta name="keywords" content="Contact Power Tech Generators, Generator Company Karachi, Power Tech Phone Number, Generator Repair Karachi, Generator Dealer Contact">
+    <title>Contact Us | Power Tech Generators - Get Free Quote</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-navy: #0A1628;
+            --navy: #0F1F3D;
+            --golden: #D4AF37;
+            --golden-light: #F0D77B;
+            --white: #FFFFFF;
+            --gray: #C8D0D8;
+            --gray-dark: #3A4556;
+            --accent-blue: #1E5FBB;
+            --gradient-dark: linear-gradient(135deg, #060E1A 0%, #0F1F3D 50%, #0A1628 100%);
+            --gradient-gold: linear-gradient(135deg, #B8960C, #D4AF37);
+            --shadow-card: 0 10px 40px rgba(0,0,0,0.3);
+            --shadow-gold: 0 10px 30px rgba(212,175,55,0.3);
+            --radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: var(--dark-navy);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        /* ========== PRELOADER ========== */
+        .preloader {
+            position: fixed; inset: 0; background: var(--dark-navy);
+            z-index: 99999; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; transition: 0.6s;
+        }
+        .preloader img { width: 200px; margin-bottom: 30px; }
+        .preloader-bar { width: 250px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+        .preloader-bar-fill { width: 0; height: 100%; background: var(--gradient-gold); animation: loadBar 2s ease forwards; }
+        @keyframes loadBar { to { width: 100%; } }
+        
+        /* ========== NAVIGATION ========== */
+        .navbar {
+            background: rgba(10, 22, 40, 0.92) !important;
+            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(212,175,55,0.15);
+            padding: 12px 0; transition: var(--transition); z-index: 1000;
+        }
+        .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
+        .navbar-brand img { height: 48px; transition: var(--transition); }
+        .navbar.scrolled .navbar-brand img { height: 40px; }
+        
+        .nav-link {
+            font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
+            letter-spacing: 1px; padding: 10px 16px !important;
+            color: var(--gray) !important; transition: var(--transition); position: relative;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--golden-light) !important; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: 5px; left: 50%;
+            transform: translateX(-50%); width: 0; height: 2px;
+            background: var(--golden); transition: width 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 60%; }
+        
+        .navbar-toggler { border: 2px solid var(--golden); padding: 8px 10px; border-radius: 8px; }
+        .navbar-toggler i { color: var(--golden); font-size: 1.3rem; }
+        
+        /* ========== BUTTONS ========== */
+        .btn-gold {
+            background: var(--gradient-gold); color: var(--white);
+            padding: 14px 32px; border-radius: 50px; font-weight: 700;
+            text-decoration: none; display: inline-flex; align-items: center;
+            gap: 8px; transition: var(--transition); border: none; cursor: pointer;
+            font-size: 0.9rem; letter-spacing: 0.5px;
+        }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); color: var(--dark-navy); }
+        
+        .btn-outline {
+            background: transparent; border: 2px solid var(--white);
+            color: var(--white); padding: 14px 32px; border-radius: 50px;
+            font-weight: 700; text-decoration: none; display: inline-flex;
+            align-items: center; gap: 8px; transition: var(--transition);
+        }
+        .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
+        
+        /* ========== PAGE BANNER ========== */
+        .page-banner {
+            background: linear-gradient(135deg, rgba(6,14,26,0.95) 0%, rgba(15,31,61,0.85) 100%);
+            padding: 160px 0 80px; position: relative; overflow: hidden;
+            border-bottom: 1px solid rgba(212,175,55,0.15);
+        }
+        .page-banner::before {
+            content: ''; position: absolute; inset: 0; opacity: 0.05;
+            background: radial-gradient(circle at 50% 50%, var(--accent-blue) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, var(--golden) 0%, transparent 40%);
+        }
+        .page-banner .breadcrumb { margin-bottom: 0; }
+        .page-banner .breadcrumb-item a { color: var(--golden-light); text-decoration: none; }
+        .page-banner .breadcrumb-item.active { color: var(--gray); }
+        .page-banner .breadcrumb-item+.breadcrumb-item::before { color: var(--golden); }
+        
+        .page-title {
+            font-family: 'Outfit', sans-serif; font-weight: 900;
+            font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--white);
+        }
+        .page-title span { color: var(--golden-light); }
+        
+        /* ========== SECTIONS ========== */
+        .section-padding { padding: 100px 0; }
+        .section-label {
+            color: var(--golden-light); font-weight: 700; letter-spacing: 3px;
+            font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px;
+            display: inline-block; background: rgba(212,175,55,0.1);
+            padding: 8px 20px; border-radius: 50px; border: 1px solid rgba(212,175,55,0.2);
+        }
+        .section-title {
+            font-family: 'Outfit', sans-serif; font-weight: 800;
+            font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white);
+        }
+        .section-title span { color: var(--golden-light); }
+        
+        /* ========== CONTACT INFO CARDS ========== */
+        .contact-info-card {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px; padding: 35px 25px; text-align: center;
+            transition: var(--transition); height: 100%;
+        }
+        .contact-info-card:hover {
+            background: rgba(212,175,55,0.05); border-color: rgba(212,175,55,0.4);
+            transform: translateY(-8px); box-shadow: var(--shadow-card);
+        }
+        .contact-icon-circle {
+            width: 80px; height: 80px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 2rem;
+            margin: 0 auto 20px;
+        }
+        .contact-info-card h5 { font-weight: 700; margin-bottom: 10px; }
+        .contact-info-card p { color: var(--gray); margin: 0; }
+        .contact-info-card a { color: var(--golden-light); text-decoration: none; font-weight: 600; }
+        
+        /* ========== CONTACT FORM ========== */
+        .contact-form-wrapper {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px; padding: 50px;
+        }
+        .contact-form-wrapper .form-control, 
+        .contact-form-wrapper .form-select {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            color: var(--white); padding: 16px 22px; border-radius: 14px;
+            font-size: 1rem; transition: var(--transition);
+        }
+        .contact-form-wrapper .form-control:focus,
+        .contact-form-wrapper .form-select:focus {
+            border-color: var(--golden); box-shadow: 0 0 0 4px rgba(212,175,55,0.1);
+            background: rgba(255,255,255,0.06); color: var(--white);
+        }
+        .contact-form-wrapper .form-control::placeholder { color: var(--gray-dark); }
+        .contact-form-wrapper label { color: var(--gray); font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+        
+        /* ========== MAP ========== */
+        .map-wrapper {
+            border-radius: 24px; overflow: hidden; border: 2px solid rgba(212,175,55,0.2);
+            height: 400px;
+        }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; }
+        
+        /* ========== BUSINESS HOURS ========== */
+        .hours-card {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px; padding: 35px 30px;
+        }
+        .hours-row {
+            display: flex; justify-content: space-between; padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--gray);
+        }
+        .hours-row:last-child { border-bottom: none; }
+        .hours-row .day { font-weight: 600; }
+        .hours-row .time { color: var(--golden-light); font-weight: 600; }
+        
+        /* ========== SOCIAL LINKS ========== */
+        .social-link-card {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px; padding: 20px; display: flex; align-items: center;
+            gap: 15px; transition: var(--transition); text-decoration: none;
+        }
+        .social-link-card:hover {
+            border-color: rgba(212,175,55,0.4); transform: translateX(8px);
+            box-shadow: var(--shadow-card);
+        }
+        .social-link-card .social-icon {
+            width: 55px; height: 55px; border-radius: 14px; display: flex;
+            align-items: center; justify-content: center; font-size: 1.5rem; color: white;
+        }
+        .social-link-card h6 { color: var(--white); font-weight: 700; margin: 0; }
+        .social-link-card small { color: var(--gray); }
+        
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #060E1A; border-top: 1px solid rgba(212,175,55,0.15);
+            padding: 70px 0 30px;
+        }
+        .footer-logo-img { height: 55px; margin-bottom: 20px; }
+        .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; }
+        .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 4px 0; font-size: 0.95rem; }
+        .footer a:hover { color: var(--golden-light); padding-left: 5px; }
+        .footer .social-icons a {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 42px; height: 42px; background: rgba(255,255,255,0.05);
+            border-radius: 50%; color: var(--white); font-size: 1rem;
+            transition: var(--transition); margin-right: 8px; text-decoration: none;
+        }
+        .footer .social-icons a:hover { background: var(--golden); color: var(--dark-navy); transform: translateY(-3px); }
+        .footer hr { border-color: rgba(255,255,255,0.08); margin: 30px 0; }
+        
+        /* ========== FLOATING BUTTONS ========== */
+        .float-btn {
+            position: fixed; z-index: 999; width: 55px; height: 55px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: var(--transition);
+            right: 20px; cursor: pointer; animation: pulseBtn 2s infinite;
+        }
+        @keyframes pulseBtn {
+            0%, 100% { box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
+            50% { box-shadow: 0 8px 35px rgba(212,175,55,0.5); }
+        }
+        .float-wa { bottom: 90px; background: #25D366; color: white; font-size: 24px; }
+        .float-call { bottom: 155px; background: var(--accent-blue); color: white; font-size: 20px; }
+        .float-top { bottom: 25px; background: var(--golden); color: #000; font-size: 20px; display: none; }
+        .float-btn:hover { transform: scale(1.15); animation: none; }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(10,22,40,0.98); backdrop-filter: blur(20px);
+                padding: 20px; border-radius: 16px; margin-top: 10px;
+                border: 1px solid rgba(212,175,55,0.2);
+            }
+            .section-padding { padding: 60px 0; }
+            .contact-form-wrapper { padding: 30px 20px; }
+            .map-wrapper { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div class="preloader" id="preloader">
+        <img src="images/power-tech-logo.png" alt="Power Tech" onerror="this.src='https://placehold.co/200x80/0A1628/D4AF37?text=POWER+TECH'">
+        <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+        <p style="color:#D4AF37; margin-top:15px; letter-spacing:3px; font-weight:600; font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
+    </div>
+
+    <!-- ========== FLOATING BUTTONS ========== -->
+    <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+923223619827" class="float-btn float-call" title="Call Now"><i class="fas fa-phone-alt"></i></a>
+    <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/power-tech-logo.png" alt="Power Tech" onerror="this.src='https://placehold.co/160x48/0A1628/D4AF37?text=POWER+TECH'">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Generators</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE BANNER ========== -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Contact Us</li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title mt-3">Get In <span>Touch</span></h1>
+                    <p class="mt-3" style="color:var(--gray); font-size:1.1rem; max-width:600px;">
+                        We'd love to hear from you. Contact us for a free consultation and quote.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT INFO CARDS ========== -->
+    <section style="padding:80px 0 0;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="contact-info-card">
+                        <div class="contact-icon-circle" style="background:rgba(212,175,55,0.12); color:#D4AF37;">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h5>Call Us</h5>
+                        <p><a href="tel:+923223619827">0322 3619827</a></p>
+                        <small style="color:var(--gray);">24/7 Emergency Support</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info-card">
+                        <div class="contact-icon-circle" style="background:rgba(37,211,102,0.12); color:#25D366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h5>WhatsApp</h5>
+                        <p><a href="https://wa.me/923223619827" target="_blank">0322 3619827</a></p>
+                        <small style="color:var(--gray);">Quick Chat Support</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info-card">
+                        <div class="contact-icon-circle" style="background:rgba(30,95,187,0.12); color:#1E5FBB;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email Us</h5>
+                        <p><a href="mailto:powertech086@gmail.com">powertech086@gmail.com</a></p>
+                        <small style="color:var(--gray);">We reply within 1 hour</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info-card">
+                        <div class="contact-icon-circle" style="background:rgba(220,53,69,0.12); color:#DC3545;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Visit Us</h5>
+                        <p style="color:var(--gray);">Karachi, Pakistan</p>
+                        <small style="color:var(--gray);">Mon-Sat: 9 AM - 7 PM</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT FORM & MAP ========== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="contact-form-wrapper">
+                        <div class="mb-4">
+                            <span class="section-label">SEND MESSAGE</span>
+                            <h3 style="font-family:'Outfit',sans-serif; font-weight:700;">Request a <span style="color:var(--golden-light);">Free Quote</span></h3>
+                            <p style="color:var(--gray);">Fill the form below and our team will get back to you within 1 hour.</p>
+                        </div>
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label>Full Name *</label>
+                                    <input type="text" class="form-control" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Phone Number *</label>
+                                    <input type="tel" class="form-control" placeholder="03XX-XXXXXXX" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Email Address</label>
+                                    <input type="email" class="form-control" placeholder="email@example.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Subject *</label>
+                                    <select class="form-select" required>
+                                        <option value="">Select subject</option>
+                                        <option>Generator Sales Inquiry</option>
+                                        <option>Generator Rental</option>
+                                        <option>AMC / Maintenance</option>
+                                        <option>Emergency Breakdown</option>
+                                        <option>Installation Service</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Preferred Brand</label>
+                                    <select class="form-select">
+                                        <option value="">Any Brand</option>
+                                        <option>Perkins</option>
+                                        <option>Cummins</option>
+                                        <option>Caterpillar</option>
+                                        <option>FG Wilson</option>
+                                        <option>Denyo</option>
+                                        <option>John Deere</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Required KVA Range</label>
+                                    <select class="form-select">
+                                        <option value="">Select Range</option>
+                                        <option>13 - 30 KVA</option>
+                                        <option>30 - 60 KVA</option>
+                                        <option>60 - 100 KVA</option>
+                                        <option>100 - 250 KVA</option>
+                                        <option>250 - 500 KVA</option>
+                                        <option>500 - 1250 KVA</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label>Message *</label>
+                                    <textarea class="form-control" rows="5" placeholder="Tell us about your requirements..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-gold w-100 justify-content-center" style="padding:18px;">
+                                        <i class="fas fa-paper-plane"></i> Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5" data-aos="fade-left">
+                    <!-- Google Map -->
+                    <div class="map-wrapper mb-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.278851788456!2d67.001234!3d24.860734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDUxJzM4LjYiTiA2N8KwMDAnMDQuNCJF!5e0!3m2!1sen!2s!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    
+                    <!-- Business Hours -->
+                    <div class="hours-card">
+                        <h5 style="font-weight:700; margin-bottom:20px; color:var(--golden-light);">
+                            <i class="fas fa-clock me-2"></i>Business Hours
+                        </h5>
+                        <div class="hours-row"><span class="day">Monday</span><span class="time">9:00 AM - 7:00 PM</span></div>
+                        <div class="hours-row"><span class="day">Tuesday</span><span class="time">9:00 AM - 7:00 PM</span></div>
+                        <div class="hours-row"><span class="day">Wednesday</span><span class="time">9:00 AM - 7:00 PM</span></div>
+                        <div class="hours-row"><span class="day">Thursday</span><span class="time">9:00 AM - 7:00 PM</span></div>
+                        <div class="hours-row"><span class="day">Friday</span><span class="time">9:00 AM - 7:00 PM</span></div>
+                        <div class="hours-row"><span class="day">Saturday</span><span class="time">9:00 AM - 5:00 PM</span></div>
+                        <div class="hours-row"><span class="day">Sunday</span><span class="time" style="color:#DC3545;">Closed</span></div>
+                        <hr style="border-color:rgba(255,255,255,0.08); margin:15px 0;">
+                        <p style="color:var(--golden-light); font-weight:700; margin:0; text-align:center;">
+                            <i class="fas fa-exclamation-circle me-2"></i>24/7 Emergency Support Available
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOCIAL LINKS ========== -->
+    <section style="background:rgba(255,255,255,0.02); padding:80px 0;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-label">CONNECT WITH US</span>
+                <h2 class="section-title">Follow Us on <span>Social Media</span></h2>
+            </div>
+            <div class="row g-3 justify-content-center">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <a href="https://www.facebook.com/PTGPakistan/" target="_blank" class="social-link-card">
+                        <div class="social-icon" style="background:#1877F2;"><i class="fab fa-facebook-f"></i></div>
+                        <div><h6>Facebook</h6><small>/PTGPakistan</small></div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.instagram.com/ptgpakistan/" target="_blank" class="social-link-card">
+                        <div class="social-icon" style="background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);"><i class="fab fa-instagram"></i></div>
+                        <div><h6>Instagram</h6><small>@ptgpakistan</small></div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://www.pinterest.com/powertech086/" target="_blank" class="social-link-card">
+                        <div class="social-icon" style="background:#BD081C;"><i class="fab fa-pinterest"></i></div>
+                        <div><h6>Pinterest</h6><small>@powertech086</small></div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://www.youtube.com/@powertechgenerators" target="_blank" class="social-link-card">
+                        <div class="social-icon" style="background:#FF0000;"><i class="fab fa-youtube"></i></div>
+                        <div><h6>YouTube</h6><small>@powertechgenerators</small></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="images/power-tech-logo.png" alt="Power Tech" class="footer-logo-img" onerror="this.src='https://placehold.co/180x55/060E1A/D4AF37?text=POWER+TECH'">
+                    <p style="color:var(--gray);">Pakistan's most trusted diesel generator company. Serving since 1986.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.pinterest.com/powertech086/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.youtube.com/@powertechgenerators" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6>Quick Links</h6>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="products.html">Generators</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6>Services</h6>
+                    <a href="services.html">Rental</a>
+                    <a href="services.html">Maintenance</a>
+                    <a href="services.html">AMC</a>
+                    <a href="services.html">Emergency</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6>Contact</h6>
+                    <p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i> 0322 3619827</p>
+                    <p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i> powertech086@gmail.com</p>
+                    <p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i> Karachi, Pakistan</p>
+                </div>
+            </div>
+            <hr>
+            <p style="color:var(--gray); text-align:center; margin:0; font-size:0.9rem;">© 2025 Power Tech Generators. All Rights Reserved. | Pakistan's #1 Generator Company</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                setTimeout(() => preloader.style.display = 'none', 500);
+            }, 1800);
+        });
+        
+        AOS.init({ duration: 1000, once: true });
+        
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                backToTop.style.display = 'flex';
+            } else {
+                navbar.classList.remove('scrolled');
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        // Active Nav
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === 'contact.html') link.classList.add('active');
+        });
+        
+        // Contact Form Handler
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            alert('✅ Thank you for contacting Power Tech Generators!\n\nOur team will get back to you within 1 hour.\n\nFor urgent queries, call: 0322 3619827');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
