@@ -28,7 +28,7 @@
             font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.7;
         }
         
-        /* Preloader */
+        /* ========== PRELOADER ========== */
         .preloader {
             position: fixed; inset: 0; background: var(--dark-navy);
             z-index: 99999; display: flex; flex-direction: column;
@@ -40,7 +40,7 @@
         .preloader-bar-fill { width: 0; height: 100%; background: var(--gradient-gold); animation: loadBar 2s ease forwards; }
         @keyframes loadBar { to { width: 100%; } }
         
-        /* Navbar */
+        /* ========== NAVIGATION ========== */
         .navbar {
             background: rgba(10, 22, 40, 0.92) !important; backdrop-filter: blur(30px);
             border-bottom: 1px solid rgba(212,175,55,0.2); padding: 12px 0;
@@ -71,64 +71,31 @@
             padding: 14px 32px; border-radius: 50px; font-weight: 700;
             text-decoration: none; display: inline-flex; align-items: center;
             gap: 8px; transition: var(--transition); border: none; cursor: pointer;
-            position: relative; overflow: hidden;
-        }
-        .btn-gold::after {
-            content: ''; position: absolute; top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
-            animation: btnShine 3s infinite;
-        }
-        @keyframes btnShine {
-            0% { transform: translateX(-100%) translateY(-100%); }
-            100% { transform: translateX(100%) translateY(100%); }
         }
         .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); }
         
         .btn-outline {
-            background: transparent; border: 2px solid rgba(255,255,255,0.5);
+            background: transparent; border: 2px solid var(--white);
             color: var(--white); padding: 14px 32px; border-radius: 50px;
             font-weight: 700; text-decoration: none; display: inline-flex;
             align-items: center; gap: 8px; transition: var(--transition);
         }
-        .btn-outline:hover { background: var(--white); color: var(--dark-navy); border-color: var(--white); }
+        .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
         
-        /* ========== HERO - SUPER ATTRACTIVE ========== */
+        /* ========== HERO ========== */
         .hero-section {
             min-height: 100vh; display: flex; align-items: center;
             position: relative; overflow: hidden;
-            background: #020810;
-            padding: 120px 0 80px;
+            background: #020810; padding: 120px 0 80px;
         }
         
         #heroCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
         
-        /* Gradient Overlay */
         .hero-gradient {
             position: absolute; inset: 0; z-index: 2;
             background: radial-gradient(ellipse at 35% 50%, rgba(30,95,187,0.2) 0%, transparent 60%),
                         radial-gradient(ellipse at 65% 40%, rgba(212,175,55,0.15) 0%, transparent 50%),
                         linear-gradient(180deg, rgba(2,8,16,0.3) 0%, rgba(10,22,40,0.85) 100%);
-        }
-        
-        /* Grid Pattern */
-        .hero-grid {
-            position: absolute; inset: 0; z-index: 2; opacity: 0.03;
-            background-image: linear-gradient(rgba(212,175,55,0.3) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(212,175,55,0.3) 1px, transparent 1px);
-            background-size: 60px 60px;
-            animation: gridMove 20s linear infinite;
-        }
-        @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(60px, 60px); }
-        }
-        
-        /* Scan Line Effect */
-        .hero-scanlines {
-            position: absolute; inset: 0; z-index: 2; opacity: 0.04;
-            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px);
-            pointer-events: none;
         }
         
         .hero-content { position: relative; z-index: 3; }
@@ -139,65 +106,36 @@
             padding: 12px 28px; border-radius: 50px; font-weight: 700;
             font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 28px;
             border: 1px solid rgba(212,175,55,0.3); backdrop-filter: blur(20px);
-            animation: badgeGlow 2.5s infinite;
-        }
-        @keyframes badgeGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(212,175,55,0.2); }
-            50% { box-shadow: 0 0 40px rgba(212,175,55,0.5), 0 0 80px rgba(212,175,55,0.2); }
-        }
-        .hero-badge i { animation: boltPulse 1s infinite; }
-        @keyframes boltPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); color: #FFF; }
         }
         
         .hero-title {
             font-family: 'Outfit', sans-serif; font-weight: 900;
             font-size: clamp(2.8rem, 5.5vw, 5.2rem); line-height: 1.08;
             margin-bottom: 22px; color: var(--white);
-            text-shadow: 0 0 50px rgba(212,175,55,0.3);
         }
         .hero-title .golden {
             background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
             background-size: 200% 200%;
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: goldenShine 3s ease infinite;
+            background-clip: text; animation: goldenShine 3s ease infinite;
         }
         @keyframes goldenShine {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
         
-        .hero-desc {
-            font-size: 1.2rem; color: var(--gray); max-width: 550px;
-            margin-bottom: 38px; line-height: 1.9;
-            text-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-        .hero-desc .highlight {
-            color: var(--golden-light); font-weight: 600;
-        }
+        .hero-desc { font-size: 1.2rem; color: var(--gray); max-width: 550px; margin-bottom: 38px; }
         
-        /* Stats */
         .stat-box {
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 20px; padding: 30px 18px; text-align: center;
-            transition: var(--transition); backdrop-filter: blur(10px);
-            position: relative; overflow: hidden;
+            border-radius: 20px; padding: 30px 18px; text-align: center; transition: var(--transition);
+            backdrop-filter: blur(10px);
         }
-        .stat-box::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-            background: var(--gradient-gold); transform: scaleX(0); transition: transform 0.5s;
-        }
-        .stat-box:hover::before { transform: scaleX(1); }
-        .stat-box:hover {
-            background: rgba(212,175,55,0.06); border-color: rgba(212,175,55,0.3);
-            transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
+        .stat-box:hover { background: rgba(212,175,55,0.06); border-color: rgba(212,175,55,0.3); transform: translateY(-8px); }
         .stat-num { font-size: 2.5rem; font-weight: 900; color: var(--golden-light); font-family: 'Outfit', sans-serif; }
         .stat-lbl { font-size: 0.8rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-top: 6px; }
         
-        /* Brands */
+        /* ========== BRANDS ========== */
         .brand-strip {
             background: rgba(0,0,0,0.3); padding: 30px 0;
             border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);
@@ -207,9 +145,9 @@
             letter-spacing: 3px; opacity: 0.5; transition: var(--transition);
             padding: 8px 18px; border-radius: 8px; cursor: pointer;
         }
-        .brand-name:hover { opacity: 1; color: var(--golden-light); background: rgba(212,175,55,0.08); transform: scale(1.1); }
+        .brand-name:hover { opacity: 1; color: var(--golden-light); background: rgba(212,175,55,0.08); }
         
-        /* Services */
+        /* ========== SERVICES ========== */
         .section-padding { padding: 80px 0; }
         .section-label { color: var(--golden-light); font-weight: 700; letter-spacing: 4px; font-size: 0.75rem; text-transform: uppercase; }
         .section-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 2.5rem; }
@@ -218,54 +156,37 @@
         .service-card {
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
             border-radius: 24px; padding: 50px 35px; transition: var(--transition);
-            height: 100%; text-align: center; position: relative; overflow: hidden;
+            height: 100%; text-align: center;
         }
-        .service-card::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
-            background: var(--gradient-gold); transform: scaleX(0); transition: transform 0.4s;
-        }
-        .service-card:hover::after { transform: scaleX(1); }
-        .service-card:hover {
-            background: rgba(212,175,55,0.04); border-color: rgba(212,175,55,0.3);
-            transform: translateY(-12px); box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-        }
-        .svc-icon {
-            width: 85px; height: 85px; border-radius: 22px; display: flex;
-            align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 28px;
-            transition: var(--transition);
-        }
-        .service-card:hover .svc-icon { transform: rotateY(180deg); }
+        .service-card:hover { background: rgba(212,175,55,0.04); border-color: rgba(212,175,55,0.3); transform: translateY(-12px); }
+        .svc-icon { width: 85px; height: 85px; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 28px; }
         .service-card h4 { font-weight: 700; margin-bottom: 15px; font-size: 1.3rem; }
         .service-card p { color: var(--gray); margin-bottom: 28px; font-size: 0.95rem; }
         
-        /* Clients */
-        .client-box {
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 14px; padding: 22px 15px; text-align: center;
-            transition: var(--transition); height: 85px; display: flex;
-            align-items: center; justify-content: center; cursor: pointer;
+        /* ========== CLIENTS ========== */
+        .client-logo-img {
+            height: 55px; width: auto; max-width: 140px;
+            object-fit: contain; transition: all 0.3s;
+            filter: brightness(0) invert(1); opacity: 0.7; cursor: pointer;
         }
-        .client-box:hover {
-            border-color: var(--golden); background: rgba(212,175,55,0.08);
-            transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
-        .client-box span { color: var(--golden-light); font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; }
+        .client-logo-img:hover { opacity: 1; transform: scale(1.15); }
         
-        /* CTA */
+        .client-placeholder {
+            height: 60px; display: flex; align-items: center; justify-content: center;
+            background: rgba(212,175,55,0.08); border: 1px dashed rgba(212,175,55,0.3);
+            border-radius: 12px; color: #D4AF37; font-weight: 700; font-size: 0.8rem;
+            letter-spacing: 1px; transition: all 0.3s;
+        }
+        .client-placeholder:hover { background: rgba(212,175,55,0.15); border-color: #D4AF37; }
+        
+        /* ========== CTA ========== */
         .cta-box {
             background: linear-gradient(135deg, rgba(212,175,55,0.06), rgba(30,95,187,0.06));
             border: 1px solid rgba(212,175,55,0.2); border-radius: 28px;
-            padding: 70px; text-align: center; position: relative; overflow: hidden;
+            padding: 70px; text-align: center;
         }
-        .cta-box::before {
-            content: ''; position: absolute; top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 60%);
-            animation: ctaRotate 10s linear infinite;
-        }
-        @keyframes ctaRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         
-        /* Footer */
+        /* ========== FOOTER ========== */
         .footer {
             background: #020510; border-top: 1px solid rgba(212,175,55,0.1);
             padding: 70px 0 30px;
@@ -280,23 +201,19 @@
             transition: var(--transition); margin-right: 10px; text-decoration: none;
             border: 1px solid rgba(255,255,255,0.06);
         }
-        .social-links a:hover { background: var(--golden); color: var(--dark-navy); border-color: var(--golden); transform: translateY(-4px); }
+        .social-links a:hover { background: var(--golden); color: var(--dark-navy); border-color: var(--golden); }
         .footer hr { border-color: rgba(255,255,255,0.06); margin: 30px 0; }
         
-        /* Floating */
+        /* ========== FLOATING ========== */
         .float-btn {
             position: fixed; z-index: 999; width: 58px; height: 58px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: var(--transition);
             right: 22px; text-decoration: none;
         }
-        .float-wa { bottom: 95px; background: #25D366; color: white; font-size: 26px; animation: floatPulse 2s infinite; }
-        .float-call { bottom: 165px; background: var(--accent-blue); color: white; font-size: 22px; animation: floatPulse 2s infinite 0.5s; }
+        .float-wa { bottom: 95px; background: #25D366; color: white; font-size: 26px; }
+        .float-call { bottom: 165px; background: var(--accent-blue); color: white; font-size: 22px; }
         .float-top { bottom: 28px; background: var(--golden); color: #000; font-size: 22px; display: none; }
-        @keyframes floatPulse {
-            0%, 100% { box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-            50% { box-shadow: 0 10px 45px rgba(212,175,55,0.6); }
-        }
         .float-btn:hover { transform: scale(1.15); }
         
         @media (max-width: 991px) {
@@ -312,7 +229,7 @@
 </head>
 <body>
 
-    <!-- Preloader -->
+    <!-- ========== PRELOADER ========== -->
     <div class="preloader" id="preloader">
         <div class="preloader-logo-box">
             <img src="Images/logo-icon.png" alt="PT" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -323,12 +240,12 @@
         <p style="color:#D4AF37;margin-top:15px;letter-spacing:3px;font-weight:600;font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
     </div>
 
-    <!-- Floating -->
+    <!-- ========== FLOATING BUTTONS ========== -->
     <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
     <a href="tel:+923223619827" class="float-btn float-call"><i class="fas fa-phone-alt"></i></a>
     <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
 
-    <!-- Navbar -->
+    <!-- ========== NAVIGATION ========== -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
             <a class="brand-logo-link" href="index.html">
@@ -355,39 +272,24 @@
     <section class="hero-section">
         <canvas id="heroCanvas"></canvas>
         <div class="hero-gradient"></div>
-        <div class="hero-grid"></div>
-        <div class="hero-scanlines"></div>
         
         <div class="container hero-content">
             <div class="row align-items-center">
                 <div class="col-lg-7" data-aos="fade-up" data-aos-duration="1200">
-                    <div class="hero-badge">
-                        <i class="fas fa-bolt"></i> PAKISTAN'S #1 GENERATOR COMPANY
-                    </div>
-                    <h1 class="hero-title">
-                        Powering <span class="golden">Pakistan</span><br>Since 1986
-                    </h1>
+                    <div class="hero-badge">⚡ PAKISTAN'S #1 GENERATOR COMPANY</div>
+                    <h1 class="hero-title">Powering <span class="golden">Pakistan</span><br>Since 1986</h1>
                     <p class="hero-desc">
-                        <span class="highlight">Premium Diesel Generators</span> from 13 KVA to 1250 KVA<br>
-                        <i class="fas fa-circle" style="font-size:0.4rem; color:var(--golden); vertical-align:middle; margin:0 8px;"></i> Sales 
-                        <i class="fas fa-circle" style="font-size:0.4rem; color:var(--golden); vertical-align:middle; margin:0 8px;"></i> Rental 
-                        <i class="fas fa-circle" style="font-size:0.4rem; color:var(--golden); vertical-align:middle; margin:0 8px;"></i> Maintenance 
-                        <i class="fas fa-circle" style="font-size:0.4rem; color:var(--golden); vertical-align:middle; margin:0 8px;"></i> 24/7 Support
+                        Premium Diesel Generators from 13 KVA to 1250 KVA<br>
+                        Sales | Rental | Maintenance | 24/7 Support
                     </p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="https://wa.me/923223619827" target="_blank" class="btn-gold">
-                            <i class="fab fa-whatsapp"></i> WhatsApp Now
-                        </a>
-                        <a href="products.html" class="btn-outline">
-                            <i class="fas fa-cogs"></i> View Generators
-                        </a>
+                        <a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+                        <a href="products.html" class="btn-outline"><i class="fas fa-cogs"></i> View Generators</a>
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="1200">
                     <div style="text-align:center;">
-                        <img src="Images/hero-generator.png" alt="Generator" 
-                             style="max-width:100%; height:auto; max-height:480px; filter:drop-shadow(0 30px 60px rgba(212,175,55,0.35)); animation:floatGen 4s ease-in-out infinite;" 
-                             onerror="this.style.display='none'">
+                        <img src="Images/hero-generator.png" alt="Generator" style="max-width:100%; height:auto; max-height:480px;" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -401,7 +303,7 @@
         </div>
     </section>
 
-    <!-- Brands -->
+    <!-- ========== BRAND PARTNERS ========== -->
     <div class="brand-strip">
         <div class="container">
             <div class="d-flex justify-content-around flex-wrap" style="gap:25px;">
@@ -412,7 +314,7 @@
         </div>
     </div>
 
-    <!-- Services -->
+    <!-- ========== SERVICES ========== -->
     <section class="section-padding">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -445,31 +347,22 @@
         </div>
     </section>
 
-    <!-- Clients -->
+    <!-- ========== CLIENT LOGOS ========== -->
     <section style="background:rgba(0,0,0,0.2);padding:80px 0;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <p class="section-label">TRUSTED BY</p>
                 <h2 class="section-title">Our <span>Prestigious Clients</span></h2>
+                <p style="color:var(--gray); font-size:0.85rem; margin-top:8px;">
+                    📁 <code style="color:var(--golden-light); background:rgba(212,175,55,0.1); padding:3px 10px; border-radius:4px;">Images/client-1.png</code> 
+                    se <code style="color:var(--golden-light); background:rgba(212,175,55,0.1); padding:3px 10px; border-radius:4px;">Images/client-32.png</code> tak upload karein
+                </p>
             </div>
-            <div class="row g-3 justify-content-center" data-aos="fade-up">
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 1</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 2</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 3</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 4</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 5</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 6</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 7</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 8</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 9</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 10</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 11</span></div></div>
-                <div class="col-6 col-md-3 col-lg-2"><div class="client-box"><span>CLIENT 12</span></div></div>
-            </div>
+            <div class="row g-3 justify-content-center" id="clientLogosContainer"></div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ========== CTA ========== -->
     <section class="section-padding">
         <div class="container">
             <div class="cta-box" data-aos="fade-up">
@@ -483,7 +376,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
@@ -510,182 +403,109 @@
         </div>
     </footer>
 
+    <!-- ========== SCRIPTS ========== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
     <script>
-        window.addEventListener('load',()=>{setTimeout(()=>{const p=document.getElementById('preloader');p.style.opacity='0';setTimeout(()=>p.style.display='none',500);},2000);});
-        AOS.init({duration:1000,once:true});
-        window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);document.getElementById('backToTop').style.display=window.scrollY>500?'flex':'none';});
+        // ========== PRELOADER ==========
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const p = document.getElementById('preloader');
+                p.style.opacity = '0';
+                setTimeout(() => p.style.display = 'none', 500);
+            }, 2000);
+        });
         
-        // ========== ENHANCED 3D ANIMATION ==========
+        // ========== AOS ==========
+        AOS.init({ duration: 1000, once: true });
+        
+        // ========== NAVBAR SCROLL ==========
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('backToTop').style.display = window.scrollY > 500 ? 'flex' : 'none';
+        });
+        
+        // ========== THREE.JS 3D ANIMATION ==========
         const canvas = document.getElementById('heroCanvas');
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.shadowMap.enabled = true;
         
         const scene = new THREE.Scene();
-        scene.fog = new THREE.FogExp2(0x020810, 0.00008);
-        
         const camera = new THREE.PerspectiveCamera(50, window.innerWidth/window.innerHeight, 0.1, 100);
         camera.position.set(4.5, 2.8, 9);
         camera.lookAt(0, 1.2, 0);
         
-        // Enhanced Lighting
         scene.add(new THREE.AmbientLight(0x1a2b4a, 0.4));
         const keyLight = new THREE.DirectionalLight(0xD4AF37, 2);
-        keyLight.position.set(5, 7, 5); keyLight.castShadow = true;
-        scene.add(keyLight);
-        const blueLight = new THREE.PointLight(0x1E5FBB, 1.2, 15);
-        blueLight.position.set(-4, 2, 3); scene.add(blueLight);
-        const orangeLight = new THREE.PointLight(0xFF6600, 0.8, 10);
-        orangeLight.position.set(0, 1.5, -3); scene.add(orangeLight);
-        const rimLight = new THREE.PointLight(0xFFFFFF, 0.5);
-        rimLight.position.set(3, 4, -5); scene.add(rimLight);
+        keyLight.position.set(5, 7, 5); scene.add(keyLight);
+        scene.add(new THREE.PointLight(0x1E5FBB, 1.2, 15, new THREE.Vector3(-4, 2, 3)));
         
-        const group = new THREE.Group();
-        scene.add(group);
+        const group = new THREE.Group(); scene.add(group);
         
-        // Engine Block (more detailed)
-        const blockGeo = new THREE.BoxGeometry(2.8, 1.8, 3.8, 2, 2, 2);
-        const blockMat = new THREE.MeshStandardMaterial({ color: 0x1a2a3a, roughness: 0.2, metalness: 0.95 });
-        const block = new THREE.Mesh(blockGeo, blockMat);
-        block.position.y = 0.8; block.castShadow = true; block.receiveShadow = true;
-        group.add(block);
+        // Engine Block
+        const block = new THREE.Mesh(
+            new THREE.BoxGeometry(2.8, 1.8, 3.8),
+            new THREE.MeshStandardMaterial({ color: 0x1a2a3a, roughness: 0.2, metalness: 0.95 })
+        );
+        block.position.y = 0.8; group.add(block);
         
-        // Engine details (bolts)
-        for (let x = -1.2; x <= 1.2; x += 2.4) {
-            for (let z = -1.6; z <= 1.6; z += 3.2) {
-                const bolt = new THREE.Mesh(
-                    new THREE.CylinderGeometry(0.08, 0.08, 0.15, 8),
-                    new THREE.MeshStandardMaterial({ color: 0xD4AF37, roughness: 0.1, metalness: 0.9 })
-                );
-                bolt.position.set(x, 1.75, z); group.add(bolt);
-            }
-        }
+        // Alternator
+        const alt = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.8, 0.8, 1.8, 32),
+            new THREE.MeshStandardMaterial({ color: 0x4a5a6a, roughness: 0.15, metalness: 0.95 })
+        );
+        alt.position.set(0, 0.8, -2.5); alt.rotation.x = Math.PI/2; group.add(alt);
         
-        // Alternator (spinning)
-        const altGeo = new THREE.CylinderGeometry(0.8, 0.8, 1.8, 32);
-        const altMat = new THREE.MeshStandardMaterial({ color: 0x4a5a6a, roughness: 0.15, metalness: 0.95 });
-        const alt = new THREE.Mesh(altGeo, altMat);
-        alt.position.set(0, 0.8, -2.5); alt.rotation.x = Math.PI/2;
-        alt.castShadow = true; group.add(alt);
+        // Radiator
+        const rad = new THREE.Mesh(
+            new THREE.BoxGeometry(2, 1.2, 0.3),
+            new THREE.MeshStandardMaterial({ color: 0x2a3a4a, roughness: 0.3, metalness: 0.85 })
+        );
+        rad.position.set(0, 0.8, 2); group.add(rad);
         
-        // Alternator rings (golden)
-        for (let z = -0.6; z <= 0.6; z += 1.2) {
-            const ring = new THREE.Mesh(
-                new THREE.TorusGeometry(0.85, 0.06, 16, 32),
-                new THREE.MeshStandardMaterial({ color: 0xD4AF37, roughness: 0.1, metalness: 0.9, emissive: new THREE.Color(0x221100) })
-            );
-            ring.position.set(0, 0.8, -2.5 + z); ring.rotation.x = Math.PI/2;
-            group.add(ring);
-        }
-        
-        // Radiator with fins
-        const radGeo = new THREE.BoxGeometry(2, 1.2, 0.3, 8, 1, 1);
-        const radMat = new THREE.MeshStandardMaterial({ color: 0x2a3a4a, roughness: 0.3, metalness: 0.85 });
-        const rad = new THREE.Mesh(radGeo, radMat);
-        rad.position.set(0, 0.8, 2); rad.castShadow = true;
-        group.add(rad);
-        
-        // Pistons (animated)
+        // Pistons
         const pistons = [];
         for (let i = -0.7; i <= 0.7; i += 0.7) {
             const piston = new THREE.Mesh(
                 new THREE.CylinderGeometry(0.25, 0.25, 0.6, 16),
-                new THREE.MeshStandardMaterial({ color: 0xD4AF37, roughness: 0.1, metalness: 0.9, emissive: new THREE.Color(0x332200) })
+                new THREE.MeshStandardMaterial({ color: 0xD4AF37, roughness: 0.1, metalness: 0.9 })
             );
-            piston.position.set(i, 1.8, 0); piston.castShadow = true;
-            group.add(piston); pistons.push(piston);
+            piston.position.set(i, 1.8, 0); group.add(piston); pistons.push(piston);
         }
         
-        // Large Gear
+        // Gears
         const gearGeo = new THREE.CylinderGeometry(0.6, 0.6, 0.25, 20);
         const gearMat = new THREE.MeshStandardMaterial({ color: 0x7a8a9a, roughness: 0.15, metalness: 0.95 });
         const gear1 = new THREE.Mesh(gearGeo, gearMat);
-        gear1.position.set(1.4, 0.3, 1.2); gear1.castShadow = true;
-        group.add(gear1);
+        gear1.position.set(1.4, 0.3, 1.2); group.add(gear1);
         const gear2 = new THREE.Mesh(gearGeo, gearMat);
-        gear2.position.set(-1.4, 0.3, 1.2); gear2.castShadow = true;
-        group.add(gear2);
+        gear2.position.set(-1.4, 0.3, 1.2); group.add(gear2);
         
-        // Tools floating around
-        const wrenchGeo = new THREE.BoxGeometry(0.12, 0.08, 0.9);
-        const toolMat = new THREE.MeshStandardMaterial({ color: 0xcccccc, roughness: 0.2, metalness: 0.9 });
-        const wrench = new THREE.Mesh(wrenchGeo, toolMat);
-        wrench.position.set(1.3, -0.2, -1.6); group.add(wrench);
-        
-        const hammerGeo = new THREE.BoxGeometry(0.15, 0.3, 0.15);
-        const hammer = new THREE.Mesh(hammerGeo, toolMat);
-        hammer.position.set(-1.3, -0.1, -1.8); group.add(hammer);
-        
-        // Spark Particles (more!)
+        // Particles
         const particlesGeo = new THREE.BufferGeometry();
-        const particlesCount = 600;
-        const posArray = new Float32Array(particlesCount * 3);
-        const colorArray = new Float32Array(particlesCount * 3);
-        for (let i = 0; i < particlesCount * 3; i += 3) {
+        const posArray = new Float32Array(600 * 3);
+        for (let i = 0; i < 600 * 3; i += 3) {
             posArray[i] = (Math.random() - 0.5) * 10;
             posArray[i+1] = Math.random() * 6 - 0.5;
             posArray[i+2] = (Math.random() - 0.5) * 10;
-            colorArray[i] = 0.8 + Math.random() * 0.2;
-            colorArray[i+1] = 0.5 + Math.random() * 0.3;
-            colorArray[i+2] = 0.1;
         }
         particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        particlesGeo.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
         const particles = new THREE.Points(particlesGeo, new THREE.PointsMaterial({
-            size: 0.03, vertexColors: true, blending: THREE.AdditiveBlending, transparent: true, opacity: 0.9
+            size: 0.03, color: 0xD4AF37, blending: THREE.AdditiveBlending, transparent: true, opacity: 0.8
         }));
         scene.add(particles);
-        
-        // Welding effect
-        const weldGeo = new THREE.BufferGeometry();
-        const weldCount = 150;
-        const weldArray = new Float32Array(weldCount * 3);
-        for (let i = 0; i < weldCount * 3; i += 3) {
-            weldArray[i] = (Math.random() - 0.5) * 2;
-            weldArray[i+1] = Math.random() * 1;
-            weldArray[i+2] = 1.8 + Math.random() * 0.8;
-        }
-        weldGeo.setAttribute('position', new THREE.BufferAttribute(weldArray, 3));
-        const weldSparks = new THREE.Points(weldGeo, new THREE.PointsMaterial({
-            size: 0.02, color: 0xFF6600, blending: THREE.AdditiveBlending, transparent: true, opacity: 1
-        }));
-        group.add(weldSparks);
         
         // Animation
         function animate() {
             requestAnimationFrame(animate);
-            
             group.rotation.y += 0.002;
             alt.rotation.z += 0.012;
-            gear1.rotation.z += 0.02;
-            gear2.rotation.z -= 0.02;
-            
-            pistons.forEach((p, i) => {
-                p.position.y = 1.8 + Math.sin(Date.now() * 0.006 + i * 2) * 0.2;
-            });
-            
-            wrench.rotation.z = Math.sin(Date.now() * 0.004) * 0.4;
-            hammer.rotation.x = Math.cos(Date.now() * 0.005) * 0.3;
-            
+            gear1.rotation.z += 0.02; gear2.rotation.z -= 0.02;
+            pistons.forEach((p, i) => { p.position.y = 1.8 + Math.sin(Date.now() * 0.006 + i * 2) * 0.2; });
             particles.rotation.y += 0.0004;
-            particles.rotation.x += 0.0002;
-            
-            const wp = weldSparks.geometry.attributes.position.array;
-            for (let i = 0; i < weldCount * 3; i += 3) {
-                wp[i+1] += 0.015;
-                if (wp[i+1] > 1.5) wp[i+1] = -0.5;
-            }
-            weldSparks.geometry.attributes.position.needsUpdate = true;
-            
-            // Pulsing lights
-            blueLight.intensity = 1.2 + Math.sin(Date.now() * 0.003) * 0.3;
-            orangeLight.intensity = 0.8 + Math.sin(Date.now() * 0.004 + 1) * 0.3;
-            
             renderer.render(scene, camera);
         }
         animate();
@@ -695,13 +515,53 @@
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
+        
+        // ========== CLIENT LOGOS AUTO-LOAD ==========
+        (function() {
+            const container = document.getElementById('clientLogosContainer');
+            if (!container) return;
+            
+            const totalClients = 32;
+            const paths = ['', 'Images/', 'images/'];
+            
+            for (let i = 1; i <= totalClients; i++) {
+                const col = document.createElement('div');
+                col.className = 'col-6 col-md-3 col-lg-2 text-center';
+                col.setAttribute('data-aos', 'zoom-in');
+                
+                const img = document.createElement('img');
+                img.alt = 'Client ' + i;
+                img.className = 'client-logo-img';
+                
+                let pathIndex = 0;
+                
+                function tryNextPath() {
+                    if (pathIndex >= paths.length) {
+                        // Fallback placeholder
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'client-placeholder';
+                        placeholder.innerHTML = '<span>CLIENT ' + i + '</span>';
+                        col.appendChild(placeholder);
+                        container.appendChild(col);
+                        return;
+                    }
+                    
+                    img.src = paths[pathIndex] + 'client-' + i + '.png';
+                    
+                    img.onload = function() {
+                        col.appendChild(img.cloneNode(true));
+                        container.appendChild(col);
+                    };
+                    
+                    img.onerror = function() {
+                        pathIndex++;
+                        tryNextPath();
+                    };
+                }
+                
+                tryNextPath();
+            }
+        })();
     </script>
-    
-    <style>
-        @keyframes floatGen {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-    </style>
 </body>
 </html>
