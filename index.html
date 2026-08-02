@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Power Tech Generators - Pakistan's #1 Diesel Generator Company Since 1986. Premium sales, rental & maintenance from 13 KVA to 1250 KVA.">
-    <title>Power Tech Generators | Pakistan's #1 Generator Company Since 1986</title>
+    <title>Power Tech Generators | Pakistan's #1 Generator Company</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -34,7 +33,7 @@
             line-height: 1.7;
         }
         
-        /* ========== PRELOADER ========== */
+        /* Preloader */
         .preloader {
             position: fixed; inset: 0; background: var(--dark-navy);
             z-index: 99999; display: flex; flex-direction: column;
@@ -45,60 +44,68 @@
             color: var(--golden); margin-bottom: 20px;
             text-shadow: 0 0 30px rgba(212,175,55,0.5);
         }
-        .preloader-bar { width: 250px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
-        .preloader-bar-fill { width: 0; height: 100%; background: var(--gradient-gold); animation: loadBar 2s ease forwards; }
+        .preloader-bar { 
+            width: 250px; height: 4px; background: rgba(255,255,255,0.1); 
+            border-radius: 10px; overflow: hidden; 
+        }
+        .preloader-bar-fill { 
+            width: 0; height: 100%; background: var(--gradient-gold); 
+            animation: loadBar 2s ease forwards; 
+        }
         @keyframes loadBar { to { width: 100%; } }
         
-        /* ========== NAVIGATION ========== */
+        /* Navigation */
         .navbar {
-            background: rgba(10, 22, 40, 0.92) !important;
-            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
-            border-bottom: 1px solid rgba(212,175,55,0.15);
+            background: rgba(10, 22, 40, 0.95) !important;
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(212,175,55,0.2);
             padding: 12px 0; transition: var(--transition); z-index: 1000;
         }
         .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
         
-        /* ========== LOGO STYLES ========== */
-        .logo-container {
+        /* LOGO - GUARANTEED VISIBLE */
+        .logo-box {
             display: flex; align-items: center; gap: 10px; text-decoration: none;
+            background: rgba(212,175,55,0.1); padding: 8px 18px;
+            border-radius: 12px; border: 1px solid rgba(212,175,55,0.3);
         }
         .logo-icon {
-            width: 45px; height: 45px; background: var(--gradient-gold);
-            border-radius: 12px; display: flex; align-items: center;
-            justify-content: center; font-size: 1.5rem; color: var(--dark-navy);
-            font-weight: 900;
+            width: 42px; height: 42px; background: var(--gradient-gold);
+            border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 1.3rem; color: var(--dark-navy);
+            font-weight: 900; animation: glow 2s infinite;
         }
-        .logo-text {
-            font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.4rem;
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(212,175,55,0.3); }
+            50% { box-shadow: 0 0 25px rgba(212,175,55,0.7); }
         }
-        .logo-text .gold { color: var(--golden); }
-        .logo-text .white { color: var(--white); }
-        .navbar.scrolled .logo-icon { width: 38px; height: 38px; font-size: 1.2rem; }
-        .navbar.scrolled .logo-text { font-size: 1.2rem; }
+        .logo-words {
+            font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem;
+            line-height: 1.1;
+        }
+        .logo-words .pt { color: var(--golden); }
+        .logo-words .tech { color: var(--white); }
         
         .nav-link {
             font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
-            letter-spacing: 1px; padding: 10px 16px !important;
-            color: var(--gray) !important; transition: var(--transition); position: relative;
+            letter-spacing: 1px; padding: 10px 15px !important;
+            color: var(--gray) !important; transition: var(--transition);
         }
         .nav-link:hover, .nav-link.active { color: var(--golden-light) !important; }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: 5px; left: 50%;
-            transform: translateX(-50%); width: 0; height: 2px;
-            background: var(--golden); transition: width 0.3s;
-        }
-        .nav-link:hover::after, .nav-link.active::after { width: 60%; }
         
-        .navbar-toggler { border: 2px solid var(--golden); padding: 8px 10px; border-radius: 8px; }
+        .navbar-toggler { 
+            border: 2px solid var(--golden); padding: 8px 10px; 
+            border-radius: 8px; background: transparent;
+        }
         .navbar-toggler i { color: var(--golden); font-size: 1.3rem; }
         
-        /* ========== BUTTONS ========== */
+        /* Buttons */
         .btn-gold {
             background: var(--gradient-gold); color: var(--dark-navy);
             padding: 14px 32px; border-radius: 50px; font-weight: 700;
             text-decoration: none; display: inline-flex; align-items: center;
             gap: 8px; transition: var(--transition); border: none; cursor: pointer;
-            font-size: 0.9rem; letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
         .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); }
         
@@ -110,15 +117,15 @@
         }
         .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
         
-        /* ========== HERO SECTION ========== */
+        /* Hero */
         .hero-section {
             min-height: 100vh; display: flex; align-items: center;
-            background: linear-gradient(135deg, #060E1A 0%, #0F1F3D 50%, #0A1628 100%);
-            position: relative; overflow: hidden; padding: 120px 0 80px;
+            background: linear-gradient(135deg, #060E1A, #0F1F3D, #0A1628);
+            padding: 120px 0 80px; position: relative; overflow: hidden;
         }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(212,175,55,0.1); color: var(--golden-light);
+            background: rgba(212,175,55,0.12); color: var(--golden-light);
             padding: 10px 24px; border-radius: 50px; font-weight: 700;
             font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 24px;
             border: 1px solid rgba(212,175,55,0.3);
@@ -131,53 +138,63 @@
         .hero-title span { color: var(--golden-light); }
         .hero-desc {
             font-size: 1.15rem; color: var(--gray); max-width: 550px;
-            margin-bottom: 32px; line-height: 1.8;
+            margin-bottom: 32px;
         }
         
-        /* ========== HERO IMAGE PLACEHOLDER ========== */
-        .hero-image-placeholder {
-            width: 100%; max-width: 500px; height: 500px;
-            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(30,95,187,0.1));
+        /* Hero Image Box - ALWAYS VISIBLE */
+        .hero-img-box {
+            width: 100%; max-width: 480px; height: 450px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
             border-radius: 30px; display: flex; flex-direction: column;
             align-items: center; justify-content: center; gap: 15px;
-            border: 2px dashed rgba(212,175,55,0.3);
+            border: 2px solid rgba(212,175,55,0.25);
             animation: float 4s ease-in-out infinite; margin: 0 auto;
+            position: relative; overflow: hidden;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        .hero-img-box::before {
+            content: ''; position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
         }
-        .hero-image-placeholder i { font-size: 5rem; color: var(--golden); opacity: 0.5; }
-        .hero-image-placeholder p { color: var(--golden-light); font-weight: 600; font-size: 0.9rem; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         
-        /* ========== STATS ========== */
-        .stat-item {
+        .hero-img-box i { 
+            font-size: 6rem; color: var(--golden); opacity: 0.6;
+            position: relative; z-index: 1;
+        }
+        .hero-img-box p { 
+            color: var(--golden-light); font-weight: 700; font-size: 1rem;
+            position: relative; z-index: 1;
+        }
+        
+        /* Stats */
+        .stat-box {
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px; padding: 30px 20px; text-align: center; transition: var(--transition);
+            border-radius: 16px; padding: 28px 18px; text-align: center; transition: var(--transition);
         }
-        .stat-item:hover {
+        .stat-box:hover {
             background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3);
-            transform: translateY(-8px); box-shadow: var(--shadow-gold);
+            transform: translateY(-8px);
         }
-        .stat-number {
-            font-size: 2.5rem; font-weight: 900; color: var(--golden-light);
-            font-family: 'Outfit', sans-serif;
-        }
-        .stat-label { font-size: 0.85rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 5px; }
+        .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--golden-light); font-family: 'Outfit', sans-serif; }
+        .stat-lbl { font-size: 0.8rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 5px; }
         
-        /* ========== BRAND STRIP ========== */
+        /* Brand Strip */
         .brand-strip {
             background: rgba(255,255,255,0.02); padding: 35px 0;
             border-top: 1px solid rgba(255,255,255,0.05);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .brand-item {
-            color: var(--white); font-weight: 800; font-size: 1.2rem;
+        .brand-name {
+            color: var(--white); font-weight: 800; font-size: 1.1rem;
             letter-spacing: 2px; opacity: 0.6; transition: var(--transition);
+            padding: 8px 15px; border-radius: 8px;
         }
-        .brand-item:hover { opacity: 1; color: var(--golden-light); }
+        .brand-name:hover { opacity: 1; color: var(--golden-light); background: rgba(212,175,55,0.1); }
         
-        /* ========== SERVICE CARDS ========== */
+        /* Service Cards */
         .service-card {
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px; padding: 45px 35px; transition: var(--transition);
@@ -185,37 +202,39 @@
         }
         .service-card:hover {
             background: rgba(212,175,55,0.05); border-color: rgba(212,175,55,0.4);
-            transform: translateY(-10px); box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
-        .service-icon {
+        .svc-icon {
             width: 80px; height: 80px; border-radius: 20px; display: flex;
             align-items: center; justify-content: center; font-size: 2rem;
             margin: 0 auto 25px;
         }
-        .service-card h4 { font-weight: 700; margin-bottom: 15px; }
+        .service-card h4 { font-weight: 700; margin-bottom: 15px; font-size: 1.2rem; }
         .service-card p { color: var(--gray); margin-bottom: 25px; }
         
-        /* ========== CLIENT LOGO PLACEHOLDER ========== */
-        .client-placeholder {
-            width: 150px; height: 60px; background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--golden-light); font-weight: 700; font-size: 0.8rem;
-            transition: var(--transition); letter-spacing: 1px;
+        /* Client Placeholders */
+        .client-box {
+            width: 150px; height: 65px; 
+            background: rgba(255,255,255,0.04); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 12px; display: flex; align-items: center; 
+            justify-content: center; color: var(--golden-light); 
+            font-weight: 700; font-size: 0.85rem; transition: var(--transition);
+            letter-spacing: 1px;
         }
-        .client-placeholder:hover {
-            border-color: var(--golden); background: rgba(212,175,55,0.08);
-            transform: scale(1.1);
+        .client-box:hover { 
+            border-color: var(--golden); background: rgba(212,175,55,0.1);
+            transform: scale(1.1); 
         }
         
-        /* ========== CTA ========== */
-        .cta-section {
+        /* CTA */
+        .cta-box {
             background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
             border: 1px solid rgba(212,175,55,0.2); border-radius: 24px;
             padding: 60px; text-align: center;
         }
         
-        /* ========== FOOTER ========== */
+        /* Footer */
         .footer {
             background: #060E1A; border-top: 1px solid rgba(212,175,55,0.15);
             padding: 70px 0 30px;
@@ -223,21 +242,21 @@
         .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; }
         .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 4px 0; font-size: 0.95rem; }
         .footer a:hover { color: var(--golden-light); padding-left: 5px; }
-        .footer .social-icons a {
+        .social-links a {
             display: inline-flex; align-items: center; justify-content: center;
             width: 42px; height: 42px; background: rgba(255,255,255,0.05);
             border-radius: 50%; color: var(--white); font-size: 1rem;
             transition: var(--transition); margin-right: 8px; text-decoration: none;
         }
-        .footer .social-icons a:hover { background: var(--golden); color: var(--dark-navy); }
+        .social-links a:hover { background: var(--golden); color: var(--dark-navy); }
         .footer hr { border-color: rgba(255,255,255,0.08); margin: 30px 0; }
         
-        /* ========== FLOATING BUTTONS ========== */
+        /* Floating Buttons */
         .float-btn {
             position: fixed; z-index: 999; width: 55px; height: 55px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: var(--transition);
-            right: 20px; cursor: pointer;
+            right: 20px; cursor: pointer; text-decoration: none;
         }
         .float-wa { bottom: 90px; background: #25D366; color: white; font-size: 24px; }
         .float-call { bottom: 155px; background: var(--accent-blue); color: white; font-size: 20px; }
@@ -252,37 +271,40 @@
             }
             .hero-section { padding: 100px 0 50px; text-align: center; }
             .hero-desc { margin: 0 auto 32px; }
-            .hero-image-placeholder { max-width: 300px; height: 300px; }
+            .hero-img-box { max-width: 300px; height: 300px; }
+            .hero-img-box i { font-size: 4rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ========== PRELOADER ========== -->
+    <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-logo-text">⚡ POWER TECH</div>
         <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
         <p style="color:#D4AF37; margin-top:15px; letter-spacing:3px; font-weight:600; font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
     </div>
 
-    <!-- ========== FLOATING BUTTONS ========== -->
-    <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="tel:+923223619827" class="float-btn float-call" title="Call Now"><i class="fas fa-phone-alt"></i></a>
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+923223619827" class="float-btn float-call"><i class="fas fa-phone-alt"></i></a>
     <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
 
-    <!-- ========== NAVIGATION ========== -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <!-- LOGO - TEXT BASED (ALWAYS VISIBLE) -->
-            <a class="logo-container" href="index.html">
+            <!-- GUARANTEED VISIBLE LOGO -->
+            <a class="logo-box" href="index.html">
                 <div class="logo-icon">⚡</div>
-                <div class="logo-text">
-                    <span class="gold">POWER</span><span class="white">TECH</span>
+                <div class="logo-words">
+                    <span class="pt">POWER</span><br><span class="tech">TECH</span>
                 </div>
             </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
                 <i class="fas fa-bars"></i>
             </button>
+            
             <div class="collapse navbar-collapse" id="mainMenu">
                 <ul class="navbar-nav mx-auto gap-1">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -297,84 +319,85 @@
         </div>
     </nav>
 
-    <!-- ========== HERO SECTION ========== -->
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-lg-7" data-aos="fade-up">
                     <div class="hero-badge">⚡ PAKISTAN'S #1 GENERATOR COMPANY</div>
                     <h1 class="hero-title">Powering <span>Pakistan</span><br>Since 1986</h1>
                     <p class="hero-desc">
-                        Premium Diesel Generators from 13 KVA to 1250 KVA. Sales, Rental, Maintenance & 24/7 Emergency Support across Karachi.
+                        Premium Diesel Generators from 13 KVA to 1250 KVA.<br>
+                        Sales • Rental • Maintenance • 24/7 Support
                     </p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
-                        <a href="products.html" class="btn-outline"><i class="fas fa-cogs"></i> View Generators</a>
+                        <a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="products.html" class="btn-outline"><i class="fas fa-cogs"></i> Generators</a>
                     </div>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="1200">
-                    <!-- HERO IMAGE PLACEHOLDER (Always Visible) -->
-                    <div class="hero-image-placeholder">
+                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+                    <!-- HERO IMAGE BOX - ALWAYS VISIBLE -->
+                    <div class="hero-img-box">
                         <i class="fas fa-bolt"></i>
-                        <p>Generator Image Here</p>
-                        <small style="color:var(--gray);">Add: images/hero-generator.png</small>
+                        <p>DIESEL GENERATOR</p>
+                        <small style="color:var(--gray); position:relative;z-index:1;">13 KVA - 1250 KVA</small>
                     </div>
                 </div>
             </div>
             
             <!-- Stats -->
             <div class="row g-3 mt-5" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number">40+</div><div class="stat-label">Years Experience</div></div></div>
-                <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number">10,000+</div><div class="stat-label">Projects Done</div></div></div>
-                <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number">25,000+</div><div class="stat-label">Happy Clients</div></div></div>
-                <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">40+</div><div class="stat-lbl">Years</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">10K+</div><div class="stat-lbl">Projects</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">25K+</div><div class="stat-lbl">Clients</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">24/7</div><div class="stat-lbl">Support</div></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== BRAND PARTNERS ========== -->
+    <!-- Brand Partners -->
     <div class="brand-strip">
         <div class="container">
-            <div class="d-flex justify-content-around align-items-center flex-wrap" style="gap: 30px;">
-                <span class="brand-item">CATERPILLAR</span>
-                <span class="brand-item">CUMMINS</span>
-                <span class="brand-item">PERKINS</span>
-                <span class="brand-item">FG WILSON</span>
-                <span class="brand-item">DENYO</span>
-                <span class="brand-item">JOHN DEERE</span>
+            <div class="d-flex justify-content-around flex-wrap" style="gap:20px;">
+                <span class="brand-name">CATERPILLAR</span>
+                <span class="brand-name">CUMMINS</span>
+                <span class="brand-name">PERKINS</span>
+                <span class="brand-name">FG WILSON</span>
+                <span class="brand-name">DENYO</span>
+                <span class="brand-name">JOHN DEERE</span>
             </div>
         </div>
     </div>
 
-    <!-- ========== SERVICES ========== -->
-    <section style="padding: 100px 0;">
+    <!-- Services -->
+    <section style="padding: 80px 0;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <p style="color:var(--golden-light); font-weight:700; letter-spacing:3px; font-size:0.8rem;">OUR SERVICES</p>
-                <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:3rem;">Complete Generator <span style="color:var(--golden-light);">Solutions</span></h2>
+                <p style="color:var(--golden-light); font-weight:700; letter-spacing:3px;">OUR SERVICES</p>
+                <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:2.5rem;">Complete <span style="color:var(--golden-light);">Solutions</span></h2>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="service-card">
-                        <div class="service-icon" style="background:rgba(212,175,55,0.12); color:#D4AF37;"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="svc-icon" style="background:rgba(212,175,55,0.12); color:#D4AF37;"><i class="fas fa-shopping-cart"></i></div>
                         <h4>Generator Sales</h4>
-                        <p>Brand new diesel generators from 13 KVA to 1250 KVA. Perkins, Cummins, Caterpillar & more.</p>
+                        <p>13 KVA to 1250 KVA from Perkins, Cummins, Caterpillar & more.</p>
                         <a href="products.html" class="btn-gold">View Inventory <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card">
-                        <div class="service-icon" style="background:rgba(30,95,187,0.12); color:#1E5FBB;"><i class="fas fa-clock"></i></div>
+                        <div class="svc-icon" style="background:rgba(30,95,187,0.12); color:#1E5FBB;"><i class="fas fa-clock"></i></div>
                         <h4>Generator Rental</h4>
-                        <p>Flexible daily, weekly & monthly rental plans for events, construction & emergency backup.</p>
+                        <p>Daily, weekly & monthly plans for events, construction & industry.</p>
                         <a href="services.html" class="btn-gold">Rent Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card">
-                        <div class="service-icon" style="background:rgba(220,53,69,0.12); color:#DC3545;"><i class="fas fa-tools"></i></div>
+                        <div class="svc-icon" style="background:rgba(220,53,69,0.12); color:#DC3545;"><i class="fas fa-tools"></i></div>
                         <h4>Maintenance & AMC</h4>
-                        <p>Preventive & corrective maintenance. Annual service contracts with 24/7 emergency support.</p>
+                        <p>Preventive, corrective & 24/7 emergency breakdown support.</p>
                         <a href="contact.html" class="btn-gold">Get AMC <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -382,64 +405,49 @@
         </div>
     </section>
 
-    <!-- ========== CLIENT LOGOS (Placeholder) ========== -->
+    <!-- Clients -->
     <section style="background:rgba(255,255,255,0.02); padding:80px 0;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <p style="color:var(--golden-light); font-weight:700; letter-spacing:3px;">TRUSTED BY</p>
                 <h2 style="font-family:'Outfit',sans-serif; font-weight:800;">Our <span style="color:var(--golden-light);">Prestigious Clients</span></h2>
-                <p style="color:var(--gray);">Client logos yahan lagayein (images/clients/ folder mein)</p>
             </div>
             <div class="row justify-content-center g-4">
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in">
-                    <div class="client-placeholder">CLIENT 1</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="client-placeholder">CLIENT 2</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="client-placeholder">CLIENT 3</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="client-placeholder">CLIENT 4</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="client-placeholder">CLIENT 5</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="client-placeholder">CLIENT 6</div>
-                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 1</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="100"><div class="client-box">CLIENT 2</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="200"><div class="client-box">CLIENT 3</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="300"><div class="client-box">CLIENT 4</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="400"><div class="client-box">CLIENT 5</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="500"><div class="client-box">CLIENT 6</div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
+    <!-- CTA -->
     <section style="padding: 80px 0;">
         <div class="container">
-            <div class="cta-section" data-aos="fade-up">
-                <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:2.2rem;">Need a <span style="color:#D4AF37;">Generator?</span></h2>
-                <p style="color:var(--gray); max-width:600px; margin:20px auto;">Contact us today for a free consultation and quote. 24/7 emergency support.</p>
+            <div class="cta-box" data-aos="fade-up">
+                <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:2rem;">Need a <span style="color:#D4AF37;">Generator?</span></h2>
+                <p style="color:var(--gray); max-width:500px; margin:15px auto;">Free consultation • Best Price • 24/7 Support</p>
                 <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
                     <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
                     <a href="https://wa.me/923223619827" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="mailto:powertech086@gmail.com" class="btn-outline"><i class="fas fa-envelope"></i> powertech086@gmail.com</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <!-- FOOTER LOGO - TEXT BASED -->
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <div class="logo-icon" style="width:50px;height:50px;font-size:1.5rem;">⚡</div>
-                        <div class="logo-text"><span class="gold">POWER</span><span class="white">TECH</span></div>
+                        <div style="width:45px;height:45px;background:var(--gradient-gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--dark-navy);">⚡</div>
+                        <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:1.3rem;"><span style="color:var(--golden);">POWER</span><span style="color:var(--white);">TECH</span></div>
                     </div>
-                    <p style="color:var(--gray);">Pakistan's most trusted diesel generator company. Serving since 1986.</p>
-                    <div class="social-icons mt-3">
+                    <p style="color:var(--gray);">Pakistan's #1 generator company. Since 1986.</p>
+                    <div class="social-links mt-3">
                         <a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.pinterest.com/powertech086/" target="_blank"><i class="fab fa-pinterest"></i></a>
@@ -447,58 +455,43 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6">
-                    <h6>Quick Links</h6>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="products.html">Generators</a>
-                    <a href="contact.html">Contact</a>
+                    <h6>Links</h6>
+                    <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a>
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <h6>Services</h6>
-                    <a href="products.html">Sales</a>
-                    <a href="services.html">Rental</a>
-                    <a href="services.html">Maintenance</a>
-                    <a href="services.html">AMC</a>
+                    <a href="products.html">Sales</a><a href="services.html">Rental</a><a href="services.html">Maintenance</a><a href="services.html">AMC</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h6>Contact</h6>
-                    <p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i> 0322 3619827</p>
-                    <p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i> powertech086@gmail.com</p>
-                    <p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i> Karachi, Pakistan</p>
+                    <p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i>0322 3619827</p>
+                    <p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i>powertech086@gmail.com</p>
+                    <p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i>Karachi, Pakistan</p>
                 </div>
             </div>
             <hr>
-            <p style="color:var(--gray); text-align:center; margin:0;">© 2025 Power Tech Generators. All Rights Reserved.</p>
+            <p style="color:var(--gray); text-align:center; margin:0; font-size:0.85rem;">© 2025 Power Tech Generators. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Preloader
         window.addEventListener('load', () => {
             setTimeout(() => {
-                const preloader = document.getElementById('preloader');
-                preloader.style.opacity = '0';
-                setTimeout(() => preloader.style.display = 'none', 500);
+                const p = document.getElementById('preloader');
+                p.style.opacity = '0';
+                setTimeout(() => p.style.display = 'none', 500);
             }, 2000);
         });
         
         AOS.init({ duration: 1000, once: true });
         
+        // Navbar scroll
         window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const backToTop = document.getElementById('backToTop');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-                backToTop.style.display = 'flex';
-            } else {
-                navbar.classList.remove('scrolled');
-                backToTop.style.display = 'none';
-            }
-        });
-        
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href') === 'index.html') link.classList.add('active');
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('backToTop').style.display = window.scrollY > 500 ? 'flex' : 'none';
         });
     </script>
 </body>
