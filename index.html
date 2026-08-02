@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
     <style>
         :root {
@@ -33,37 +34,25 @@
             line-height: 1.7;
         }
         
-        /* ========== PRELOADER ========== */
+        /* Preloader */
         .preloader {
             position: fixed; inset: 0; background: var(--dark-navy);
             z-index: 99999; display: flex; flex-direction: column;
             align-items: center; justify-content: center; transition: 0.6s;
         }
-        .preloader-bar { 
-            width: 250px; height: 4px; background: rgba(255,255,255,0.1); 
-            border-radius: 10px; overflow: hidden; margin-top: 25px;
-        }
-        .preloader-bar-fill { 
-            width: 0; height: 100%; background: var(--gradient-gold); 
-            animation: loadBar 2s ease forwards; 
-        }
+        .preloader img { width: 200px; height: auto; margin-bottom: 25px; }
+        .preloader-bar { width: 250px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+        .preloader-bar-fill { width: 0; height: 100%; background: var(--gradient-gold); animation: loadBar 2s ease forwards; }
         @keyframes loadBar { to { width: 100%; } }
         
-        /* ========== NAVIGATION ========== */
+        /* Navbar */
         .navbar {
             background: rgba(10, 22, 40, 0.95) !important;
-            backdrop-filter: blur(30px);
-            border-bottom: 1px solid rgba(212,175,55,0.2);
+            backdrop-filter: blur(30px); border-bottom: 1px solid rgba(212,175,55,0.2);
             padding: 12px 0; transition: var(--transition); z-index: 1000;
         }
         .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
-        
-        /* Navbar Logo */
-        .navbar-logo {
-            height: 45px;  /* Logo ki height */
-            width: auto;   /* Width auto adjust */
-            transition: var(--transition);
-        }
+        .navbar-logo { height: 45px; width: auto; transition: var(--transition); }
         .navbar.scrolled .navbar-logo { height: 38px; }
         
         .nav-link {
@@ -73,19 +62,14 @@
         }
         .nav-link:hover, .nav-link.active { color: var(--golden-light) !important; }
         
-        .navbar-toggler { 
-            border: 2px solid var(--golden); padding: 8px 10px; 
-            border-radius: 8px; background: transparent;
-        }
+        .navbar-toggler { border: 2px solid var(--golden); padding: 8px 10px; border-radius: 8px; }
         .navbar-toggler i { color: var(--golden); font-size: 1.3rem; }
         
-        /* ========== BUTTONS ========== */
         .btn-gold {
             background: var(--gradient-gold); color: var(--dark-navy);
             padding: 14px 32px; border-radius: 50px; font-weight: 700;
             text-decoration: none; display: inline-flex; align-items: center;
             gap: 8px; transition: var(--transition); border: none; cursor: pointer;
-            font-size: 0.9rem;
         }
         .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); }
         
@@ -97,11 +81,11 @@
         }
         .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
         
-        /* ========== HERO ========== */
+        /* Hero */
         .hero-section {
             min-height: 100vh; display: flex; align-items: center;
             background: linear-gradient(135deg, #060E1A, #0F1F3D, #0A1628);
-            padding: 120px 0 80px; position: relative; overflow: hidden;
+            padding: 120px 0 80px;
         }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
@@ -116,52 +100,18 @@
             margin-bottom: 20px; color: var(--white);
         }
         .hero-title span { color: var(--golden-light); }
-        .hero-desc {
-            font-size: 1.15rem; color: var(--gray); max-width: 550px;
-            margin-bottom: 32px;
-        }
+        .hero-desc { font-size: 1.15rem; color: var(--gray); max-width: 550px; margin-bottom: 32px; }
         
-        /* Hero Image Box */
-        .hero-img-box {
-            width: 100%; max-width: 480px; height: 450px;
-            background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
-            border-radius: 30px; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; gap: 15px;
-            border: 2px solid rgba(212,175,55,0.25);
-            animation: float 4s ease-in-out infinite; margin: 0 auto;
-            position: relative; overflow: hidden;
-        }
-        .hero-img-box::before {
-            content: ''; position: absolute; top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
-            animation: rotate 10s linear infinite;
-        }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        
-        .hero-img-box i { 
-            font-size: 6rem; color: var(--golden); opacity: 0.6;
-            position: relative; z-index: 1;
-        }
-        .hero-img-box p { 
-            color: var(--golden-light); font-weight: 700; font-size: 1rem;
-            position: relative; z-index: 1;
-        }
-        
-        /* ========== STATS ========== */
+        /* Stats */
         .stat-box {
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
             border-radius: 16px; padding: 28px 18px; text-align: center; transition: var(--transition);
         }
-        .stat-box:hover {
-            background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3);
-            transform: translateY(-8px);
-        }
+        .stat-box:hover { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3); transform: translateY(-8px); }
         .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--golden-light); font-family: 'Outfit', sans-serif; }
         .stat-lbl { font-size: 0.8rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 5px; }
         
-        /* ========== BRANDS ========== */
+        /* Brands */
         .brand-strip {
             background: rgba(255,255,255,0.02); padding: 35px 0;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -174,7 +124,7 @@
         }
         .brand-name:hover { opacity: 1; color: var(--golden-light); background: rgba(212,175,55,0.1); }
         
-        /* ========== SERVICES ========== */
+        /* Services */
         .service-card {
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px; padding: 45px 35px; transition: var(--transition);
@@ -192,38 +142,27 @@
         .service-card h4 { font-weight: 700; margin-bottom: 15px; font-size: 1.2rem; }
         .service-card p { color: var(--gray); margin-bottom: 25px; }
         
-        /* ========== CLIENTS ========== */
-        .client-box {
-            width: 150px; height: 65px; 
-            background: rgba(255,255,255,0.04); 
-            border: 1px solid rgba(255,255,255,0.1); 
-            border-radius: 12px; display: flex; align-items: center; 
-            justify-content: center; color: var(--golden-light); 
-            font-weight: 700; font-size: 0.85rem; transition: var(--transition);
-            letter-spacing: 1px;
+        /* Client Logos */
+        .client-logo-img {
+            height: 55px; width: auto; max-width: 140px;
+            object-fit: contain; transition: var(--transition);
+            filter: brightness(0) invert(1); opacity: 0.7;
         }
-        .client-box:hover { 
-            border-color: var(--golden); background: rgba(212,175,55,0.1);
-            transform: scale(1.1); 
-        }
+        .client-logo-img:hover { opacity: 1; transform: scale(1.15); filter: brightness(0) invert(1); }
         
-        /* ========== CTA ========== */
+        /* CTA */
         .cta-box {
             background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
             border: 1px solid rgba(212,175,55,0.2); border-radius: 24px;
             padding: 60px; text-align: center;
         }
         
-        /* ========== FOOTER ========== */
+        /* Footer */
         .footer {
             background: #060E1A; border-top: 1px solid rgba(212,175,55,0.15);
             padding: 70px 0 30px;
         }
-        .footer-logo {
-            height: 55px;  /* Footer logo height */
-            width: auto;
-            margin-bottom: 20px;
-        }
+        .footer-logo { height: 55px; width: auto; margin-bottom: 20px; }
         .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; }
         .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 4px 0; font-size: 0.95rem; }
         .footer a:hover { color: var(--golden-light); padding-left: 5px; }
@@ -236,17 +175,20 @@
         .social-links a:hover { background: var(--golden); color: var(--dark-navy); }
         .footer hr { border-color: rgba(255,255,255,0.08); margin: 30px 0; }
         
-        /* ========== FLOATING BUTTONS ========== */
+        /* Floating */
         .float-btn {
             position: fixed; z-index: 999; width: 55px; height: 55px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: var(--transition);
-            right: 20px; cursor: pointer; text-decoration: none;
+            right: 20px; text-decoration: none;
         }
         .float-wa { bottom: 90px; background: #25D366; color: white; font-size: 24px; }
         .float-call { bottom: 155px; background: var(--accent-blue); color: white; font-size: 20px; }
         .float-top { bottom: 25px; background: var(--golden); color: #000; font-size: 20px; display: none; }
         .float-btn:hover { transform: scale(1.15); }
+        
+        /* Swiper */
+        .client-swiper { padding: 20px 0; }
         
         @media (max-width: 991px) {
             .navbar-collapse {
@@ -256,52 +198,32 @@
             }
             .hero-section { padding: 100px 0 50px; text-align: center; }
             .hero-desc { margin: 0 auto 32px; }
-            .hero-img-box { max-width: 300px; height: 300px; }
-            .hero-img-box i { font-size: 4rem; }
-            .navbar-logo { height: 38px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ========== PRELOADER ========== -->
+    <!-- Preloader -->
     <div class="preloader" id="preloader">
-        <!-- 🔴🔴🔴 YAHAN APNI LOGO LAGAO (JAGAH #1) 🔴🔴🔴 -->
-        <img src="images/logo.png" alt="Power Tech" style="width:200px; height:auto;"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <!-- Fallback agar image na mile -->
-        <div style="display:none; font-family:'Outfit',sans-serif; font-size:2.5rem; font-weight:900; color:#D4AF37; text-shadow:0 0 30px rgba(212,175,55,0.5);">
-            ⚡ POWER TECH
-        </div>
+        <img src="images/logo.png" alt="Power Tech" onerror="this.parentElement.innerHTML='<div style=font-family:Outfit,sans-serif;font-size:2.5rem;font-weight:900;color:#D4AF37;text-shadow:0 0 30px rgba(212,175,55,0.5)>⚡ POWER TECH</div><div class=preloader-bar style=margin-top:25px><div class=preloader-bar-fill></div></div><p style=color:#D4AF37;margin-top:15px;letter-spacing:3px;font-weight:600;font-size:0.8rem>PREMIUM GENERATORS SINCE 1986</p>'">
         <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
         <p style="color:#D4AF37; margin-top:15px; letter-spacing:3px; font-weight:600; font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
     </div>
 
-    <!-- Floating Buttons -->
+    <!-- Floating -->
     <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
     <a href="tel:+923223619827" class="float-btn float-call"><i class="fas fa-phone-alt"></i></a>
     <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
 
-    <!-- ========== NAVIGATION ========== -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <!-- 🔴🔴🔴 YAHAN APNI LOGO LAGAO (JAGAH #2) 🔴🔴🔴 -->
-                <img src="images/logo.png" alt="Power Tech" class="navbar-logo"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <!-- Fallback agar image na mile -->
-                <div style="display:none; align-items:center; gap:8px; background:rgba(212,175,55,0.1); padding:6px 14px; border-radius:10px; border:1px solid rgba(212,175,55,0.3);">
-                    <span style="font-size:1.3rem;">⚡</span>
-                    <span style="font-family:'Outfit',sans-serif; font-weight:900; font-size:1.1rem;">
-                        <span style="color:#D4AF37;">POWER</span><span style="color:white;">TECH</span>
-                    </span>
-                </div>
+                <img src="images/logo.png" alt="Power Tech" class="navbar-logo" onerror="this.outerHTML='<div style=display:flex;align-items:center;gap:8px;background:rgba(212,175,55,0.1);padding:6px 14px;border-radius:10px;border:1px solid rgba(212,175,55,0.3)><span style=font-size:1.3rem>⚡</span><span style=font-family:Outfit,sans-serif;font-weight:900;font-size:1.1rem><span style=color:#D4AF37>POWER</span><span style=color:white>TECH</span></span></div>'">
             </a>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
                 <i class="fas fa-bars"></i>
             </button>
-            
             <div class="collapse navbar-collapse" id="mainMenu">
                 <ul class="navbar-nav mx-auto gap-1">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -316,31 +238,23 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7" data-aos="fade-up">
                     <div class="hero-badge">⚡ PAKISTAN'S #1 GENERATOR COMPANY</div>
                     <h1 class="hero-title">Powering <span>Pakistan</span><br>Since 1986</h1>
-                    <p class="hero-desc">
-                        Premium Diesel Generators from 13 KVA to 1250 KVA.<br>
-                        Sales • Rental • Maintenance • 24/7 Support
-                    </p>
+                    <p class="hero-desc">Premium Diesel Generators from 13 KVA to 1250 KVA. Sales • Rental • Maintenance • 24/7 Support</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                         <a href="products.html" class="btn-outline"><i class="fas fa-cogs"></i> Generators</a>
                     </div>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
-                    <div class="hero-img-box">
-                        <i class="fas fa-bolt"></i>
-                        <p>DIESEL GENERATOR</p>
-                        <small style="color:var(--gray); position:relative;z-index:1;">13 KVA - 1250 KVA</small>
-                    </div>
+                <div class="col-lg-5 d-none d-lg-block text-center" data-aos="fade-left">
+                    <img src="images/hero-generator.png" alt="Generator" style="max-width:450px; width:100%;" onerror="this.outerHTML='<div style=width:100%;max-width:450px;height:400px;background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(30,95,187,0.08));border-radius:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid rgba(212,175,55,0.25);margin:0 auto;animation:float 4s ease-in-out infinite><i class=fas fa-bolt style=font-size:5rem;color:#D4AF37;opacity:0.6></i><p style=color:#F0D77B;font-weight:700;margin-top:15px>DIESEL GENERATOR</p><small style=color:#C8D0D8>13 KVA - 1250 KVA</small></div>'">
                 </div>
             </div>
-            
             <div class="row g-3 mt-5" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">40+</div><div class="stat-lbl">Years</div></div></div>
                 <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">10K+</div><div class="stat-lbl">Projects</div></div></div>
@@ -350,7 +264,7 @@
         </div>
     </section>
 
-    <!-- Brand Partners -->
+    <!-- Brands -->
     <div class="brand-strip">
         <div class="container">
             <div class="d-flex justify-content-around flex-wrap" style="gap:20px;">
@@ -400,20 +314,17 @@
         </div>
     </section>
 
-    <!-- Clients -->
+    <!-- ========== CLIENT LOGOS (SEEDHA IMAGES FOLDER SE) ========== -->
     <section style="background:rgba(255,255,255,0.02); padding:80px 0;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <p style="color:var(--golden-light); font-weight:700; letter-spacing:3px;">TRUSTED BY</p>
-                <h2 style="font-family:'Outfit',sans-serif; font-weight:800;">Our <span style="color:var(--golden-light);">Clients</span></h2>
+                <h2 style="font-family:'Outfit',sans-serif; font-weight:800;">Our <span style="color:var(--golden-light);">Prestigious Clients</span></h2>
             </div>
-            <div class="row justify-content-center g-4">
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 1</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 2</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 3</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 4</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 5</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 6</div></div>
+            
+            <!-- Client Logos Grid - SEEDHA images/ FOLDER SE -->
+            <div class="row justify-content-center g-4" id="clientLogosContainer">
+                <!-- JavaScript se auto-generate hoga -->
             </div>
         </div>
     </section>
@@ -437,16 +348,7 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <!-- 🔴🔴🔴 YAHAN APNI LOGO LAGAO (JAGAH #3) 🔴🔴🔴 -->
-                    <img src="images/logo.png" alt="Power Tech" class="footer-logo"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <!-- Fallback -->
-                    <div style="display:none; align-items:center; gap:8px; margin-bottom:20px;">
-                        <span style="font-size:1.5rem;">⚡</span>
-                        <span style="font-family:'Outfit',sans-serif; font-weight:900; font-size:1.3rem;">
-                            <span style="color:#D4AF37;">POWER</span><span style="color:white;">TECH</span>
-                        </span>
-                    </div>
+                    <img src="images/logo.png" alt="Power Tech" class="footer-logo" onerror="this.outerHTML='<div style=display:flex;align-items:center;gap:8px;margin-bottom:20px><span style=font-size:1.5rem>⚡</span><span style=font-family:Outfit,sans-serif;font-weight:900;font-size:1.3rem><span style=color:#D4AF37>POWER</span><span style=color:white>TECH</span></span></div>'">
                     <p style="color:var(--gray);">Pakistan's #1 generator company. Since 1986.</p>
                     <div class="social-links mt-3">
                         <a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -477,7 +379,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
+        // Preloader
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const p = document.getElementById('preloader');
@@ -488,10 +392,43 @@
         
         AOS.init({ duration: 1000, once: true });
         
+        // Navbar scroll
         window.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
             document.getElementById('backToTop').style.display = window.scrollY > 500 ? 'flex' : 'none';
         });
+        
+        // ========== CLIENT LOGOS AUTO-LOAD (images/ FOLDER SE) ==========
+        function loadClientLogos() {
+            const container = document.getElementById('clientLogosContainer');
+            // Aapke paas client-1.png se client-32.png tak files hain
+            const totalClients = 32;
+            let loadedCount = 0;
+            
+            for (let i = 1; i <= totalClients; i++) {
+                const img = new Image();
+                img.src = `images/client-${i}.png`;
+                img.alt = `Client ${i}`;
+                img.className = 'client-logo-img';
+                
+                img.onload = function() {
+                    loadedCount++;
+                    const col = document.createElement('div');
+                    col.className = 'col-6 col-md-3 col-lg-2 text-center';
+                    col.setAttribute('data-aos', 'zoom-in');
+                    col.appendChild(this);
+                    container.appendChild(col);
+                };
+                
+                img.onerror = function() {
+                    // Agar file nahi mili to skip
+                    loadedCount++;
+                };
+            }
+        }
+        
+        // Page load hone par client logos load karo
+        loadClientLogos();
     </script>
 </body>
 </html>
