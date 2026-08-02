@@ -37,13 +37,8 @@
         .preloader-logo-box {
             display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
         }
-        .preloader-logo-box img {
-            width: 70px; height: 70px; object-fit: contain;
-        }
-        .preloader-logo-text {
-            font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 2rem;
-            line-height: 1.1;
-        }
+        .preloader-logo-box img { width: 70px; height: 70px; object-fit: contain; }
+        .preloader-logo-text { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 2rem; line-height: 1.1; }
         .preloader-bar { width: 250px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; margin-top: 25px; }
         .preloader-bar-fill { width: 0; height: 100%; background: var(--gradient-gold); animation: loadBar 2s ease forwards; }
         @keyframes loadBar { to { width: 100%; } }
@@ -56,27 +51,18 @@
         }
         .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
         
-        /* LOGO + TEXT COMBO */
         .brand-logo-link {
-            display: flex; align-items: center; gap: 10px; text-decoration: none;
-            transition: var(--transition);
+            display: flex; align-items: center; gap: 10px; text-decoration: none; transition: var(--transition);
         }
-        .brand-logo-icon {
-            width: 48px; height: 48px; object-fit: contain;
-            transition: var(--transition);
-        }
+        .brand-logo-icon { width: 48px; height: 48px; object-fit: contain; transition: var(--transition); }
         .navbar.scrolled .brand-logo-icon { width: 40px; height: 40px; }
-        .brand-logo-text {
-            font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem;
-            line-height: 1.2; transition: var(--transition);
-        }
+        .brand-logo-text { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; line-height: 1.2; transition: var(--transition); }
         .navbar.scrolled .brand-logo-text { font-size: 1.1rem; }
         .brand-logo-text .gold { color: var(--golden); }
         .brand-logo-text .white { color: var(--white); }
         .brand-logo-text .tagline {
             display: block; font-family: 'Inter', sans-serif; font-size: 0.6rem;
-            font-weight: 500; color: var(--gray); letter-spacing: 1.5px;
-            text-transform: uppercase;
+            font-weight: 500; color: var(--gray); letter-spacing: 1.5px; text-transform: uppercase;
         }
         
         .nav-link {
@@ -89,7 +75,6 @@
         .navbar-toggler { border: 2px solid var(--golden); padding: 8px 10px; border-radius: 8px; }
         .navbar-toggler i { color: var(--golden); font-size: 1.3rem; }
         
-        /* ========== BUTTONS ========== */
         .btn-gold {
             background: var(--gradient-gold); color: var(--dark-navy);
             padding: 14px 32px; border-radius: 50px; font-weight: 700;
@@ -106,37 +91,82 @@
         }
         .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
         
-        /* ========== HERO ========== */
+        /* ========== HERO SECTION - PREMIUM ========== */
         .hero-section {
             min-height: 100vh; display: flex; align-items: center;
-            background: linear-gradient(135deg, #060E1A, #0F1F3D, #0A1628);
-            padding: 120px 0 80px;
+            background: url('Images/hero-banner.jpg') center/cover no-repeat;
+            position: relative; padding: 120px 0 80px;
         }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(6,14,26,0.92) 0%, rgba(10,22,40,0.75) 40%, rgba(6,14,26,0.92) 100%);
+            z-index: 1;
+        }
+        .hero-particles {
+            position: absolute; inset: 0; z-index: 1; opacity: 0.3;
+            background: radial-gradient(circle at 30% 50%, rgba(212,175,55,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(30,95,187,0.15) 0%, transparent 40%);
+        }
+        .hero-content { position: relative; z-index: 2; }
+        
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
             background: rgba(212,175,55,0.12); color: var(--golden-light);
             padding: 10px 24px; border-radius: 50px; font-weight: 700;
             font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 24px;
-            border: 1px solid rgba(212,175,55,0.3);
+            border: 1px solid rgba(212,175,55,0.3); backdrop-filter: blur(10px);
         }
         .hero-title {
             font-family: 'Outfit', sans-serif; font-weight: 900;
-            font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.15;
+            font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: 1.1;
             margin-bottom: 20px; color: var(--white);
+            text-shadow: 0 5px 30px rgba(0,0,0,0.5);
         }
-        .hero-title span { color: var(--golden-light); }
-        .hero-desc { font-size: 1.15rem; color: var(--gray); max-width: 550px; margin-bottom: 32px; }
+        .hero-title span {
+            background: linear-gradient(135deg, var(--golden), var(--golden-light));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-desc {
+            font-size: 1.2rem; color: var(--gray); max-width: 550px;
+            margin-bottom: 35px; line-height: 1.8;
+        }
         
-        /* ========== STATS ========== */
+        /* Hero Right Side - Generator Image */
+        .hero-image-wrapper {
+            position: relative; z-index: 2; text-align: center;
+        }
+        .hero-generator-img {
+            max-width: 100%; height: auto; max-height: 500px;
+            filter: drop-shadow(0 20px 50px rgba(212,175,55,0.25));
+            animation: floatGenerator 5s ease-in-out infinite;
+        }
+        @keyframes floatGenerator {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+        .hero-glow {
+            position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+            width: 300px; height: 40px;
+            background: radial-gradient(ellipse, rgba(212,175,55,0.4) 0%, transparent 70%);
+            border-radius: 50%; animation: pulseGlow 3s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+            50% { opacity: 1; transform: translateX(-50%) scale(1.3); }
+        }
+        
+        /* Stats */
         .stat-box {
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
             border-radius: 16px; padding: 28px 18px; text-align: center; transition: var(--transition);
+            backdrop-filter: blur(10px);
         }
         .stat-box:hover { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3); transform: translateY(-8px); }
         .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--golden-light); font-family: 'Outfit', sans-serif; }
         .stat-lbl { font-size: 0.8rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 5px; }
         
-        /* ========== BRANDS ========== */
+        /* Brands */
         .brand-strip {
             background: rgba(255,255,255,0.02); padding: 35px 0;
             border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -148,7 +178,7 @@
         }
         .brand-name:hover { opacity: 1; color: var(--golden-light); background: rgba(212,175,55,0.1); }
         
-        /* ========== SERVICES ========== */
+        /* Services */
         .service-card {
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px; padding: 45px 35px; transition: var(--transition);
@@ -165,27 +195,24 @@
         .service-card h4 { font-weight: 700; margin-bottom: 15px; font-size: 1.2rem; }
         .service-card p { color: var(--gray); margin-bottom: 25px; }
         
-        /* ========== CLIENTS ========== */
+        /* Clients */
         .client-box {
             background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px; padding: 20px 15px; text-align: center;
             transition: var(--transition); height: 80px; display: flex;
             align-items: center; justify-content: center;
         }
-        .client-box:hover {
-            border-color: var(--golden); background: rgba(212,175,55,0.1);
-            transform: translateY(-5px);
-        }
+        .client-box:hover { border-color: var(--golden); background: rgba(212,175,55,0.1); transform: translateY(-5px); }
         .client-box span { color: var(--golden-light); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; }
         
-        /* ========== CTA ========== */
+        /* CTA */
         .cta-box {
             background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
             border: 1px solid rgba(212,175,55,0.2); border-radius: 24px;
             padding: 60px; text-align: center;
         }
         
-        /* ========== FOOTER ========== */
+        /* Footer */
         .footer {
             background: #060E1A; border-top: 1px solid rgba(212,175,55,0.15);
             padding: 70px 0 30px;
@@ -202,7 +229,7 @@
         .social-links a:hover { background: var(--golden); color: var(--dark-navy); }
         .footer hr { border-color: rgba(255,255,255,0.08); margin: 30px 0; }
         
-        /* ========== FLOATING ========== */
+        /* Floating */
         .float-btn {
             position: fixed; z-index: 999; width: 55px; height: 55px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -222,57 +249,39 @@
             }
             .hero-section { padding: 100px 0 50px; text-align: center; }
             .hero-desc { margin: 0 auto 32px; }
-            .brand-logo-icon { width: 38px; height: 38px; }
-            .brand-logo-text { font-size: 1rem; }
+            .hero-generator-img { max-height: 300px; margin-top: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ========== PRELOADER ========== -->
+    <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-logo-box">
-            <!-- 🔴 APNA LOGO ICON YAHAN LAGAO -->
-            <img src="Images/logo-icon.png" alt="PT" 
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <!-- Fallback agar logo icon na mile -->
+            <img src="Images/logo-icon.png" alt="PT" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div style="display:none; width:70px; height:70px; background:var(--gradient-gold); border-radius:15px; align-items:center; justify-content:center; font-size:2rem; color:var(--dark-navy); font-weight:900;">⚡</div>
-            
             <div class="preloader-logo-text">
-                <span style="color:var(--golden);">POWER</span><br>
-                <span style="color:var(--white);">TECH</span>
+                <span style="color:var(--golden);">POWER</span><br><span style="color:var(--white);">TECH</span>
             </div>
         </div>
         <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
         <p style="color:#D4AF37;margin-top:15px;letter-spacing:3px;font-weight:600;font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
     </div>
 
-    <!-- ========== FLOATING BUTTONS ========== -->
+    <!-- Floating -->
     <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
     <a href="tel:+923223619827" class="float-btn float-call"><i class="fas fa-phone-alt"></i></a>
     <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
 
-    <!-- ========== NAVIGATION ========== -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <!-- LOGO + TEXT COMBO (Caterpillar Style) -->
             <a class="brand-logo-link" href="index.html">
-                <!-- 🔴 APNA LOGO ICON YAHAN LAGAO -->
-                <img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <!-- Fallback -->
+                <img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="display:none; width:48px; height:48px; background:var(--gradient-gold); border-radius:12px; align-items:center; justify-content:center; font-size:1.5rem; color:var(--dark-navy); font-weight:900;" class="brand-logo-icon">⚡</div>
-                
-                <div class="brand-logo-text">
-                    <span class="gold">POWER</span> <span class="white">TECH</span>
-                    <span class="tagline">Generators</span>
-                </div>
+                <div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div>
             </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"><i class="fas fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="mainMenu">
                 <ul class="navbar-nav mx-auto gap-1">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -287,28 +296,43 @@
         </div>
     </nav>
 
-    <!-- ========== HERO ========== -->
+    <!-- ========== HERO SECTION WITH BANNER IMAGE ========== -->
     <section class="hero-section">
-        <div class="container">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles"></div>
+        <div class="container hero-content">
             <div class="row align-items-center">
-                <div class="col-lg-7" data-aos="fade-up">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-duration="1200">
                     <div class="hero-badge">⚡ PAKISTAN'S #1 GENERATOR COMPANY</div>
                     <h1 class="hero-title">Powering <span>Pakistan</span><br>Since 1986</h1>
-                    <p class="hero-desc">Premium Diesel Generators from 13 KVA to 1250 KVA.<br>Sales • Rental • Maintenance • 24/7 Support</p>
+                    <p class="hero-desc">
+                        Premium Diesel Generators from 13 KVA to 1250 KVA<br>
+                        <i class="fas fa-check-circle" style="color:var(--golden);"></i> Sales &nbsp;
+                        <i class="fas fa-check-circle" style="color:var(--golden);"></i> Rental &nbsp;
+                        <i class="fas fa-check-circle" style="color:var(--golden);"></i> Maintenance &nbsp;
+                        <i class="fas fa-check-circle" style="color:var(--golden);"></i> 24/7 Support
+                    </p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                        <a href="products.html" class="btn-outline"><i class="fas fa-cogs"></i> Generators</a>
+                        <a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+                        <a href="products.html" class="btn-outline"><i class="fas fa-cogs"></i> View Generators</a>
                     </div>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block text-center" data-aos="fade-left">
-                    <div style="width:100%;max-width:450px;height:400px;background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(30,95,187,0.08));border-radius:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid rgba(212,175,55,0.25);margin:0 auto;">
-                        <i class="fas fa-industry" style="font-size:5rem;color:#D4AF37;opacity:0.6;"></i>
-                        <p style="color:#F0D77B;font-weight:700;margin-top:15px;">DIESEL GENERATOR</p>
-                        <small style="color:#C8D0D8;">13 KVA - 1250 KVA</small>
+                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="1200">
+                    <div class="hero-image-wrapper">
+                        <img src="Images/hero-generator.png" alt="Diesel Generator" class="hero-generator-img" 
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100%; max-width:450px; height:400px; background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(30,95,187,0.08)); border-radius:30px; align-items:center; justify-content:center; border:2px solid rgba(212,175,55,0.25); margin:0 auto; flex-direction:column;">
+                            <i class="fas fa-industry" style="font-size:5rem;color:#D4AF37;opacity:0.6;"></i>
+                            <p style="color:#F0D77B;font-weight:700;margin-top:15px;">DIESEL GENERATOR</p>
+                            <small style="color:#C8D0D8;">13 KVA - 1250 KVA</small>
+                        </div>
+                        <div class="hero-glow"></div>
                     </div>
                 </div>
             </div>
-            <div class="row g-3 mt-5" data-aos="fade-up" data-aos-delay="200">
+            
+            <!-- Stats -->
+            <div class="row g-3 mt-5" data-aos="fade-up" data-aos-delay="300">
                 <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">40+</div><div class="stat-lbl">Years</div></div></div>
                 <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">10K+</div><div class="stat-lbl">Projects</div></div></div>
                 <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">25K+</div><div class="stat-lbl">Clients</div></div></div>
@@ -317,21 +341,17 @@
         </div>
     </section>
 
-    <!-- ========== BRANDS ========== -->
+    <!-- Brands -->
     <div class="brand-strip">
         <div class="container">
             <div class="d-flex justify-content-around flex-wrap" style="gap:20px;">
-                <span class="brand-name">CATERPILLAR</span>
-                <span class="brand-name">CUMMINS</span>
-                <span class="brand-name">PERKINS</span>
-                <span class="brand-name">FG WILSON</span>
-                <span class="brand-name">DENYO</span>
-                <span class="brand-name">JOHN DEERE</span>
+                <span class="brand-name">CATERPILLAR</span><span class="brand-name">CUMMINS</span><span class="brand-name">PERKINS</span>
+                <span class="brand-name">FG WILSON</span><span class="brand-name">DENYO</span><span class="brand-name">JOHN DEERE</span>
             </div>
         </div>
     </div>
 
-    <!-- ========== SERVICES ========== -->
+    <!-- Services -->
     <section style="padding:80px 0;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -364,7 +384,7 @@
         </div>
     </section>
 
-    <!-- ========== CLIENTS ========== -->
+    <!-- Clients -->
     <section style="background:rgba(255,255,255,0.02);padding:80px 0;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -388,7 +408,7 @@
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
+    <!-- CTA -->
     <section style="padding:80px 0;">
         <div class="container">
             <div class="cta-box" data-aos="fade-up">
@@ -402,20 +422,15 @@
         </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <!-- FOOTER LOGO + TEXT -->
                     <div class="brand-logo-link" style="margin-bottom:20px;">
-                        <img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon"
-                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:48px; height:48px; background:var(--gradient-gold); border-radius:12px; align-items:center; justify-content:center; font-size:1.5rem; color:var(--dark-navy); font-weight:900;" class="brand-logo-icon">⚡</div>
-                        <div class="brand-logo-text">
-                            <span class="gold">POWER</span> <span class="white">TECH</span>
-                            <span class="tagline">Generators</span>
-                        </div>
+                        <div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div>
                     </div>
                     <p style="color:var(--gray);">Pakistan's #1 generator company. Since 1986.</p>
                     <div class="social-links mt-3">
@@ -425,20 +440,9 @@
                         <a href="https://www.youtube.com/@powertechgenerators" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h6>Links</h6>
-                    <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h6>Services</h6>
-                    <a href="products.html">Sales</a><a href="services.html">Rental</a><a href="services.html">Maintenance</a><a href="services.html">AMC</a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h6>Contact</h6>
-                    <p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i>0322 3619827</p>
-                    <p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i>powertech086@gmail.com</p>
-                    <p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i>Karachi, Pakistan</p>
-                </div>
+                <div class="col-lg-2 col-md-6"><h6>Links</h6><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a></div>
+                <div class="col-lg-2 col-md-6"><h6>Services</h6><a href="products.html">Sales</a><a href="services.html">Rental</a><a href="services.html">Maintenance</a><a href="services.html">AMC</a></div>
+                <div class="col-lg-4 col-md-6"><h6>Contact</h6><p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i>0322 3619827</p><p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i>powertech086@gmail.com</p><p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i>Karachi, Pakistan</p></div>
             </div>
             <hr>
             <p style="color:var(--gray);text-align:center;margin:0;font-size:0.85rem;">© 2025 Power Tech Generators. All Rights Reserved.</p>
@@ -448,20 +452,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        window.addEventListener('load',()=>{
-            setTimeout(()=>{
-                const p=document.getElementById('preloader');
-                p.style.opacity='0';
-                setTimeout(()=>p.style.display='none',500);
-            },2000);
-        });
-        
+        window.addEventListener('load',()=>{setTimeout(()=>{const p=document.getElementById('preloader');p.style.opacity='0';setTimeout(()=>p.style.display='none',500);},2000);});
         AOS.init({duration:1000,once:true});
-        
-        window.addEventListener('scroll',()=>{
-            document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
-            document.getElementById('backToTop').style.display=window.scrollY>500?'flex':'none';
-        });
+        window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);document.getElementById('backToTop').style.display=window.scrollY>500?'flex':'none';});
     </script>
 </body>
 </html>
