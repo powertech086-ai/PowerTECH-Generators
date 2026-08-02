@@ -33,20 +33,15 @@
             line-height: 1.7;
         }
         
-        /* Preloader */
+        /* ========== PRELOADER ========== */
         .preloader {
             position: fixed; inset: 0; background: var(--dark-navy);
             z-index: 99999; display: flex; flex-direction: column;
             align-items: center; justify-content: center; transition: 0.6s;
         }
-        .preloader-logo-text {
-            font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 900;
-            color: var(--golden); margin-bottom: 20px;
-            text-shadow: 0 0 30px rgba(212,175,55,0.5);
-        }
         .preloader-bar { 
             width: 250px; height: 4px; background: rgba(255,255,255,0.1); 
-            border-radius: 10px; overflow: hidden; 
+            border-radius: 10px; overflow: hidden; margin-top: 25px;
         }
         .preloader-bar-fill { 
             width: 0; height: 100%; background: var(--gradient-gold); 
@@ -54,7 +49,7 @@
         }
         @keyframes loadBar { to { width: 100%; } }
         
-        /* Navigation */
+        /* ========== NAVIGATION ========== */
         .navbar {
             background: rgba(10, 22, 40, 0.95) !important;
             backdrop-filter: blur(30px);
@@ -63,28 +58,13 @@
         }
         .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
         
-        /* LOGO - GUARANTEED VISIBLE */
-        .logo-box {
-            display: flex; align-items: center; gap: 10px; text-decoration: none;
-            background: rgba(212,175,55,0.1); padding: 8px 18px;
-            border-radius: 12px; border: 1px solid rgba(212,175,55,0.3);
+        /* Navbar Logo */
+        .navbar-logo {
+            height: 45px;  /* Logo ki height */
+            width: auto;   /* Width auto adjust */
+            transition: var(--transition);
         }
-        .logo-icon {
-            width: 42px; height: 42px; background: var(--gradient-gold);
-            border-radius: 10px; display: flex; align-items: center;
-            justify-content: center; font-size: 1.3rem; color: var(--dark-navy);
-            font-weight: 900; animation: glow 2s infinite;
-        }
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 10px rgba(212,175,55,0.3); }
-            50% { box-shadow: 0 0 25px rgba(212,175,55,0.7); }
-        }
-        .logo-words {
-            font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem;
-            line-height: 1.1;
-        }
-        .logo-words .pt { color: var(--golden); }
-        .logo-words .tech { color: var(--white); }
+        .navbar.scrolled .navbar-logo { height: 38px; }
         
         .nav-link {
             font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
@@ -99,7 +79,7 @@
         }
         .navbar-toggler i { color: var(--golden); font-size: 1.3rem; }
         
-        /* Buttons */
+        /* ========== BUTTONS ========== */
         .btn-gold {
             background: var(--gradient-gold); color: var(--dark-navy);
             padding: 14px 32px; border-radius: 50px; font-weight: 700;
@@ -117,7 +97,7 @@
         }
         .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
         
-        /* Hero */
+        /* ========== HERO ========== */
         .hero-section {
             min-height: 100vh; display: flex; align-items: center;
             background: linear-gradient(135deg, #060E1A, #0F1F3D, #0A1628);
@@ -141,7 +121,7 @@
             margin-bottom: 32px;
         }
         
-        /* Hero Image Box - ALWAYS VISIBLE */
+        /* Hero Image Box */
         .hero-img-box {
             width: 100%; max-width: 480px; height: 450px;
             background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
@@ -169,7 +149,7 @@
             position: relative; z-index: 1;
         }
         
-        /* Stats */
+        /* ========== STATS ========== */
         .stat-box {
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
             border-radius: 16px; padding: 28px 18px; text-align: center; transition: var(--transition);
@@ -181,7 +161,7 @@
         .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--golden-light); font-family: 'Outfit', sans-serif; }
         .stat-lbl { font-size: 0.8rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 5px; }
         
-        /* Brand Strip */
+        /* ========== BRANDS ========== */
         .brand-strip {
             background: rgba(255,255,255,0.02); padding: 35px 0;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -194,7 +174,7 @@
         }
         .brand-name:hover { opacity: 1; color: var(--golden-light); background: rgba(212,175,55,0.1); }
         
-        /* Service Cards */
+        /* ========== SERVICES ========== */
         .service-card {
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px; padding: 45px 35px; transition: var(--transition);
@@ -212,7 +192,7 @@
         .service-card h4 { font-weight: 700; margin-bottom: 15px; font-size: 1.2rem; }
         .service-card p { color: var(--gray); margin-bottom: 25px; }
         
-        /* Client Placeholders */
+        /* ========== CLIENTS ========== */
         .client-box {
             width: 150px; height: 65px; 
             background: rgba(255,255,255,0.04); 
@@ -227,17 +207,22 @@
             transform: scale(1.1); 
         }
         
-        /* CTA */
+        /* ========== CTA ========== */
         .cta-box {
             background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
             border: 1px solid rgba(212,175,55,0.2); border-radius: 24px;
             padding: 60px; text-align: center;
         }
         
-        /* Footer */
+        /* ========== FOOTER ========== */
         .footer {
             background: #060E1A; border-top: 1px solid rgba(212,175,55,0.15);
             padding: 70px 0 30px;
+        }
+        .footer-logo {
+            height: 55px;  /* Footer logo height */
+            width: auto;
+            margin-bottom: 20px;
         }
         .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; }
         .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 4px 0; font-size: 0.95rem; }
@@ -251,7 +236,7 @@
         .social-links a:hover { background: var(--golden); color: var(--dark-navy); }
         .footer hr { border-color: rgba(255,255,255,0.08); margin: 30px 0; }
         
-        /* Floating Buttons */
+        /* ========== FLOATING BUTTONS ========== */
         .float-btn {
             position: fixed; z-index: 999; width: 55px; height: 55px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -273,14 +258,21 @@
             .hero-desc { margin: 0 auto 32px; }
             .hero-img-box { max-width: 300px; height: 300px; }
             .hero-img-box i { font-size: 4rem; }
+            .navbar-logo { height: 38px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Preloader -->
+    <!-- ========== PRELOADER ========== -->
     <div class="preloader" id="preloader">
-        <div class="preloader-logo-text">⚡ POWER TECH</div>
+        <!-- 🔴🔴🔴 YAHAN APNI LOGO LAGAO (JAGAH #1) 🔴🔴🔴 -->
+        <img src="images/logo.png" alt="Power Tech" style="width:200px; height:auto;"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Fallback agar image na mile -->
+        <div style="display:none; font-family:'Outfit',sans-serif; font-size:2.5rem; font-weight:900; color:#D4AF37; text-shadow:0 0 30px rgba(212,175,55,0.5);">
+            ⚡ POWER TECH
+        </div>
         <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
         <p style="color:#D4AF37; margin-top:15px; letter-spacing:3px; font-weight:600; font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
     </div>
@@ -290,14 +282,19 @@
     <a href="tel:+923223619827" class="float-btn float-call"><i class="fas fa-phone-alt"></i></a>
     <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
 
-    <!-- Navigation -->
+    <!-- ========== NAVIGATION ========== -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <!-- GUARANTEED VISIBLE LOGO -->
-            <a class="logo-box" href="index.html">
-                <div class="logo-icon">⚡</div>
-                <div class="logo-words">
-                    <span class="pt">POWER</span><br><span class="tech">TECH</span>
+            <a class="navbar-brand" href="index.html">
+                <!-- 🔴🔴🔴 YAHAN APNI LOGO LAGAO (JAGAH #2) 🔴🔴🔴 -->
+                <img src="images/logo.png" alt="Power Tech" class="navbar-logo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <!-- Fallback agar image na mile -->
+                <div style="display:none; align-items:center; gap:8px; background:rgba(212,175,55,0.1); padding:6px 14px; border-radius:10px; border:1px solid rgba(212,175,55,0.3);">
+                    <span style="font-size:1.3rem;">⚡</span>
+                    <span style="font-family:'Outfit',sans-serif; font-weight:900; font-size:1.1rem;">
+                        <span style="color:#D4AF37;">POWER</span><span style="color:white;">TECH</span>
+                    </span>
                 </div>
             </a>
             
@@ -336,7 +333,6 @@
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
-                    <!-- HERO IMAGE BOX - ALWAYS VISIBLE -->
                     <div class="hero-img-box">
                         <i class="fas fa-bolt"></i>
                         <p>DIESEL GENERATOR</p>
@@ -345,7 +341,6 @@
                 </div>
             </div>
             
-            <!-- Stats -->
             <div class="row g-3 mt-5" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">40+</div><div class="stat-lbl">Years</div></div></div>
                 <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">10K+</div><div class="stat-lbl">Projects</div></div></div>
@@ -410,15 +405,15 @@
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <p style="color:var(--golden-light); font-weight:700; letter-spacing:3px;">TRUSTED BY</p>
-                <h2 style="font-family:'Outfit',sans-serif; font-weight:800;">Our <span style="color:var(--golden-light);">Prestigious Clients</span></h2>
+                <h2 style="font-family:'Outfit',sans-serif; font-weight:800;">Our <span style="color:var(--golden-light);">Clients</span></h2>
             </div>
             <div class="row justify-content-center g-4">
                 <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 1</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="100"><div class="client-box">CLIENT 2</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="200"><div class="client-box">CLIENT 3</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="300"><div class="client-box">CLIENT 4</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="400"><div class="client-box">CLIENT 5</div></div>
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="500"><div class="client-box">CLIENT 6</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 2</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 3</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 4</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 5</div></div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in"><div class="client-box">CLIENT 6</div></div>
             </div>
         </div>
     </section>
@@ -428,7 +423,7 @@
         <div class="container">
             <div class="cta-box" data-aos="fade-up">
                 <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:2rem;">Need a <span style="color:#D4AF37;">Generator?</span></h2>
-                <p style="color:var(--gray); max-width:500px; margin:15px auto;">Free consultation • Best Price • 24/7 Support</p>
+                <p style="color:var(--gray);">Free consultation • Best Price • 24/7 Support</p>
                 <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
                     <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
                     <a href="https://wa.me/923223619827" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -442,9 +437,15 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center gap-2 mb-3">
-                        <div style="width:45px;height:45px;background:var(--gradient-gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--dark-navy);">⚡</div>
-                        <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:1.3rem;"><span style="color:var(--golden);">POWER</span><span style="color:var(--white);">TECH</span></div>
+                    <!-- 🔴🔴🔴 YAHAN APNI LOGO LAGAO (JAGAH #3) 🔴🔴🔴 -->
+                    <img src="images/logo.png" alt="Power Tech" class="footer-logo"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fallback -->
+                    <div style="display:none; align-items:center; gap:8px; margin-bottom:20px;">
+                        <span style="font-size:1.5rem;">⚡</span>
+                        <span style="font-family:'Outfit',sans-serif; font-weight:900; font-size:1.3rem;">
+                            <span style="color:#D4AF37;">POWER</span><span style="color:white;">TECH</span>
+                        </span>
                     </div>
                     <p style="color:var(--gray);">Pakistan's #1 generator company. Since 1986.</p>
                     <div class="social-links mt-3">
@@ -477,7 +478,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Preloader
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const p = document.getElementById('preloader');
@@ -488,7 +488,6 @@
         
         AOS.init({ duration: 1000, once: true });
         
-        // Navbar scroll
         window.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
             document.getElementById('backToTop').style.display = window.scrollY > 500 ? 'flex' : 'none';
