@@ -4,31 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Power Tech Generators - Pakistan's #1 Diesel Generator Company Since 1986. Premium sales, rental & maintenance from 13 KVA to 1250 KVA.">
-    <meta name="keywords" content="Diesel Generator Karachi, Generator Pakistan, Perkins Dealer, Cummins Generator, Generator Rental, Power Tech">
     <title>Power Tech Generators | Pakistan's #1 Generator Company Since 1986</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
     <style>
         :root {
             --dark-navy: #0A1628;
-            --navy: #0F1F3D;
             --golden: #D4AF37;
             --golden-light: #F0D77B;
             --white: #FFFFFF;
             --gray: #C8D0D8;
-            --gray-dark: #3A4556;
             --accent-blue: #1E5FBB;
-            --gradient-dark: linear-gradient(135deg, #060E1A 0%, #0F1F3D 50%, #0A1628 100%);
             --gradient-gold: linear-gradient(135deg, #B8960C, #D4AF37);
-            --shadow-card: 0 10px 40px rgba(0,0,0,0.3);
             --shadow-gold: 0 10px 30px rgba(212,175,55,0.3);
-            --radius: 16px;
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition: all 0.4s ease;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -47,7 +40,11 @@
             z-index: 99999; display: flex; flex-direction: column;
             align-items: center; justify-content: center; transition: 0.6s;
         }
-        .preloader img { width: 200px; margin-bottom: 30px; }
+        .preloader-logo-text {
+            font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 900;
+            color: var(--golden); margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(212,175,55,0.5);
+        }
         .preloader-bar { width: 250px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
         .preloader-bar-fill { width: 0; height: 100%; background: var(--gradient-gold); animation: loadBar 2s ease forwards; }
         @keyframes loadBar { to { width: 100%; } }
@@ -60,8 +57,24 @@
             padding: 12px 0; transition: var(--transition); z-index: 1000;
         }
         .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
-        .navbar-brand img { height: 48px; transition: var(--transition); }
-        .navbar.scrolled .navbar-brand img { height: 40px; }
+        
+        /* ========== LOGO STYLES ========== */
+        .logo-container {
+            display: flex; align-items: center; gap: 10px; text-decoration: none;
+        }
+        .logo-icon {
+            width: 45px; height: 45px; background: var(--gradient-gold);
+            border-radius: 12px; display: flex; align-items: center;
+            justify-content: center; font-size: 1.5rem; color: var(--dark-navy);
+            font-weight: 900;
+        }
+        .logo-text {
+            font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.4rem;
+        }
+        .logo-text .gold { color: var(--golden); }
+        .logo-text .white { color: var(--white); }
+        .navbar.scrolled .logo-icon { width: 38px; height: 38px; font-size: 1.2rem; }
+        .navbar.scrolled .logo-text { font-size: 1.2rem; }
         
         .nav-link {
             font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
@@ -81,13 +94,13 @@
         
         /* ========== BUTTONS ========== */
         .btn-gold {
-            background: var(--gradient-gold); color: var(--white);
+            background: var(--gradient-gold); color: var(--dark-navy);
             padding: 14px 32px; border-radius: 50px; font-weight: 700;
             text-decoration: none; display: inline-flex; align-items: center;
             gap: 8px; transition: var(--transition); border: none; cursor: pointer;
             font-size: 0.9rem; letter-spacing: 0.5px;
         }
-        .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); color: var(--dark-navy); }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); }
         
         .btn-outline {
             background: transparent; border: 2px solid var(--white);
@@ -100,15 +113,9 @@
         /* ========== HERO SECTION ========== */
         .hero-section {
             min-height: 100vh; display: flex; align-items: center;
-            background: var(--gradient-dark); position: relative; overflow: hidden;
-            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #060E1A 0%, #0F1F3D 50%, #0A1628 100%);
+            position: relative; overflow: hidden; padding: 120px 0 80px;
         }
-        .hero-bg-pattern {
-            position: absolute; inset: 0; opacity: 0.05;
-            background: radial-gradient(circle at 30% 50%, var(--accent-blue) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 20%, var(--golden) 0%, transparent 40%);
-        }
-        
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
             background: rgba(212,175,55,0.1); color: var(--golden-light);
@@ -116,56 +123,47 @@
             font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 24px;
             border: 1px solid rgba(212,175,55,0.3);
         }
-        
         .hero-title {
             font-family: 'Outfit', sans-serif; font-weight: 900;
             font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.15;
             margin-bottom: 20px; color: var(--white);
         }
         .hero-title span { color: var(--golden-light); }
-        
         .hero-desc {
             font-size: 1.15rem; color: var(--gray); max-width: 550px;
             margin-bottom: 32px; line-height: 1.8;
         }
         
-        .hero-image img {
-            width: 100%; max-width: 550px;
-            filter: drop-shadow(0 20px 50px rgba(212,175,55,0.2));
-            animation: float 4s ease-in-out infinite;
+        /* ========== HERO IMAGE PLACEHOLDER ========== */
+        .hero-image-placeholder {
+            width: 100%; max-width: 500px; height: 500px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(30,95,187,0.1));
+            border-radius: 30px; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; gap: 15px;
+            border: 2px dashed rgba(212,175,55,0.3);
+            animation: float 4s ease-in-out infinite; margin: 0 auto;
         }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .hero-image-placeholder i { font-size: 5rem; color: var(--golden); opacity: 0.5; }
+        .hero-image-placeholder p { color: var(--golden-light); font-weight: 600; font-size: 0.9rem; }
         
-        /* ========== ANIMATED COUNTER STATS ========== */
-        .stats-row { margin-top: 50px; }
+        /* ========== STATS ========== */
         .stat-item {
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: var(--radius); padding: 30px 20px; text-align: center;
-            transition: var(--transition); position: relative; overflow: hidden;
+            border-radius: 16px; padding: 30px 20px; text-align: center; transition: var(--transition);
         }
-        .stat-item::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-            background: var(--gradient-gold); transform: scaleX(0); transition: transform 0.6s ease;
-        }
-        .stat-item:hover::before { transform: scaleX(1); }
         .stat-item:hover {
             background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3);
             transform: translateY(-8px); box-shadow: var(--shadow-gold);
         }
         .stat-number {
-            font-size: 3rem; font-weight: 900; color: var(--golden-light);
-            font-family: 'Outfit', sans-serif; line-height: 1;
-            display: flex; align-items: baseline; justify-content: center; gap: 2px;
+            font-size: 2.5rem; font-weight: 900; color: var(--golden-light);
+            font-family: 'Outfit', sans-serif;
         }
-        .stat-suffix { font-size: 2rem; }
-        .stat-label {
-            font-size: 0.85rem; color: var(--gray); font-weight: 600;
-            margin-top: 8px; text-transform: uppercase; letter-spacing: 1.5px;
-        }
-        .stat-icon {
-            font-size: 1.5rem; color: var(--golden-light);
-            margin-bottom: 10px; opacity: 0.6;
-        }
+        .stat-label { font-size: 0.85rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 5px; }
         
         /* ========== BRAND STRIP ========== */
         .brand-strip {
@@ -173,55 +171,44 @@
             border-top: 1px solid rgba(255,255,255,0.05);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .brand-logo-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.6; transition: var(--transition); }
-        .brand-logo-img:hover { opacity: 1; transform: scale(1.1); }
-        .brand-text { color: var(--white); font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; opacity: 0.6; transition: var(--transition); }
-        .brand-text:hover { opacity: 1; color: var(--golden-light); }
-        
-        /* ========== SECTIONS ========== */
-        .section-padding { padding: 100px 0; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-label {
-            color: var(--golden-light); font-weight: 700; letter-spacing: 3px;
-            font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px;
+        .brand-item {
+            color: var(--white); font-weight: 800; font-size: 1.2rem;
+            letter-spacing: 2px; opacity: 0.6; transition: var(--transition);
         }
-        .section-title {
-            font-family: 'Outfit', sans-serif; font-weight: 800;
-            font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white);
-        }
-        .section-title span { color: var(--golden-light); }
+        .brand-item:hover { opacity: 1; color: var(--golden-light); }
         
         /* ========== SERVICE CARDS ========== */
         .service-card {
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px; padding: 45px 35px; transition: var(--transition);
-            height: 100%; text-align: center; position: relative; overflow: hidden;
+            height: 100%; text-align: center;
         }
-        .service-card::before {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
-            background: var(--gradient-gold); transform: scaleX(0); transition: transform 0.4s ease;
-        }
-        .service-card:hover::before { transform: scaleX(1); }
         .service-card:hover {
             background: rgba(212,175,55,0.05); border-color: rgba(212,175,55,0.4);
-            transform: translateY(-10px); box-shadow: var(--shadow-card);
+            transform: translateY(-10px); box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
         .service-icon {
             width: 80px; height: 80px; border-radius: 20px; display: flex;
             align-items: center; justify-content: center; font-size: 2rem;
             margin: 0 auto 25px;
         }
-        .service-card h4 { font-weight: 700; margin-bottom: 15px; font-size: 1.3rem; }
+        .service-card h4 { font-weight: 700; margin-bottom: 15px; }
         .service-card p { color: var(--gray); margin-bottom: 25px; }
         
-        /* ========== CLIENT LOGOS ========== */
-        .client-logo-img {
-            height: 55px; filter: brightness(0) invert(1); opacity: 0.5;
-            transition: var(--transition); object-fit: contain;
+        /* ========== CLIENT LOGO PLACEHOLDER ========== */
+        .client-placeholder {
+            width: 150px; height: 60px; background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--golden-light); font-weight: 700; font-size: 0.8rem;
+            transition: var(--transition); letter-spacing: 1px;
         }
-        .client-logo-img:hover { opacity: 1; transform: scale(1.15); }
+        .client-placeholder:hover {
+            border-color: var(--golden); background: rgba(212,175,55,0.08);
+            transform: scale(1.1);
+        }
         
-        /* ========== CTA SECTION ========== */
+        /* ========== CTA ========== */
         .cta-section {
             background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
             border: 1px solid rgba(212,175,55,0.2); border-radius: 24px;
@@ -233,7 +220,6 @@
             background: #060E1A; border-top: 1px solid rgba(212,175,55,0.15);
             padding: 70px 0 30px;
         }
-        .footer-logo-img { height: 55px; margin-bottom: 20px; }
         .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; }
         .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 4px 0; font-size: 0.95rem; }
         .footer a:hover { color: var(--golden-light); padding-left: 5px; }
@@ -243,7 +229,7 @@
             border-radius: 50%; color: var(--white); font-size: 1rem;
             transition: var(--transition); margin-right: 8px; text-decoration: none;
         }
-        .footer .social-icons a:hover { background: var(--golden); color: var(--dark-navy); transform: translateY(-3px); }
+        .footer .social-icons a:hover { background: var(--golden); color: var(--dark-navy); }
         .footer hr { border-color: rgba(255,255,255,0.08); margin: 30px 0; }
         
         /* ========== FLOATING BUTTONS ========== */
@@ -251,18 +237,13 @@
             position: fixed; z-index: 999; width: 55px; height: 55px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: var(--transition);
-            right: 20px; cursor: pointer; animation: pulseBtn 2s infinite;
-        }
-        @keyframes pulseBtn {
-            0%, 100% { box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
-            50% { box-shadow: 0 8px 35px rgba(212,175,55,0.5); }
+            right: 20px; cursor: pointer;
         }
         .float-wa { bottom: 90px; background: #25D366; color: white; font-size: 24px; }
         .float-call { bottom: 155px; background: var(--accent-blue); color: white; font-size: 20px; }
         .float-top { bottom: 25px; background: var(--golden); color: #000; font-size: 20px; display: none; }
-        .float-btn:hover { transform: scale(1.15); animation: none; }
+        .float-btn:hover { transform: scale(1.15); }
         
-        /* ========== RESPONSIVE ========== */
         @media (max-width: 991px) {
             .navbar-collapse {
                 background: rgba(10,22,40,0.98); backdrop-filter: blur(20px);
@@ -271,11 +252,7 @@
             }
             .hero-section { padding: 100px 0 50px; text-align: center; }
             .hero-desc { margin: 0 auto 32px; }
-            .hero-image { margin-top: 40px; }
-            .hero-image img { max-width: 350px; margin: 0 auto; }
-            .cta-section { padding: 30px 20px; }
-            .section-padding { padding: 60px 0; }
-            .stat-number { font-size: 2.2rem; }
+            .hero-image-placeholder { max-width: 300px; height: 300px; }
         }
     </style>
 </head>
@@ -283,7 +260,7 @@
 
     <!-- ========== PRELOADER ========== -->
     <div class="preloader" id="preloader">
-        <img src="images/power-tech-logo.png" alt="Power Tech" onerror="this.src='https://placehold.co/200x80/0A1628/D4AF37?text=POWER+TECH'">
+        <div class="preloader-logo-text">⚡ POWER TECH</div>
         <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
         <p style="color:#D4AF37; margin-top:15px; letter-spacing:3px; font-weight:600; font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
     </div>
@@ -291,13 +268,17 @@
     <!-- ========== FLOATING BUTTONS ========== -->
     <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="tel:+923223619827" class="float-btn float-call" title="Call Now"><i class="fas fa-phone-alt"></i></a>
-    <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top"><i class="fas fa-arrow-up"></i></div>
+    <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
 
     <!-- ========== NAVIGATION ========== -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/power-tech-logo.png" alt="Power Tech" onerror="this.src='https://placehold.co/160x48/0A1628/D4AF37?text=POWER+TECH'">
+            <!-- LOGO - TEXT BASED (ALWAYS VISIBLE) -->
+            <a class="logo-container" href="index.html">
+                <div class="logo-icon">⚡</div>
+                <div class="logo-text">
+                    <span class="gold">POWER</span><span class="white">TECH</span>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
                 <i class="fas fa-bars"></i>
@@ -318,7 +299,6 @@
 
     <!-- ========== HERO SECTION ========== -->
     <section class="hero-section">
-        <div class="hero-bg-pattern"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7" data-aos="fade-up" data-aos-duration="1200">
@@ -333,53 +313,21 @@
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="1200">
-                    <div class="hero-image text-center">
-                        <img src="images/hero-generator.png" alt="Diesel Generator" onerror="this.src='https://placehold.co/500x500/0A1628/D4AF37?text=GENERATOR'">
+                    <!-- HERO IMAGE PLACEHOLDER (Always Visible) -->
+                    <div class="hero-image-placeholder">
+                        <i class="fas fa-bolt"></i>
+                        <p>Generator Image Here</p>
+                        <small style="color:var(--gray);">Add: images/hero-generator.png</small>
                     </div>
                 </div>
             </div>
             
-            <!-- ========== ANIMATED COUNTER STATS ========== -->
-            <div class="row g-3 stats-row" data-aos="fade-up" data-aos-delay="300">
-                <div class="col-6 col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
-                        <div class="stat-number">
-                            <span class="counter" data-target="40">0</span>
-                            <span class="stat-suffix">+</span>
-                        </div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-tools"></i></div>
-                        <div class="stat-number">
-                            <span class="counter" data-target="10000">0</span>
-                            <span class="stat-suffix">+</span>
-                        </div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-smile"></i></div>
-                        <div class="stat-number">
-                            <span class="counter" data-target="25000">0</span>
-                            <span class="stat-suffix">+</span>
-                        </div>
-                        <div class="stat-label">Happy Clients</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-headset"></i></div>
-                        <div class="stat-number">
-                            <span>24</span><span class="stat-suffix">/7</span>
-                        </div>
-                        <div class="stat-label">Emergency Support</div>
-                    </div>
-                </div>
+            <!-- Stats -->
+            <div class="row g-3 mt-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number">40+</div><div class="stat-label">Years Experience</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number">10,000+</div><div class="stat-label">Projects Done</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number">25,000+</div><div class="stat-label">Happy Clients</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div></div>
             </div>
         </div>
     </section>
@@ -388,45 +336,45 @@
     <div class="brand-strip">
         <div class="container">
             <div class="d-flex justify-content-around align-items-center flex-wrap" style="gap: 30px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Caterpillar_logo.svg/2560px-Caterpillar_logo.svg.png" alt="Caterpillar" class="brand-logo-img" style="height:35px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cummins_logo.svg/2560px-Cummins_logo.svg.png" alt="Cummins" class="brand-logo-img" style="height:30px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Perkins_Engines_logo.svg/2560px-Perkins_Engines_logo.svg.png" alt="Perkins" class="brand-logo-img" style="height:28px;">
-                <span class="brand-text">FG WILSON</span>
-                <span class="brand-text">DENYO</span>
-                <span class="brand-text">JOHN DEERE</span>
+                <span class="brand-item">CATERPILLAR</span>
+                <span class="brand-item">CUMMINS</span>
+                <span class="brand-item">PERKINS</span>
+                <span class="brand-item">FG WILSON</span>
+                <span class="brand-item">DENYO</span>
+                <span class="brand-item">JOHN DEERE</span>
             </div>
         </div>
     </div>
 
     <!-- ========== SERVICES ========== -->
-    <section class="section-padding">
+    <section style="padding: 100px 0;">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-label">OUR SERVICES</div>
-                <h2 class="section-title">Complete Generator <span>Solutions</span></h2>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p style="color:var(--golden-light); font-weight:700; letter-spacing:3px; font-size:0.8rem;">OUR SERVICES</p>
+                <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:3rem;">Complete Generator <span style="color:var(--golden-light);">Solutions</span></h2>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="service-card">
                         <div class="service-icon" style="background:rgba(212,175,55,0.12); color:#D4AF37;"><i class="fas fa-shopping-cart"></i></div>
                         <h4>Generator Sales</h4>
-                        <p>Brand new diesel generators from 13 KVA to 1250 KVA. Authorized dealer of Perkins, Cummins, Caterpillar & more.</p>
+                        <p>Brand new diesel generators from 13 KVA to 1250 KVA. Perkins, Cummins, Caterpillar & more.</p>
                         <a href="products.html" class="btn-gold">View Inventory <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card">
                         <div class="service-icon" style="background:rgba(30,95,187,0.12); color:#1E5FBB;"><i class="fas fa-clock"></i></div>
                         <h4>Generator Rental</h4>
-                        <p>Flexible daily, weekly & monthly rental plans for events, construction sites & emergency backup power.</p>
+                        <p>Flexible daily, weekly & monthly rental plans for events, construction & emergency backup.</p>
                         <a href="services.html" class="btn-gold">Rent Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card">
                         <div class="service-icon" style="background:rgba(220,53,69,0.12); color:#DC3545;"><i class="fas fa-tools"></i></div>
                         <h4>Maintenance & AMC</h4>
-                        <p>Preventive & corrective maintenance. Annual service contracts with 24/7 emergency breakdown support.</p>
+                        <p>Preventive & corrective maintenance. Annual service contracts with 24/7 emergency support.</p>
                         <a href="contact.html" class="btn-gold">Get AMC <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -434,42 +382,43 @@
         </div>
     </section>
 
-    <!-- ========== CLIENT LOGOS ========== -->
+    <!-- ========== CLIENT LOGOS (Placeholder) ========== -->
     <section style="background:rgba(255,255,255,0.02); padding:80px 0;">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-label">TRUSTED BY</div>
-                <h2 class="section-title">Our <span>Prestigious Clients</span></h2>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p style="color:var(--golden-light); font-weight:700; letter-spacing:3px;">TRUSTED BY</p>
+                <h2 style="font-family:'Outfit',sans-serif; font-weight:800;">Our <span style="color:var(--golden-light);">Prestigious Clients</span></h2>
+                <p style="color:var(--gray);">Client logos yahan lagayein (images/clients/ folder mein)</p>
             </div>
             <div class="row justify-content-center g-4">
-                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="0">
-                    <img src="images/clients/client-1.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+1'">
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in">
+                    <div class="client-placeholder">CLIENT 1</div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="images/clients/client-2.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+2'">
+                    <div class="client-placeholder">CLIENT 2</div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="images/clients/client-3.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+3'">
+                    <div class="client-placeholder">CLIENT 3</div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="images/clients/client-4.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+4'">
+                    <div class="client-placeholder">CLIENT 4</div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="images/clients/client-5.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+5'">
+                    <div class="client-placeholder">CLIENT 5</div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="images/clients/client-6.png" alt="Client" class="client-logo-img" onerror="this.src='https://placehold.co/150x60/1A2332/D4AF37?text=CLIENT+6'">
+                    <div class="client-placeholder">CLIENT 6</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== CTA ========== -->
-    <section class="section-padding">
+    <section style="padding: 80px 0;">
         <div class="container">
             <div class="cta-section" data-aos="fade-up">
                 <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:2.2rem;">Need a <span style="color:#D4AF37;">Generator?</span></h2>
-                <p style="color:var(--gray); max-width:600px; margin:20px auto;">Contact us today for a free consultation and quote. Our experts are ready to help 24/7.</p>
+                <p style="color:var(--gray); max-width:600px; margin:20px auto;">Contact us today for a free consultation and quote. 24/7 emergency support.</p>
                 <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
                     <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
                     <a href="https://wa.me/923223619827" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -484,8 +433,12 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="images/power-tech-logo.png" alt="Power Tech" class="footer-logo-img" onerror="this.src='https://placehold.co/180x55/060E1A/D4AF37?text=POWER+TECH'">
-                    <p style="color:var(--gray);">Pakistan's most trusted diesel generator company. Serving industries, businesses & homes since 1986.</p>
+                    <!-- FOOTER LOGO - TEXT BASED -->
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="logo-icon" style="width:50px;height:50px;font-size:1.5rem;">⚡</div>
+                        <div class="logo-text"><span class="gold">POWER</span><span class="white">TECH</span></div>
+                    </div>
+                    <p style="color:var(--gray);">Pakistan's most trusted diesel generator company. Serving since 1986.</p>
                     <div class="social-icons mt-3">
                         <a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -502,10 +455,10 @@
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <h6>Services</h6>
-                    <a href="products.html">Generator Sales</a>
+                    <a href="products.html">Sales</a>
                     <a href="services.html">Rental</a>
                     <a href="services.html">Maintenance</a>
-                    <a href="services.html">AMC Contracts</a>
+                    <a href="services.html">AMC</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h6>Contact</h6>
@@ -515,28 +468,23 @@
                 </div>
             </div>
             <hr>
-            <p style="color:var(--gray); text-align:center; margin:0; font-size:0.9rem;">© 2025 Power Tech Generators. All Rights Reserved. | Pakistan's #1 Generator Company</p>
+            <p style="color:var(--gray); text-align:center; margin:0;">© 2025 Power Tech Generators. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
     <script>
-        // ========== PRELOADER ==========
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const preloader = document.getElementById('preloader');
                 preloader.style.opacity = '0';
                 setTimeout(() => preloader.style.display = 'none', 500);
-            }, 1800);
+            }, 2000);
         });
         
-        // ========== AOS INIT ==========
         AOS.init({ duration: 1000, once: true });
         
-        // ========== NAVBAR SCROLL ==========
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             const backToTop = document.getElementById('backToTop');
@@ -549,60 +497,8 @@
             }
         });
         
-        // ========== ACTIVE NAV LINK ==========
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            }
-        });
-        
-        // ========== 🔥 ANIMATED COUNTER - SCROLL PE RUN HOGA ==========
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // Animation speed (lower = faster)
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const updateCount = () => {
-                    const count = +counter.innerText;
-                    const increment = target / speed;
-                    
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + increment);
-                        setTimeout(updateCount, 15);
-                    } else {
-                        counter.innerText = target.toLocaleString(); // Format with commas
-                    }
-                };
-                updateCount();
-            });
-        }
-        
-        // Intersection Observer - Jab stats section dikhe tab counter chale
-        const statsSection = document.querySelector('.stats-row');
-        if (statsSection) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounters();
-                        observer.unobserve(entry.target); // Sirf ek baar chalega
-                    }
-                });
-            }, { threshold: 0.3 }); // 30% visible hone pe trigger
-            
-            observer.observe(statsSection);
-        }
-        
-        // ========== SMOOTH SCROLL FOR ALL ANCHOR LINKS ==========
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+            if (link.getAttribute('href') === 'index.html') link.classList.add('active');
         });
     </script>
 </body>
