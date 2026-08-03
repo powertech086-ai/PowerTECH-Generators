@@ -3,319 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Power Tech Generators - Premium diesel generators from 13 KVA to 1250 KVA. Authorized dealer of Perkins, Cummins, Caterpillar, FG Wilson, Denyo. New & used generators for sale in Karachi, Pakistan.">
-    <meta name="keywords" content="Diesel Generator Price Pakistan, Perkins Generator Karachi, Cummins Generator Pakistan, Generator 13 KVA to 1250 KVA, Buy Generator Karachi, FG Wilson Dealer">
     <title>Generators | Power Tech - 13 KVA to 1250 KVA Diesel Generators</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
     <style>
         :root {
-            --dark-navy: #0A1628;
-            --navy: #0F1F3D;
-            --golden: #D4AF37;
-            --golden-light: #F0D77B;
-            --white: #FFFFFF;
-            --gray: #C8D0D8;
-            --gray-dark: #3A4556;
-            --accent-blue: #1E5FBB;
-            --gradient-dark: linear-gradient(135deg, #060E1A 0%, #0F1F3D 50%, #0A1628 100%);
+            --dark-navy: #0A1628; --golden: #D4AF37; --golden-light: #F0D77B;
+            --white: #FFFFFF; --gray: #C8D0D8; --accent-blue: #1E5FBB;
             --gradient-gold: linear-gradient(135deg, #B8960C, #D4AF37);
-            --shadow-card: 0 10px 40px rgba(0,0,0,0.3);
             --shadow-gold: 0 10px 30px rgba(212,175,55,0.3);
-            --radius: 16px;
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition: all 0.4s ease;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--dark-navy); color: var(--white); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.7; }
         
-        body {
-            background: var(--dark-navy);
-            color: var(--white);
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.7;
-        }
-        
-        /* ========== PRELOADER ========== */
-        .preloader {
-            position: fixed; inset: 0; background: var(--dark-navy);
-            z-index: 99999; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; transition: 0.6s;
-        }
-        .preloader img { width: 200px; margin-bottom: 30px; }
-        .preloader-bar { width: 250px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
-        .preloader-bar-fill { width: 0; height: 100%; background: var(--gradient-gold); animation: loadBar 2s ease forwards; }
-        @keyframes loadBar { to { width: 100%; } }
-        
-        /* ========== NAVIGATION ========== */
-        .navbar {
-            background: rgba(10, 22, 40, 0.92) !important;
-            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
-            border-bottom: 1px solid rgba(212,175,55,0.15);
-            padding: 12px 0; transition: var(--transition); z-index: 1000;
-        }
+        .navbar { background: rgba(10, 22, 40, 0.92) !important; backdrop-filter: blur(30px); border-bottom: 1px solid rgba(212,175,55,0.2); padding: 12px 0; transition: var(--transition); z-index: 1000; }
         .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
-        .navbar-brand img { height: 48px; transition: var(--transition); }
-        .navbar.scrolled .navbar-brand img { height: 40px; }
         
-        .nav-link {
-            font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
-            letter-spacing: 1px; padding: 10px 16px !important;
-            color: var(--gray) !important; transition: var(--transition); position: relative;
-        }
+        .brand-logo-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .brand-logo-icon { width: 48px; height: 48px; object-fit: contain; transition: var(--transition); }
+        .navbar.scrolled .brand-logo-icon { width: 40px; height: 40px; }
+        .brand-logo-text { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; line-height: 1.2; }
+        .brand-logo-text .gold { color: var(--golden); }
+        .brand-logo-text .white { color: var(--white); }
+        .brand-logo-text .tagline { display: block; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 500; color: var(--gray); letter-spacing: 1.5px; text-transform: uppercase; }
+        
+        .nav-link { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; padding: 10px 15px !important; color: var(--gray) !important; transition: var(--transition); }
         .nav-link:hover, .nav-link.active { color: var(--golden-light) !important; }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: 5px; left: 50%;
-            transform: translateX(-50%); width: 0; height: 2px;
-            background: var(--golden); transition: width 0.3s;
-        }
-        .nav-link:hover::after, .nav-link.active::after { width: 60%; }
-        
         .navbar-toggler { border: 2px solid var(--golden); padding: 8px 10px; border-radius: 8px; }
         .navbar-toggler i { color: var(--golden); font-size: 1.3rem; }
         
-        /* ========== BUTTONS ========== */
-        .btn-gold {
-            background: var(--gradient-gold); color: var(--white);
-            padding: 14px 32px; border-radius: 50px; font-weight: 700;
-            text-decoration: none; display: inline-flex; align-items: center;
-            gap: 8px; transition: var(--transition); border: none; cursor: pointer;
-            font-size: 0.9rem; letter-spacing: 0.5px;
-        }
-        .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); color: var(--dark-navy); }
-        
-        .btn-outline {
-            background: transparent; border: 2px solid var(--white);
-            color: var(--white); padding: 14px 32px; border-radius: 50px;
-            font-weight: 700; text-decoration: none; display: inline-flex;
-            align-items: center; gap: 8px; transition: var(--transition);
-        }
+        .btn-gold { background: var(--gradient-gold); color: var(--dark-navy); padding: 14px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); border: none; cursor: pointer; }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); }
+        .btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white); padding: 14px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
         .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
+        .btn-sm-gold { background: var(--gradient-gold); color: var(--dark-navy); padding: 10px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); font-size: 0.85rem; border: none; }
+        .btn-sm-gold:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); }
         
-        .btn-sm-gold {
-            background: var(--gradient-gold); color: var(--white);
-            padding: 8px 20px; border-radius: 50px; font-weight: 600;
-            text-decoration: none; display: inline-flex; align-items: center;
-            gap: 5px; transition: var(--transition); font-size: 0.85rem; border: none;
-        }
-        .btn-sm-gold:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); color: var(--dark-navy); }
+        .page-banner { background: linear-gradient(135deg, #060E1A, #0F1F3D); padding: 160px 0 80px; text-align: center; border-bottom: 1px solid rgba(212,175,55,0.15); }
+        .page-banner h1 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 3.5rem; }
+        .page-banner h1 span { color: var(--golden-light); }
+        .breadcrumb { justify-content: center; }
+        .breadcrumb-item a { color: var(--golden-light); text-decoration: none; }
+        .breadcrumb-item.active { color: var(--gray); }
+        .breadcrumb-item+.breadcrumb-item::before { color: var(--golden); }
         
-        /* ========== PAGE BANNER ========== */
-        .page-banner {
-            background: linear-gradient(135deg, rgba(6,14,26,0.95) 0%, rgba(15,31,61,0.85) 100%);
-            padding: 160px 0 80px; position: relative; overflow: hidden;
-            border-bottom: 1px solid rgba(212,175,55,0.15);
-        }
-        .page-banner::before {
-            content: ''; position: absolute; inset: 0; opacity: 0.05;
-            background: radial-gradient(circle at 30% 50%, var(--accent-blue) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 30%, var(--golden) 0%, transparent 40%);
-        }
-        .page-banner .breadcrumb { margin-bottom: 0; }
-        .page-banner .breadcrumb-item a { color: var(--golden-light); text-decoration: none; }
-        .page-banner .breadcrumb-item.active { color: var(--gray); }
-        .page-banner .breadcrumb-item+.breadcrumb-item::before { color: var(--golden); }
-        
-        .page-title {
-            font-family: 'Outfit', sans-serif; font-weight: 900;
-            font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--white);
-        }
-        .page-title span { color: var(--golden-light); }
-        
-        /* ========== SECTIONS ========== */
-        .section-padding { padding: 100px 0; }
-        .section-header { margin-bottom: 50px; }
-        .section-label {
-            color: var(--golden-light); font-weight: 700; letter-spacing: 3px;
-            font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px;
-            display: inline-block; background: rgba(212,175,55,0.1);
-            padding: 8px 20px; border-radius: 50px; border: 1px solid rgba(212,175,55,0.2);
-        }
-        .section-title {
-            font-family: 'Outfit', sans-serif; font-weight: 800;
-            font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white);
-        }
+        .section-padding { padding: 80px 0; }
+        .section-label { color: var(--golden-light); font-weight: 700; letter-spacing: 4px; font-size: 0.75rem; text-transform: uppercase; }
+        .section-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 2.5rem; }
         .section-title span { color: var(--golden-light); }
         
-        /* ========== BRAND FILTER TABS ========== */
-        .brand-tabs {
-            display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px;
-        }
-        .brand-tab {
-            padding: 12px 28px; border-radius: 50px; font-weight: 600;
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
-            color: var(--gray); cursor: pointer; transition: var(--transition);
-            font-size: 0.9rem; letter-spacing: 0.5px;
-        }
-        .brand-tab:hover, .brand-tab.active {
-            background: var(--gradient-gold); color: var(--dark-navy);
-            border-color: var(--golden); box-shadow: var(--shadow-gold);
-        }
+        .filter-tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+        .filter-tab { padding: 12px 28px; border-radius: 50px; font-weight: 600; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: var(--gray); cursor: pointer; transition: var(--transition); font-size: 0.9rem; }
+        .filter-tab:hover, .filter-tab.active { background: var(--gradient-gold); color: var(--dark-navy); border-color: var(--golden); }
         
-        /* ========== PRODUCT CARDS ========== */
-        .product-card {
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px; overflow: hidden; transition: var(--transition);
-            height: 100%; display: flex; flex-direction: column;
-        }
-        .product-card:hover {
-            transform: translateY(-10px); box-shadow: var(--shadow-card);
-            border-color: rgba(212,175,55,0.4);
-        }
-        .product-image {
-            position: relative; overflow: hidden; height: 250px;
-            background: rgba(0,0,0,0.3);
-        }
-        .product-image img {
-            width: 100%; height: 100%; object-fit: cover; transition: 0.6s;
-        }
+        .product-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; overflow: hidden; transition: var(--transition); height: 100%; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-10px); border-color: rgba(212,175,55,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .product-image { position: relative; overflow: hidden; height: 250px; background: rgba(0,0,0,0.3); }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
         .product-card:hover .product-image img { transform: scale(1.08); }
-        .product-badge {
-            position: absolute; top: 15px; right: 15px;
-            background: var(--gradient-gold); color: var(--dark-navy);
-            padding: 6px 15px; border-radius: 50px; font-weight: 700;
-            font-size: 0.8rem; z-index: 1;
-        }
-        .product-brand {
-            position: absolute; top: 15px; left: 15px;
-            background: rgba(10,22,40,0.9); color: var(--golden-light);
-            padding: 6px 15px; border-radius: 50px; font-weight: 700;
-            font-size: 0.8rem; z-index: 1; backdrop-filter: blur(10px);
-        }
+        .product-badge { position: absolute; top: 15px; right: 15px; background: var(--gradient-gold); color: var(--dark-navy); padding: 6px 15px; border-radius: 50px; font-weight: 700; font-size: 0.75rem; z-index: 1; }
+        .product-brand { position: absolute; top: 15px; left: 15px; background: rgba(10,22,40,0.9); color: var(--golden-light); padding: 6px 15px; border-radius: 50px; font-weight: 700; font-size: 0.75rem; z-index: 1; }
         .product-info { padding: 25px; flex: 1; display: flex; flex-direction: column; }
         .product-info h4 { font-weight: 700; margin-bottom: 8px; font-size: 1.2rem; }
         .product-info .brand-name { color: var(--golden-light); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; }
-        .product-specs {
-            display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;
-        }
-        .product-spec {
-            display: flex; align-items: center; gap: 6px;
-            color: var(--gray); font-size: 0.85rem;
-        }
-        .product-spec i { color: var(--golden-light); font-size: 0.9rem; }
-        .product-price {
-            font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800;
-            color: var(--golden-light); margin-top: auto; padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
+        .product-specs { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; }
+        .product-spec { color: var(--gray); font-size: 0.85rem; display: flex; align-items: center; gap: 5px; }
+        .product-spec i { color: var(--golden-light); }
+        .product-price { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--golden-light); margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.06); }
         
-        /* ========== BRAND SHOWCASE ========== */
-        .brand-showcase-card {
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px; padding: 40px 30px; text-align: center;
-            transition: var(--transition); height: 100%;
-        }
-        .brand-showcase-card:hover {
-            background: rgba(212,175,55,0.05); border-color: rgba(212,175,55,0.4);
-            transform: translateY(-8px); box-shadow: var(--shadow-card);
-        }
-        .brand-showcase-card img {
-            height: 50px; margin-bottom: 20px;
-            filter: brightness(0) invert(1); opacity: 0.8;
-        }
-        .brand-showcase-card h5 { font-weight: 700; margin-bottom: 10px; }
-        .brand-showcase-card p { color: var(--gray); font-size: 0.95rem; }
+        .brand-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 40px 30px; text-align: center; transition: var(--transition); height: 100%; }
+        .brand-card:hover { background: rgba(212,175,55,0.04); border-color: rgba(212,175,55,0.3); transform: translateY(-8px); }
+        .brand-card h5 { font-weight: 700; margin-top: 15px; }
+        .brand-card p { color: var(--gray); font-size: 0.9rem; }
         
-        /* ========== CTA ========== */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,95,187,0.08));
-            border: 1px solid rgba(212,175,55,0.2); border-radius: 24px;
-            padding: 60px; text-align: center;
-        }
-        
-        /* ========== INQUIRY FORM ========== */
-        .inquiry-form {
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px; padding: 40px;
-        }
-        .inquiry-form .form-control, .inquiry-form .form-select {
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
-            color: var(--white); padding: 14px 20px; border-radius: 12px;
-            font-size: 0.95rem; transition: var(--transition);
-        }
-        .inquiry-form .form-control:focus, .inquiry-form .form-select:focus {
-            border-color: var(--golden); box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
-            background: rgba(255,255,255,0.05); color: var(--white);
-        }
-        .inquiry-form .form-control::placeholder { color: var(--gray-dark); }
-        .inquiry-form label { color: var(--gray); font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
-        
-        /* ========== FOOTER ========== */
-        .footer {
-            background: #060E1A; border-top: 1px solid rgba(212,175,55,0.15);
-            padding: 70px 0 30px;
-        }
-        .footer-logo-img { height: 55px; margin-bottom: 20px; }
+        .footer { background: #020510; border-top: 1px solid rgba(212,175,55,0.1); padding: 70px 0 30px; }
         .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; }
-        .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 4px 0; font-size: 0.95rem; }
-        .footer a:hover { color: var(--golden-light); padding-left: 5px; }
-        .footer .social-icons a {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 42px; height: 42px; background: rgba(255,255,255,0.05);
-            border-radius: 50%; color: var(--white); font-size: 1rem;
-            transition: var(--transition); margin-right: 8px; text-decoration: none;
-        }
-        .footer .social-icons a:hover { background: var(--golden); color: var(--dark-navy); transform: translateY(-3px); }
-        .footer hr { border-color: rgba(255,255,255,0.08); margin: 30px 0; }
+        .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 5px 0; font-size: 0.95rem; }
+        .footer a:hover { color: var(--golden-light); }
+        .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: rgba(255,255,255,0.03); border-radius: 50%; color: var(--white); font-size: 1.1rem; transition: var(--transition); margin-right: 10px; text-decoration: none; }
+        .social-links a:hover { background: var(--golden); color: var(--dark-navy); }
+        .footer hr { border-color: rgba(255,255,255,0.06); margin: 30px 0; }
         
-        /* ========== FLOATING BUTTONS ========== */
-        .float-btn {
-            position: fixed; z-index: 999; width: 55px; height: 55px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: var(--transition);
-            right: 20px; cursor: pointer; animation: pulseBtn 2s infinite;
-        }
-        @keyframes pulseBtn {
-            0%, 100% { box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
-            50% { box-shadow: 0 8px 35px rgba(212,175,55,0.5); }
-        }
-        .float-wa { bottom: 90px; background: #25D366; color: white; font-size: 24px; }
-        .float-call { bottom: 155px; background: var(--accent-blue); color: white; font-size: 20px; }
-        .float-top { bottom: 25px; background: var(--golden); color: #000; font-size: 20px; display: none; }
-        .float-btn:hover { transform: scale(1.15); animation: none; }
+        .float-btn { position: fixed; z-index: 999; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: var(--transition); right: 22px; text-decoration: none; }
+        .float-wa { bottom: 95px; background: #25D366; color: white; font-size: 26px; }
+        .float-call { bottom: 165px; background: var(--accent-blue); color: white; font-size: 22px; }
+        .float-top { bottom: 28px; background: var(--golden); color: #000; font-size: 22px; display: none; }
+        .float-btn:hover { transform: scale(1.15); }
         
-        /* ========== RESPONSIVE ========== */
         @media (max-width: 991px) {
-            .navbar-collapse {
-                background: rgba(10,22,40,0.98); backdrop-filter: blur(20px);
-                padding: 20px; border-radius: 16px; margin-top: 10px;
-                border: 1px solid rgba(212,175,55,0.2);
-            }
-            .section-padding { padding: 60px 0; }
-            .brand-tabs { gap: 8px; }
-            .brand-tab { padding: 10px 20px; font-size: 0.8rem; }
-            .product-image { height: 200px; }
+            .navbar-collapse { background: rgba(10,22,40,0.98); backdrop-filter: blur(20px); padding: 20px; border-radius: 16px; margin-top: 10px; border: 1px solid rgba(212,175,55,0.2); }
+            .page-banner h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ========== PRELOADER ========== -->
-    <div class="preloader" id="preloader">
-        <img src="images/power-tech-logo.png" alt="Power Tech" onerror="this.src='https://placehold.co/200x80/0A1628/D4AF37?text=POWER+TECH'">
-        <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
-        <p style="color:#D4AF37; margin-top:15px; letter-spacing:3px; font-weight:600; font-size:0.8rem;">PREMIUM GENERATORS SINCE 1986</p>
-    </div>
+    <!-- FLOATING -->
+    <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+923223619827" class="float-btn float-call"><i class="fas fa-phone-alt"></i></a>
+    <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
 
-    <!-- ========== FLOATING BUTTONS ========== -->
-    <a href="https://wa.me/923223619827" target="_blank" class="float-btn float-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="tel:+923223619827" class="float-btn float-call" title="Call Now"><i class="fas fa-phone-alt"></i></a>
-    <div class="float-btn float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top"><i class="fas fa-arrow-up"></i></div>
-
-    <!-- ========== NAVIGATION ========== -->
+    <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/power-tech-logo.png" alt="Power Tech" onerror="this.src='https://placehold.co/160x48/0A1628/D4AF37?text=POWER+TECH'">
+            <a class="brand-logo-link" href="index.html">
+                <img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display:none; width:48px; height:48px; background:var(--gradient-gold); border-radius:12px; align-items:center; justify-content:center; font-size:1.5rem; color:var(--dark-navy); font-weight:900;" class="brand-logo-icon">⚡</div>
+                <div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"><i class="fas fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="mainMenu">
                 <ul class="navbar-nav mx-auto gap-1">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -330,103 +132,53 @@
         </div>
     </nav>
 
-    <!-- ========== PAGE BANNER ========== -->
+    <!-- PAGE BANNER -->
     <section class="page-banner">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8" data-aos="fade-up">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active">Generators</li>
-                        </ol>
-                    </nav>
-                    <h1 class="page-title mt-3">Our <span>Generators</span></h1>
-                    <p class="mt-3" style="color:var(--gray); font-size:1.1rem; max-width:600px;">
-                        Premium diesel generators from 13 KVA to 1250 KVA. Authorized dealer of world's top brands.
-                    </p>
-                </div>
-            </div>
+            <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active">Generators</li></ol></nav>
+            <h1 class="mt-3">Our <span>Generators</span></h1>
+            <p style="color:var(--gray); max-width:600px; margin:15px auto;">Premium diesel generators from 13 KVA to 1250 KVA. Authorized dealer of world's top brands.</p>
         </div>
     </section>
 
-    <!-- ========== BRAND SHOWCASE ========== -->
-    <section style="background:rgba(255,255,255,0.02); padding:60px 0; border-bottom:1px solid rgba(255,255,255,0.05);">
+    <!-- BRAND SHOWCASE -->
+    <section style="background:rgba(0,0,0,0.2); padding:60px 0;">
         <div class="container">
             <div class="row g-4">
-                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="0">
-                    <div class="brand-showcase-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Caterpillar_logo.svg/2560px-Caterpillar_logo.svg.png" alt="Caterpillar" style="height:35px;">
-                        <h5>Caterpillar</h5>
-                        <p>World's #1 heavy equipment</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
-                    <div class="brand-showcase-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cummins_logo.svg/2560px-Cummins_logo.svg.png" alt="Cummins" style="height:30px;">
-                        <h5>Cummins</h5>
-                        <p>Global power leader</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="brand-showcase-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Perkins_Engines_logo.svg/2560px-Perkins_Engines_logo.svg.png" alt="Perkins" style="height:28px;">
-                        <h5>Perkins</h5>
-                        <p>Trusted since 1932</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
-                    <div class="brand-showcase-card">
-                        <span style="font-size:1.5rem; font-weight:900; color:white; letter-spacing:2px;">FG WILSON</span>
-                        <h5>FG Wilson</h5>
-                        <p>Engineering excellence</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
-                    <div class="brand-showcase-card">
-                        <span style="font-size:1.5rem; font-weight:900; color:white; letter-spacing:2px;">DENYO</span>
-                        <h5>Denyo</h5>
-                        <p>Japanese reliability</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
-                    <div class="brand-showcase-card">
-                        <span style="font-size:1.5rem; font-weight:900; color:white; letter-spacing:2px;">JOHN DEERE</span>
-                        <h5>John Deere</h5>
-                        <p>American quality</p>
-                    </div>
-                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up"><div class="brand-card"><i class="fas fa-star fa-2x" style="color:#FFCD11;"></i><h5>Caterpillar</h5><p>World's #1</p></div></div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="50"><div class="brand-card"><i class="fas fa-star fa-2x" style="color:#C8102E;"></i><h5>Cummins</h5><p>Global Leader</p></div></div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100"><div class="brand-card"><i class="fas fa-star fa-2x" style="color:#003DA5;"></i><h5>Perkins</h5><p>Since 1932</p></div></div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="150"><div class="brand-card"><i class="fas fa-star fa-2x" style="color:#D4AF37;"></i><h5>FG Wilson</h5><p>UK Quality</p></div></div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200"><div class="brand-card"><i class="fas fa-star fa-2x" style="color:#D4AF37;"></i><h5>Denyo</h5><p>Japan Tech</p></div></div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="250"><div class="brand-card"><i class="fas fa-star fa-2x" style="color:#D4AF37;"></i><h5>John Deere</h5><p>USA Quality</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== PRODUCT LISTING ========== -->
+    <!-- PRODUCTS -->
     <section class="section-padding">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <span class="section-label">OUR INVENTORY</span>
-                <h2 class="section-title">Generator <span>Catalog</span></h2>
-                <p style="color:var(--gray); max-width:600px; margin:15px auto 0;">Click on brand tabs to filter. All generators come with warranty and 24/7 support.</p>
+                <h2 class="section-title mt-2">Generator <span>Catalog</span></h2>
             </div>
             
-            <!-- Brand Filter Tabs -->
-            <div class="brand-tabs" data-aos="fade-up">
-                <button class="brand-tab active" onclick="filterProducts('all')">All Brands</button>
-                <button class="brand-tab" onclick="filterProducts('perkins')">Perkins</button>
-                <button class="brand-tab" onclick="filterProducts('cummins')">Cummins</button>
-                <button class="brand-tab" onclick="filterProducts('caterpillar')">Caterpillar</button>
-                <button class="brand-tab" onclick="filterProducts('fgwilson')">FG Wilson</button>
-                <button class="brand-tab" onclick="filterProducts('denyo')">Denyo</button>
+            <!-- Filter Tabs -->
+            <div class="filter-tabs" data-aos="fade-up">
+                <button class="filter-tab active" onclick="filterProducts('all')">All Brands</button>
+                <button class="filter-tab" onclick="filterProducts('perkins')">Perkins</button>
+                <button class="filter-tab" onclick="filterProducts('cummins')">Cummins</button>
+                <button class="filter-tab" onclick="filterProducts('caterpillar')">Caterpillar</button>
+                <button class="filter-tab" onclick="filterProducts('fgwilson')">FG Wilson</button>
+                <button class="filter-tab" onclick="filterProducts('denyo')">Denyo</button>
             </div>
             
-            <!-- Products Grid -->
             <div class="row g-4" id="productsGrid">
-                
-                <!-- Product 1 - Perkins -->
+                <!-- Perkins 20 KVA -->
                 <div class="col-lg-4 col-md-6 product-item" data-brand="perkins" data-aos="fade-up">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/products/perkins-20kva.jpg" alt="Perkins 20 KVA Generator" onerror="this.src='https://placehold.co/400x300/1A2332/D4AF37?text=PERKINS+20+KVA'">
+                            <img src="Images/perkins-20kva.jpg" alt="Perkins 20 KVA" onerror="this.src='https://placehold.co/600x400/1a2332/D4AF37?text=PERKINS+20+KVA'">
                             <span class="product-badge">In Stock</span>
                             <span class="product-brand">Perkins</span>
                         </div>
@@ -435,20 +187,20 @@
                             <div class="brand-name">Perkins Engines UK</div>
                             <div class="product-specs">
                                 <span class="product-spec"><i class="fas fa-bolt"></i> 20 KVA</span>
-                                <span class="product-spec"><i class="fas fa-tachometer-alt"></i> Diesel</span>
+                                <span class="product-spec"><i class="fas fa-gas-pump"></i> Diesel</span>
                                 <span class="product-spec"><i class="fas fa-industry"></i> 3 Phase</span>
                             </div>
                             <div class="product-price">Contact for Price</div>
-                            <a href="https://wa.me/923223619827?text=Info%20about%20Perkins%2020%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire Now</a>
+                            <a href="https://wa.me/923223619827?text=Info%20Perkins%2020%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 2 - Cummins -->
+                <!-- Cummins 50 KVA -->
                 <div class="col-lg-4 col-md-6 product-item" data-brand="cummins" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/products/cummins-50kva.jpg" alt="Cummins 50 KVA Generator" onerror="this.src='https://placehold.co/400x300/1A2332/D4AF37?text=CUMMINS+50+KVA'">
+                            <img src="Images/cummins-50kva.jpg" alt="Cummins 50 KVA" onerror="this.src='https://placehold.co/600x400/1a2332/D4AF37?text=CUMMINS+50+KVA'">
                             <span class="product-badge">Best Seller</span>
                             <span class="product-brand">Cummins</span>
                         </div>
@@ -457,20 +209,20 @@
                             <div class="brand-name">Cummins Inc. USA</div>
                             <div class="product-specs">
                                 <span class="product-spec"><i class="fas fa-bolt"></i> 50 KVA</span>
-                                <span class="product-spec"><i class="fas fa-tachometer-alt"></i> Diesel</span>
+                                <span class="product-spec"><i class="fas fa-gas-pump"></i> Diesel</span>
                                 <span class="product-spec"><i class="fas fa-industry"></i> 3 Phase</span>
                             </div>
                             <div class="product-price">Contact for Price</div>
-                            <a href="https://wa.me/923223619827?text=Info%20about%20Cummins%2050%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire Now</a>
+                            <a href="https://wa.me/923223619827?text=Info%20Cummins%2050%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 3 - Caterpillar -->
+                <!-- Caterpillar 100 KVA -->
                 <div class="col-lg-4 col-md-6 product-item" data-brand="caterpillar" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/products/cat-100kva.jpg" alt="Caterpillar 100 KVA Generator" onerror="this.src='https://placehold.co/400x300/1A2332/D4AF37?text=CAT+100+KVA'">
+                            <img src="Images/cat-100kva.jpg" alt="CAT 100 KVA" onerror="this.src='https://placehold.co/600x400/1a2332/D4AF37?text=CAT+100+KVA'">
                             <span class="product-badge">Premium</span>
                             <span class="product-brand">Caterpillar</span>
                         </div>
@@ -479,20 +231,20 @@
                             <div class="brand-name">Caterpillar Inc. USA</div>
                             <div class="product-specs">
                                 <span class="product-spec"><i class="fas fa-bolt"></i> 100 KVA</span>
-                                <span class="product-spec"><i class="fas fa-tachometer-alt"></i> Diesel</span>
+                                <span class="product-spec"><i class="fas fa-gas-pump"></i> Diesel</span>
                                 <span class="product-spec"><i class="fas fa-industry"></i> 3 Phase</span>
                             </div>
                             <div class="product-price">Contact for Price</div>
-                            <a href="https://wa.me/923223619827?text=Info%20about%20CAT%20100%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire Now</a>
+                            <a href="https://wa.me/923223619827?text=Info%20CAT%20100%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 4 - FG Wilson -->
+                <!-- FG Wilson 150 KVA -->
                 <div class="col-lg-4 col-md-6 product-item" data-brand="fgwilson" data-aos="fade-up">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/products/fgwilson-150kva.jpg" alt="FG Wilson 150 KVA Generator" onerror="this.src='https://placehold.co/400x300/1A2332/D4AF37?text=FG+WILSON+150+KVA'">
+                            <img src="Images/fgwilson-150kva.jpg" alt="FG Wilson 150 KVA" onerror="this.src='https://placehold.co/600x400/1a2332/D4AF37?text=FG+WILSON+150+KVA'">
                             <span class="product-badge">In Stock</span>
                             <span class="product-brand">FG Wilson</span>
                         </div>
@@ -501,21 +253,21 @@
                             <div class="brand-name">FG Wilson UK</div>
                             <div class="product-specs">
                                 <span class="product-spec"><i class="fas fa-bolt"></i> 150 KVA</span>
-                                <span class="product-spec"><i class="fas fa-tachometer-alt"></i> Diesel</span>
+                                <span class="product-spec"><i class="fas fa-gas-pump"></i> Diesel</span>
                                 <span class="product-spec"><i class="fas fa-industry"></i> 3 Phase</span>
                             </div>
                             <div class="product-price">Contact for Price</div>
-                            <a href="https://wa.me/923223619827?text=Info%20about%20FG%20Wilson%20150%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire Now</a>
+                            <a href="https://wa.me/923223619827?text=Info%20FG%20Wilson%20150%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 5 - Denyo -->
+                <!-- Denyo 250 KVA -->
                 <div class="col-lg-4 col-md-6 product-item" data-brand="denyo" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/products/denyo-250kva.jpg" alt="Denyo 250 KVA Generator" onerror="this.src='https://placehold.co/400x300/1A2332/D4AF37?text=DENYO+250+KVA'">
-                            <span class="product-badge">Japanese Tech</span>
+                            <img src="Images/denyo-250kv.jpg" alt="Denyo 250 KVA" onerror="this.src='https://placehold.co/600x400/1a2332/D4AF37?text=DENYO+250+KVA'">
+                            <span class="product-badge">Japanese</span>
                             <span class="product-brand">Denyo</span>
                         </div>
                         <div class="product-info">
@@ -523,20 +275,20 @@
                             <div class="brand-name">Denyo Japan</div>
                             <div class="product-specs">
                                 <span class="product-spec"><i class="fas fa-bolt"></i> 250 KVA</span>
-                                <span class="product-spec"><i class="fas fa-tachometer-alt"></i> Diesel</span>
+                                <span class="product-spec"><i class="fas fa-gas-pump"></i> Diesel</span>
                                 <span class="product-spec"><i class="fas fa-industry"></i> 3 Phase</span>
                             </div>
                             <div class="product-price">Contact for Price</div>
-                            <a href="https://wa.me/923223619827?text=Info%20about%20Denyo%20250%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire Now</a>
+                            <a href="https://wa.me/923223619827?text=Info%20Denyo%20250%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 6 - Perkins Large -->
+                <!-- Perkins 500 KVA -->
                 <div class="col-lg-4 col-md-6 product-item" data-brand="perkins" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/products/perkins-500kva.jpg" alt="Perkins 500 KVA Generator" onerror="this.src='https://placehold.co/400x300/1A2332/D4AF37?text=PERKINS+500+KVA'">
+                            <img src="Images/perkins-500kva.jpg" alt="Perkins 500 KVA" onerror="this.src='https://placehold.co/600x400/1a2332/D4AF37?text=PERKINS+500+KVA'">
                             <span class="product-badge">Heavy Duty</span>
                             <span class="product-brand">Perkins</span>
                         </div>
@@ -545,223 +297,71 @@
                             <div class="brand-name">Perkins Engines UK</div>
                             <div class="product-specs">
                                 <span class="product-spec"><i class="fas fa-bolt"></i> 500 KVA</span>
-                                <span class="product-spec"><i class="fas fa-tachometer-alt"></i> Diesel</span>
+                                <span class="product-spec"><i class="fas fa-gas-pump"></i> Diesel</span>
                                 <span class="product-spec"><i class="fas fa-industry"></i> 3 Phase</span>
                             </div>
                             <div class="product-price">Contact for Price</div>
-                            <a href="https://wa.me/923223619827?text=Info%20about%20Perkins%20500%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire Now</a>
+                            <a href="https://wa.me/923223619827?text=Info%20Perkins%20500%20KVA" target="_blank" class="btn-sm-gold mt-3"><i class="fab fa-whatsapp"></i> Inquire</a>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <!-- ========== INQUIRY FORM ========== -->
-    <section style="background:rgba(255,255,255,0.02); padding:80px 0;">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5" data-aos="fade-right">
-                    <div class="section-header mb-4">
-                        <span class="section-label">GET A QUOTE</span>
-                        <h2 class="section-title">Request <span>Price Quote</span></h2>
-                    </div>
-                    <p style="color:var(--gray);">Tell us your power requirements and our experts will provide the best generator solution with competitive pricing.</p>
-                    <div class="mt-4">
-                        <p style="color:var(--gray);"><i class="fas fa-check-circle me-2" style="color:var(--golden-light);"></i> Free consultation</p>
-                        <p style="color:var(--gray);"><i class="fas fa-check-circle me-2" style="color:var(--golden-light);"></i> Best price guarantee</p>
-                        <p style="color:var(--gray);"><i class="fas fa-check-circle me-2" style="color:var(--golden-light);"></i> Warranty included</p>
-                        <p style="color:var(--gray);"><i class="fas fa-check-circle me-2" style="color:var(--golden-light);"></i> 24/7 after-sales support</p>
-                    </div>
-                </div>
-                <div class="col-lg-7" data-aos="fade-left">
-                    <div class="inquiry-form">
-                        <form id="inquiryForm" onsubmit="handleInquiry(event)">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label>Full Name *</label>
-                                    <input type="text" class="form-control" placeholder="Your name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Phone Number *</label>
-                                    <input type="tel" class="form-control" placeholder="03XX-XXXXXXX" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Email</label>
-                                    <input type="email" class="form-control" placeholder="email@example.com">
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Preferred Brand</label>
-                                    <select class="form-select">
-                                        <option value="">Any Brand</option>
-                                        <option>Perkins</option>
-                                        <option>Cummins</option>
-                                        <option>Caterpillar</option>
-                                        <option>FG Wilson</option>
-                                        <option>Denyo</option>
-                                        <option>John Deere</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Required KVA *</label>
-                                    <select class="form-select" required>
-                                        <option value="">Select KVA</option>
-                                        <option>13 - 30 KVA</option>
-                                        <option>30 - 60 KVA</option>
-                                        <option>60 - 100 KVA</option>
-                                        <option>100 - 250 KVA</option>
-                                        <option>250 - 500 KVA</option>
-                                        <option>500 - 1250 KVA</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Usage Type</label>
-                                    <select class="form-select">
-                                        <option value="">Select</option>
-                                        <option>Industrial</option>
-                                        <option>Commercial</option>
-                                        <option>Residential</option>
-                                        <option>Events</option>
-                                        <option>Hospital</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label>Message</label>
-                                    <textarea class="form-control" rows="3" placeholder="Additional requirements..."></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn-gold w-100 justify-content-center">
-                                        <i class="fas fa-paper-plane"></i> Submit Inquiry
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+    <!-- CTA -->
+    <section style="background:rgba(0,0,0,0.2); padding:80px 0;">
+        <div class="container text-center">
+            <h2 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:2.2rem;">Need a <span style="color:#D4AF37;">Generator?</span></h2>
+            <p style="color:var(--gray); max-width:500px; margin:20px auto;">Contact us for best price and immediate delivery.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+                <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
+                <a href="https://wa.me/923223619827" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="cta-section" data-aos="fade-up">
-                <h2 style="font-family:'Outfit',sans-serif; font-weight:800; font-size:2.2rem;">Need Immediate <span style="color:#D4AF37;">Assistance?</span></h2>
-                <p style="color:var(--gray); max-width:600px; margin:20px auto;">Call us now for instant pricing and availability. Our team is ready 24/7.</p>
-                <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
-                    <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
-                    <a href="https://wa.me/923223619827" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== FOOTER ========== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="images/power-tech-logo.png" alt="Power Tech" class="footer-logo-img" onerror="this.src='https://placehold.co/180x55/060E1A/D4AF37?text=POWER+TECH'">
-                    <p style="color:var(--gray);">Pakistan's most trusted diesel generator company. Authorized dealer of Perkins, Cummins, Caterpillar & more.</p>
-                    <div class="social-icons mt-3">
+                    <div class="brand-logo-link" style="margin-bottom:20px;">
+                        <img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:48px; height:48px; background:var(--gradient-gold); border-radius:12px; align-items:center; justify-content:center; font-size:1.5rem; color:var(--dark-navy); font-weight:900;" class="brand-logo-icon">⚡</div>
+                        <div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div>
+                    </div>
+                    <p style="color:var(--gray);">Pakistan's #1 generator company. Since 1986.</p>
+                    <div class="social-links mt-3">
                         <a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.pinterest.com/powertech086/" target="_blank"><i class="fab fa-pinterest"></i></a>
                         <a href="https://www.youtube.com/@powertechgenerators" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h6>Quick Links</h6>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="products.html">Generators</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h6>Brands</h6>
-                    <a href="#">Perkins</a>
-                    <a href="#">Cummins</a>
-                    <a href="#">Caterpillar</a>
-                    <a href="#">FG Wilson</a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h6>Contact</h6>
-                    <p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i> 0322 3619827</p>
-                    <p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i> powertech086@gmail.com</p>
-                    <p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i> Karachi, Pakistan</p>
-                </div>
+                <div class="col-lg-2 col-md-6"><h6>Links</h6><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a></div>
+                <div class="col-lg-2 col-md-6"><h6>Brands</h6><a href="#">Perkins</a><a href="#">Cummins</a><a href="#">Caterpillar</a><a href="#">FG Wilson</a></div>
+                <div class="col-lg-4 col-md-6"><h6>Contact</h6><p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i>0322 3619827</p><p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i>powertech086@gmail.com</p><p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i>Karachi, Pakistan</p></div>
             </div>
             <hr>
-            <p style="color:var(--gray); text-align:center; margin:0; font-size:0.9rem;">© 2025 Power Tech Generators. All Rights Reserved. | Pakistan's #1 Generator Company</p>
+            <p style="color:var(--gray);text-align:center;margin:0;font-size:0.85rem;">© 2025 Power Tech Generators. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Preloader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const preloader = document.getElementById('preloader');
-                preloader.style.opacity = '0';
-                setTimeout(() => preloader.style.display = 'none', 500);
-            }, 1800);
-        });
-        
         AOS.init({ duration: 1000, once: true });
+        window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); document.getElementById('backToTop').style.display = window.scrollY > 500 ? 'flex' : 'none'; });
         
-        // Navbar Scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const backToTop = document.getElementById('backToTop');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-                backToTop.style.display = 'flex';
-            } else {
-                navbar.classList.remove('scrolled');
-                backToTop.style.display = 'none';
-            }
-        });
-        
-        // Active Nav
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href') === currentPage) link.classList.add('active');
-        });
-        
-        // ========== PRODUCT FILTER ==========
+        // Filter Products
         function filterProducts(brand) {
-            // Update active tab
-            document.querySelectorAll('.brand-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
-            
-            // Filter products
-            const products = document.querySelectorAll('.product-item');
-            products.forEach(product => {
-                if (brand === 'all' || product.getAttribute('data-brand') === brand) {
-                    product.style.display = 'block';
-                    product.style.animation = 'fadeIn 0.5s ease';
-                } else {
-                    product.style.display = 'none';
-                }
+            document.querySelectorAll('.product-item').forEach(item => {
+                item.style.display = (brand === 'all' || item.getAttribute('data-brand') === brand) ? 'block' : 'none';
             });
         }
-        
-        // ========== INQUIRY FORM HANDLER ==========
-        function handleInquiry(event) {
-            event.preventDefault();
-            alert('✅ Thank you for your inquiry!\n\nOur team will contact you shortly.\n\nFor urgent queries, call: 0322 3619827');
-            event.target.reset();
-        }
     </script>
-    
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </body>
 </html>
