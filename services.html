@@ -54,18 +54,23 @@
 
     <footer class="footer"><div class="container"><div class="row g-3"><div class="col-lg-4"><div class="brand-logo-link" style="margin-bottom:15px"><img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;width:38px;height:38px;background:var(--gradient-gold);border-radius:10px;align-items:center;justify-content:center;font-size:1.2rem;color:var(--dark-navy);font-weight:900" class="brand-logo-icon">⚡</div><div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div></div><p style="color:var(--gray);font-size:.9rem">Pakistan's #1 generator company. Since 1986.</p><div class="social-links mt-2"><a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.pinterest.com/powertech086/" target="_blank"><i class="fab fa-pinterest"></i></a><a href="https://www.youtube.com/@powertechgenerators" target="_blank"><i class="fab fa-youtube"></i></a></div></div><div class="col-6 col-lg-2"><h6>Links</h6><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a></div><div class="col-6 col-lg-2"><h6>Legal</h6><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms</a><a href="sales-agreement.html">Sales Agreement</a><a href="rental-agreement.html">Rental</a><a href="amc-contract.html">AMC Contract</a></div><div class="col-lg-4"><h6>Contact</h6><p style="color:var(--gray);font-size:.9rem"><i class="fas fa-phone-alt me-2" style="color:#D4AF37"></i>0322 3619827</p><p style="color:var(--gray);font-size:.9rem"><i class="fas fa-envelope me-2" style="color:#D4AF37"></i>powertech086@gmail.com</p></div></div><hr><p style="color:var(--gray);text-align:center;margin:0;font-size:.8rem">© 2025 Power Tech Generators. All Rights Reserved.</p></div></footer>
 
-    <!-- ========== ELEVENLABS VOICE AGENT ========== -->
-    <elevenlabs-convai agent-id="agent_5101kz1prewdemm95hmhhd5wxnah"></elevenlabs-convai>
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-    <script>
-        setTimeout(function() {
-            const widget = document.querySelector('elevenlabs-convai');
-            if (widget && widget.shadowRoot) { const btn = widget.shadowRoot.querySelector('button'); if (btn) btn.click(); }
-            if ('speechSynthesis' in window) {
-                setTimeout(() => { const msg = new SpeechSynthesisUtterance('We offer generator rental, maintenance, and 24/7 emergency support.'); msg.lang = 'ur-PK'; msg.rate = 0.9; window.speechSynthesis.speak(msg); }, 1000);
+    <!-- ========== ELEVENLABS VOICE AGENT ONLY ========== -->
+<elevenlabs-convai agent-id="agent_5101kz1prewdemm95hmhhd5wxnah"></elevenlabs-convai>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<script>
+    // 5 seconds baad ElevenLabs widget auto-open hoga
+    // KOI browser voice nahi bolegi - sirf ElevenLabs ki awaz aayegi
+    setTimeout(function() {
+        const widget = document.querySelector('elevenlabs-convai');
+        if (widget && widget.shadowRoot) {
+            const btn = widget.shadowRoot.querySelector('button');
+            if (btn) {
+                btn.click();
             }
-        }, 5000);
-    </script>
+        }
+    }, 5000);
+</script>
+
 
     <!-- ========== GOOGLE SHEET AUTO LEAD ========== -->
     <script>
