@@ -25,82 +25,110 @@
         .navbar { background: rgba(10, 22, 40, 0.92) !important; backdrop-filter: blur(30px); border-bottom: 1px solid rgba(212,175,55,0.2); padding: 12px 0; transition: var(--transition); z-index: 1000; }
         .navbar.scrolled { padding: 8px 0; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
         
-        .brand-logo-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .brand-logo-icon { width: 48px; height: 48px; object-fit: contain; transition: var(--transition); }
-        .navbar.scrolled .brand-logo-icon { width: 40px; height: 40px; }
-        .brand-logo-text { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; line-height: 1.2; }
+        .brand-logo-link { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .brand-logo-icon { width: 38px; height: 38px; object-fit: contain; transition: var(--transition); }
+        .navbar.scrolled .brand-logo-icon { width: 34px; height: 34px; }
+        .brand-logo-text { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.1rem; line-height: 1.2; }
         .brand-logo-text .gold { color: var(--golden); }
         .brand-logo-text .white { color: var(--white); }
-        .brand-logo-text .tagline { display: block; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 500; color: var(--gray); letter-spacing: 1.5px; text-transform: uppercase; }
+        .brand-logo-text .tagline { display: block; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 500; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; }
         
-        .nav-link { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; padding: 10px 15px !important; color: var(--gray) !important; transition: var(--transition); }
+        .nav-link { font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px !important; color: var(--gray) !important; transition: var(--transition); }
         .nav-link:hover, .nav-link.active { color: var(--golden-light) !important; }
-        .navbar-toggler { border: 2px solid var(--golden); padding: 8px 10px; border-radius: 8px; }
-        .navbar-toggler i { color: var(--golden); font-size: 1.3rem; }
+        .navbar-toggler { border: 2px solid var(--golden); padding: 6px 8px; border-radius: 8px; }
+        .navbar-toggler i { color: var(--golden); font-size: 1.2rem; }
         
-        .btn-gold { background: var(--gradient-gold); color: var(--dark-navy); padding: 14px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); border: none; cursor: pointer; }
+        .btn-gold { background: var(--gradient-gold); color: var(--dark-navy); padding: 12px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); border: none; cursor: pointer; font-size: 0.85rem; }
         .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); }
-        .btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white); padding: 14px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
-        .btn-outline:hover { background: var(--white); color: var(--dark-navy); }
         
-        .page-banner { background: linear-gradient(135deg, #060E1A, #0F1F3D); padding: 160px 0 80px; text-align: center; border-bottom: 1px solid rgba(212,175,55,0.15); }
-        .page-banner h1 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 3.5rem; }
+        .page-banner { background: linear-gradient(135deg, #060E1A, #0F1F3D); padding: 140px 0 60px; text-align: center; border-bottom: 1px solid rgba(212,175,55,0.15); }
+        .page-banner h1 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 2.5rem; }
         .page-banner h1 span { color: var(--golden-light); }
-        .breadcrumb { justify-content: center; }
-        .breadcrumb-item a { color: var(--golden-light); text-decoration: none; }
-        .breadcrumb-item.active { color: var(--gray); }
-        .breadcrumb-item+.breadcrumb-item::before { color: var(--golden); }
         
-        .section-padding { padding: 80px 0; }
-        .section-label { color: var(--golden-light); font-weight: 700; letter-spacing: 4px; font-size: 0.75rem; text-transform: uppercase; }
-        .section-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 2.5rem; }
+        .section-padding { padding: 60px 0; }
+        .section-label { color: var(--golden-light); font-weight: 700; letter-spacing: 3px; font-size: 0.7rem; text-transform: uppercase; }
+        .section-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 2rem; }
         .section-title span { color: var(--golden-light); }
         
-        .about-img { width: 100%; border-radius: 20px; border: 2px solid rgba(212,175,55,0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .about-img { width: 100%; border-radius: 15px; border: 2px solid rgba(212,175,55,0.2); }
         
-        .mv-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 24px; padding: 50px 35px; transition: var(--transition); height: 100%; text-align: center; }
-        .mv-card:hover { background: rgba(212,175,55,0.04); border-color: rgba(212,175,55,0.3); transform: translateY(-10px); }
-        .mv-icon { width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 25px; }
-        .mv-card h4 { font-weight: 700; margin-bottom: 15px; font-size: 1.3rem; }
-        .mv-card p { color: var(--gray); }
+        .stat-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 15px; padding: 20px 15px; text-align: center; }
+        .stat-num { font-size: 2rem; font-weight: 900; color: var(--golden-light); font-family: 'Outfit', sans-serif; }
+        .stat-lbl { font-size: 0.7rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
         
-        .value-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 35px 25px; text-align: center; transition: var(--transition); height: 100%; }
-        .value-card:hover { background: rgba(212,175,55,0.04); border-color: rgba(212,175,55,0.3); transform: translateY(-8px); }
-        .value-card i { font-size: 2.5rem; color: var(--golden-light); margin-bottom: 20px; }
-        .value-card h5 { font-weight: 700; margin-bottom: 10px; }
-        .value-card p { color: var(--gray); font-size: 0.9rem; margin: 0; }
+        .mv-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 30px 25px; text-align: center; }
+        .mv-icon { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 15px; }
+        .mv-card h4 { font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; }
+        .mv-card p { color: var(--gray); font-size: 0.9rem; }
         
-        .team-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; overflow: hidden; transition: var(--transition); text-align: center; }
-        .team-card:hover { transform: translateY(-10px); border-color: rgba(212,175,55,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .team-card img { width: 100%; height: 280px; object-fit: cover; }
-        .team-info { padding: 25px 20px; }
-        .team-info h5 { font-weight: 700; margin-bottom: 5px; }
-        .team-info span { color: var(--golden-light); font-size: 0.9rem; font-weight: 600; }
-        .team-info small { color: var(--gray); font-size: 0.8rem; }
+        .value-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 15px; padding: 25px 15px; text-align: center; }
+        .value-card i { font-size: 2rem; color: var(--golden-light); margin-bottom: 10px; }
+        .value-card h5 { font-weight: 700; margin-bottom: 5px; font-size: 0.95rem; }
+        .value-card p { color: var(--gray); font-size: 0.8rem; margin: 0; }
         
-        .stat-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 30px 20px; text-align: center; transition: var(--transition); }
-        .stat-item:hover { background: rgba(212,175,55,0.06); border-color: rgba(212,175,55,0.3); transform: translateY(-8px); }
-        .stat-num { font-size: 2.5rem; font-weight: 900; color: var(--golden-light); font-family: 'Outfit', sans-serif; }
-        .stat-lbl { font-size: 0.8rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-top: 6px; }
+        /* ========== FIXED TEAM CARD ========== */
+        .team-card { 
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); 
+            border-radius: 20px; overflow: hidden; transition: var(--transition); text-align: center; 
+        }
+        .team-card:hover { transform: translateY(-8px); border-color: rgba(212,175,55,0.3); }
+        .team-img-wrapper {
+            width: 100%; 
+            position: relative;
+            overflow: hidden;
+        }
+        .team-img-wrapper img {
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+        .team-info { padding: 20px 15px; }
+        .team-info h5 { font-weight: 700; margin-bottom: 4px; font-size: 1.1rem; }
+        .team-info span { color: var(--golden-light); font-size: 0.85rem; font-weight: 600; }
+        .team-info small { color: var(--gray); font-size: 0.75rem; }
         
-        .footer { background: #020510; border-top: 1px solid rgba(212,175,55,0.1); padding: 70px 0 30px; }
-        .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; }
-        .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 5px 0; font-size: 0.95rem; }
+        .footer { background: #020510; border-top: 1px solid rgba(212,175,55,0.1); padding: 50px 0 20px; }
+        .footer h6 { color: var(--golden-light); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-size: 0.8rem; }
+        .footer a { color: var(--gray); text-decoration: none; transition: var(--transition); display: block; padding: 3px 0; font-size: 0.9rem; }
         .footer a:hover { color: var(--golden-light); }
-        .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: rgba(255,255,255,0.03); border-radius: 50%; color: var(--white); font-size: 1.1rem; transition: var(--transition); margin-right: 10px; text-decoration: none; }
+        .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: rgba(255,255,255,0.03); border-radius: 50%; color: var(--white); font-size: 1rem; transition: var(--transition); margin-right: 8px; text-decoration: none; }
         .social-links a:hover { background: var(--golden); color: var(--dark-navy); }
-        .footer hr { border-color: rgba(255,255,255,0.06); margin: 30px 0; }
+        .footer hr { border-color: rgba(255,255,255,0.06); margin: 20px 0; }
         
-        .float-btn { position: fixed; z-index: 999; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: var(--transition); right: 22px; text-decoration: none; }
-        .float-wa { bottom: 95px; background: #25D366; color: white; font-size: 26px; }
-        .float-call { bottom: 165px; background: var(--accent-blue); color: white; font-size: 22px; }
-        .float-top { bottom: 28px; background: var(--golden); color: #000; font-size: 22px; display: none; }
-        .float-btn:hover { transform: scale(1.15); }
+        .float-btn { position: fixed; z-index: 999; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: var(--transition); right: 15px; text-decoration: none; }
+        .float-wa { bottom: 85px; background: #25D366; color: white; font-size: 22px; }
+        .float-call { bottom: 145px; background: var(--accent-blue); color: white; font-size: 18px; }
+        .float-top { bottom: 22px; background: var(--golden); color: #000; font-size: 18px; display: none; }
+        .float-btn:hover { transform: scale(1.1); }
         
-        @media (max-width: 991px) {
-            .navbar-collapse { background: rgba(10,22,40,0.98); backdrop-filter: blur(20px); padding: 20px; border-radius: 16px; margin-top: 10px; border: 1px solid rgba(212,175,55,0.2); }
-            .page-banner h1 { font-size: 2.5rem; }
-            .team-card img { height: 200px; }
+        /* ========== MOBILE FIXES ========== */
+        @media (max-width: 767px) {
+            .page-banner { padding: 120px 0 40px; }
+            .page-banner h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            .section-padding { padding: 40px 0; }
+            
+            .brand-logo-icon { width: 34px; height: 34px; }
+            .brand-logo-text { font-size: 1rem; }
+            
+            .team-img-wrapper img { aspect-ratio: 3/4; max-height: 350px; }
+            .team-info { padding: 15px 10px; }
+            .team-info h5 { font-size: 1rem; }
+            
+            .stat-num { font-size: 1.5rem; }
+            .mv-icon { width: 55px; height: 55px; font-size: 1.5rem; }
+            .mv-card { padding: 20px 15px; }
+            .mv-card h4 { font-size: 1rem; }
+        }
+        
+        @media (max-width: 575px) {
+            .team-img-wrapper img { aspect-ratio: 1/1; max-height: 250px; object-position: center 20%; }
+            .value-card { padding: 20px 10px; }
+            .value-card i { font-size: 1.5rem; }
+            .value-card h5 { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -116,7 +144,7 @@
         <div class="container">
             <a class="brand-logo-link" href="index.html">
                 <img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display:none; width:48px; height:48px; background:var(--gradient-gold); border-radius:12px; align-items:center; justify-content:center; font-size:1.5rem; color:var(--dark-navy); font-weight:900;" class="brand-logo-icon">⚡</div>
+                <div style="display:none; width:38px; height:38px; background:var(--gradient-gold); border-radius:10px; align-items:center; justify-content:center; font-size:1.2rem; color:var(--dark-navy); font-weight:900;" class="brand-logo-icon">⚡</div>
                 <div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"><i class="fas fa-bars"></i></button>
@@ -137,34 +165,32 @@
     <!-- PAGE BANNER -->
     <section class="page-banner">
         <div class="container">
-            <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active">About Us</li></ol></nav>
-            <h1 class="mt-3">About <span>Power Tech</span></h1>
-            <p style="color:var(--gray); max-width:600px; margin:15px auto;">Pakistan's most trusted diesel generator company with 40+ years of excellence.</p>
+            <nav aria-label="breadcrumb"><ol class="breadcrumb justify-content-center"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active">About Us</li></ol></nav>
+            <h1 class="mt-2">About <span>Power Tech</span></h1>
         </div>
     </section>
 
     <!-- ABOUT COMPANY -->
     <section class="section-padding">
         <div class="container">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-center g-4">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <img src="Images/about-power-tech.jpg" alt="Power Tech Generators" class="about-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div style="display:none; width:100%; height:400px; background:linear-gradient(135deg,rgba(212,175,55,0.1),rgba(30,95,187,0.1)); border-radius:20px; align-items:center; justify-content:center; border:2px dashed rgba(212,175,55,0.3);"><p style="color:var(--golden-light);">About Image Here</p></div>
+                    <img src="Images/about-power-tech.jpg" alt="Power Tech" class="about-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; width:100%; aspect-ratio:4/3; background:linear-gradient(135deg,rgba(212,175,55,0.1),rgba(30,95,187,0.1)); border-radius:15px; align-items:center; justify-content:center; border:2px dashed rgba(212,175,55,0.3);"><p style="color:var(--golden-light);">About Image</p></div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <span class="section-label">OUR STORY</span>
                     <h2 class="section-title mt-2">Powering Pakistan <span>Since 1986</span></h2>
-                    <p style="color:var(--gray); margin-top:20px;">Power Tech Generators was founded in 1986 by <strong style="color:var(--golden-light);">Latif Ahmed</strong> with a simple mission: to provide reliable power solutions to Pakistan's growing industries.</p>
-                    <p style="color:var(--gray);">What started as a small generator repair workshop in Karachi has now grown into Pakistan's most trusted diesel generator company with 40+ years of excellence.</p>
-                    <p style="color:var(--gray);">Over the past 40+ years, we have successfully completed over <strong style="color:var(--golden-light);">10,000 projects</strong> and served more than <strong style="color:var(--golden-light);">25,000 happy customers</strong> across Pakistan.</p>
-                    <a href="contact.html" class="btn-gold mt-3"><i class="fas fa-phone-alt"></i> Contact Us</a>
+                    <p style="color:var(--gray); margin-top:15px; font-size:0.95rem;">Founded by <strong style="color:var(--golden-light);">Latif Ahmed</strong> in 1986, Power Tech started as a small workshop and grew into Pakistan's most trusted generator company.</p>
+                    <p style="color:var(--gray); font-size:0.95rem;">10,000+ projects | 25,000+ clients | 50+ technicians</p>
+                    <a href="contact.html" class="btn-gold mt-2"><i class="fas fa-phone-alt"></i> Contact Us</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- STATS -->
-    <section style="background:rgba(0,0,0,0.2); padding:60px 0;">
+    <section style="background:rgba(0,0,0,0.2); padding:40px 0;">
         <div class="container">
             <div class="row g-3">
                 <div class="col-6 col-md-3"><div class="stat-item"><div class="stat-num">40+</div><div class="stat-lbl">Years</div></div></div>
@@ -183,14 +209,14 @@
                     <div class="mv-card">
                         <div class="mv-icon" style="background:rgba(212,175,55,0.1);color:#D4AF37;"><i class="fas fa-bullseye"></i></div>
                         <h4>Our Mission</h4>
-                        <p>To provide reliable, efficient, and affordable diesel generator solutions to industries, businesses, and homes across Pakistan. We are committed to keeping Pakistan powered with 24/7 emergency support.</p>
+                        <p>To provide reliable, efficient, and affordable diesel generator solutions across Pakistan with 24/7 support.</p>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="mv-card">
                         <div class="mv-icon" style="background:rgba(30,95,187,0.1);color:#1E5FBB;"><i class="fas fa-eye"></i></div>
                         <h4>Our Vision</h4>
-                        <p>To become Pakistan's leading power solutions provider, recognized for excellence, reliability, and innovation across all major cities.</p>
+                        <p>To become Pakistan's leading power solutions provider recognized for excellence and innovation.</p>
                     </div>
                 </div>
             </div>
@@ -198,67 +224,71 @@
     </section>
 
     <!-- CORE VALUES -->
-    <section style="background:rgba(0,0,0,0.2); padding:80px 0;">
+    <section style="background:rgba(0,0,0,0.2); padding:50px 0;">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
+            <div class="text-center mb-4" data-aos="fade-up">
                 <span class="section-label">WHAT WE STAND FOR</span>
                 <h2 class="section-title mt-2">Our Core <span>Values</span></h2>
             </div>
-            <div class="row g-3">
-                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-star"></i><h5>Excellence</h5><p>Quality in everything</p></div></div>
-                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-handshake"></i><h5>Integrity</h5><p>Honest & transparent</p></div></div>
-                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-users"></i><h5>Customer First</h5><p>Client satisfaction</p></div></div>
+            <div class="row g-2">
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-star"></i><h5>Excellence</h5><p>Quality always</p></div></div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-handshake"></i><h5>Integrity</h5><p>Honest & fair</p></div></div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-users"></i><h5>Customer First</h5><p>Client priority</p></div></div>
                 <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-bolt"></i><h5>Reliability</h5><p>24/7 support</p></div></div>
-                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-cogs"></i><h5>Innovation</h5><p>Latest technology</p></div></div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-cogs"></i><h5>Innovation</h5><p>Latest tech</p></div></div>
                 <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in"><div class="value-card"><i class="fas fa-heart"></i><h5>Passion</h5><p>Love for power</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- TEAM - UPDATED -->
+    <!-- TEAM - MOBILE FIXED -->
     <section class="section-padding">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
+            <div class="text-center mb-4" data-aos="fade-up">
                 <span class="section-label">OUR PEOPLE</span>
                 <h2 class="section-title mt-2">Leadership <span>Team</span></h2>
             </div>
             <div class="row g-4 justify-content-center">
-                <!-- CEO - Latif Ahmed -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up">
                     <div class="team-card">
-                        <img src="Images/team-1.jpg" alt="Latif Ahmed" onerror="this.src='https://placehold.co/400x500/1a2332/D4AF37?text=LATIF+AHMED'">
+                        <div class="team-img-wrapper">
+                            <img src="Images/team-1.jpg" alt="Latif Ahmed" onerror="this.src='https://placehold.co/400x500/1a2332/D4AF37?text=LATIF+AHMED'">
+                        </div>
                         <div class="team-info">
                             <h5>Latif Ahmed</h5>
                             <span>Founder & CEO</span>
-                            <br><small>Working Since 1986</small>
+                            <br><small>Since 1986</small>
                         </div>
                     </div>
                 </div>
-                <!-- Manager Operations - Muhammad Faheem -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="team-card">
-                        <img src="Images/team-2.jpg" alt="Muhammad Faheem" onerror="this.src='https://placehold.co/400x500/1a2332/D4AF37?text=MUHAMMAD+FAHEEM'">
+                        <div class="team-img-wrapper">
+                            <img src="Images/team-2.jpg" alt="Muhammad Faheem" onerror="this.src='https://placehold.co/400x500/1a2332/D4AF37?text=MUHAMMAD+FAHEEM'">
+                        </div>
                         <div class="team-info">
                             <h5>Muhammad Faheem</h5>
                             <span>Manager Operations</span>
-                            <br><small>Working Since 2007</small>
+                            <br><small>Since 2007</small>
                         </div>
                     </div>
                 </div>
-                <!-- Sales Manager -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="team-card">
-                        <img src="Images/team-3.jpg" alt="Team" onerror="this.src='https://placehold.co/400x500/1a2332/D4AF37?text=SALES+MANAGER'">
+                        <div class="team-img-wrapper">
+                            <img src="Images/team-3.jpg" alt="Team" onerror="this.src='https://placehold.co/400x500/1a2332/D4AF37?text=SALES+MANAGER'">
+                        </div>
                         <div class="team-info">
                             <h5>Usman Khan</h5>
                             <span>Sales Manager</span>
                         </div>
                     </div>
                 </div>
-                <!-- Chief Engineer -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="team-card">
-                        <img src="Images/team-4.jpg" alt="Team" onerror="this.src='https://placehold.co/400x500/1a2332/D4AF37?text=CHIEF+ENGINEER'">
+                        <div class="team-img-wrapper">
+                            <img src="Images/team-4.jpg" alt="Team" onerror="this.src='https://placehold.co/400x500/1a2332/D4AF37?text=CHIEF+ENGINEER'">
+                        </div>
                         <div class="team-info">
                             <h5>Bilal Siddiqui</h5>
                             <span>Chief Engineer</span>
@@ -270,13 +300,12 @@
     </section>
 
     <!-- CTA -->
-    <section style="background:rgba(0,0,0,0.2); padding:80px 0;">
+    <section style="background:rgba(0,0,0,0.2); padding:50px 0;">
         <div class="container text-center">
-            <h2 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:2.2rem;">Want to Work <span style="color:#D4AF37;">With Us?</span></h2>
-            <p style="color:var(--gray); max-width:500px; margin:20px auto;">Contact us today for a free consultation. Our team is ready 24/7.</p>
-            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+            <h2 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.8rem;">Want to Work <span style="color:#D4AF37;">With Us?</span></h2>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
                 <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a>
-                <a href="https://wa.me/923223619827" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
     </section>
@@ -284,34 +313,34 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="row g-4">
+            <div class="row g-3">
                 <div class="col-lg-4">
-                    <div class="brand-logo-link" style="margin-bottom:20px;">
+                    <div class="brand-logo-link" style="margin-bottom:15px;">
                         <img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="display:none; width:48px; height:48px; background:var(--gradient-gold); border-radius:12px; align-items:center; justify-content:center; font-size:1.5rem; color:var(--dark-navy); font-weight:900;" class="brand-logo-icon">⚡</div>
+                        <div style="display:none; width:38px; height:38px; background:var(--gradient-gold); border-radius:10px; align-items:center; justify-content:center; font-size:1.2rem; color:var(--dark-navy); font-weight:900;" class="brand-logo-icon">⚡</div>
                         <div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div>
                     </div>
-                    <p style="color:var(--gray);">Pakistan's #1 generator company. Since 1986.</p>
-                    <div class="social-links mt-3">
+                    <p style="color:var(--gray); font-size:0.9rem;">Pakistan's #1 generator company. Since 1986.</p>
+                    <div class="social-links mt-2">
                         <a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.pinterest.com/powertech086/" target="_blank"><i class="fab fa-pinterest"></i></a>
                         <a href="https://www.youtube.com/@powertechgenerators" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6"><h6>Links</h6><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a></div>
-                <div class="col-lg-2 col-md-6"><h6>Services</h6><a href="products.html">Sales</a><a href="services.html">Rental</a><a href="services.html">Maintenance</a><a href="services.html">AMC</a></div>
-                <div class="col-lg-4 col-md-6"><h6>Contact</h6><p style="color:var(--gray);"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i>0322 3619827</p><p style="color:var(--gray);"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i>powertech086@gmail.com</p><p style="color:var(--gray);"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37;"></i>Karachi, Pakistan</p></div>
+                <div class="col-6 col-lg-2"><h6>Links</h6><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a></div>
+                <div class="col-6 col-lg-2"><h6>Legal</h6><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms</a><a href="sales-agreement.html">Sales Agreement</a><a href="rental-agreement.html">Rental Agreement</a></div>
+                <div class="col-lg-4"><h6>Contact</h6><p style="color:var(--gray); font-size:0.9rem;"><i class="fas fa-phone-alt me-2" style="color:#D4AF37;"></i>0322 3619827</p><p style="color:var(--gray); font-size:0.9rem;"><i class="fas fa-envelope me-2" style="color:#D4AF37;"></i>powertech086@gmail.com</p></div>
             </div>
             <hr>
-            <p style="color:var(--gray);text-align:center;margin:0;font-size:0.85rem;">© 2025 Power Tech Generators. All Rights Reserved.</p>
+            <p style="color:var(--gray);text-align:center;margin:0;font-size:0.8rem;">© 2025 Power Tech Generators. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 800, once: true });
         window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); document.getElementById('backToTop').style.display = window.scrollY > 500 ? 'flex' : 'none'; });
     </script>
 </body>
