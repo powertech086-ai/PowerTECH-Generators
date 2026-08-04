@@ -52,29 +52,63 @@
     <section class="section-padding"><div class="container"><div class="cta-box" data-aos="fade-up"><h2 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.8rem">Need a <span style="color:#D4AF37">Generator?</span></h2><p style="color:var(--gray)">Free consultation • Best Price • 24/7</p><div class="d-flex justify-content-center flex-wrap gap-2 mt-3"><a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a><a href="https://wa.me/923223619827" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div></div></section>
     <footer class="footer"><div class="container"><div class="row g-3"><div class="col-lg-4"><div class="brand-logo-link" style="margin-bottom:15px"><img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;width:38px;height:38px;background:var(--gradient-gold);border-radius:10px;align-items:center;justify-content:center;font-size:1.2rem;color:var(--dark-navy);font-weight:900" class="brand-logo-icon">⚡</div><div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div></div><p style="color:var(--gray);font-size:.9rem">Pakistan's #1 generator company. Since 1986.</p><div class="social-links mt-2"><a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.pinterest.com/powertech086/" target="_blank"><i class="fab fa-pinterest"></i></a><a href="https://www.youtube.com/@powertechgenerators" target="_blank"><i class="fab fa-youtube"></i></a></div></div><div class="col-6 col-lg-2"><h6>Links</h6><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a></div><div class="col-6 col-lg-2"><h6>Legal</h6><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms</a><a href="sales-agreement.html">Sales Agreement</a><a href="rental-agreement.html">Rental</a><a href="amc-contract.html">AMC Contract</a></div><div class="col-lg-4"><h6>Contact</h6><p style="color:var(--gray);font-size:.9rem"><i class="fas fa-phone-alt me-2" style="color:#D4AF37"></i>0322 3619827</p><p style="color:var(--gray);font-size:.9rem"><i class="fas fa-envelope me-2" style="color:#D4AF37"></i>powertech086@gmail.com</p><p style="color:var(--gray);font-size:.9rem"><i class="fas fa-map-marker-alt me-2" style="color:#D4AF37"></i>Karachi, Pakistan</p></div></div><hr><p style="color:var(--gray);text-align:center;margin:0;font-size:.8rem">© 2025 Power Tech Generators. All Rights Reserved.</p></div></footer>
 
-    <!-- ========== AUTO-SWITCH VOICE SYSTEM ========== -->
+    <!-- ========== SIMPLE CLICK VOICE AGENT (ELEVENLABS + FREE FALLBACK) ========== -->
     <elevenlabs-convai agent-id="agent_5101kz1prewdemm95hmhhd5wxnah"></elevenlabs-convai>
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     <script>
     (function() {
-        const CONFIG = { elevenLabsOpenDelay: 5000, browserFallbackDelay: 8000, autoCloseNoInteraction: 15000, reopenAfterClose: 30000, checkInterval: 10000 };
-        let elevenLabsWorking = true, widgetOpened = false, userInteracted = false, closeTimer = null, reopenTimer = null, browserVoiceActive = false;
-        function detectInteraction() { userInteracted = true; if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; } }
-        document.addEventListener('click', function(e) { detectInteraction(); });
-        document.addEventListener('keypress', detectInteraction);
-        document.addEventListener('scroll', function() { userInteracted = true; });
-        document.addEventListener('touchstart', detectInteraction);
-        window.addEventListener('error', function(e) { if (e.target && e.target.src && e.target.src.includes('elevenlabs')) { elevenLabsWorking = false; switchToBrowserVoice(); } }, true);
-        function openElevenLabs() { if (!elevenLabsWorking || widgetOpened || browserVoiceActive) return; const widget = document.querySelector('elevenlabs-convai'); if (widget && widget.shadowRoot) { const btn = widget.shadowRoot.querySelector('button'); if (btn) { try { btn.click(); widgetOpened = true; startAutoCloseTimer(); } catch(e) { elevenLabsWorking = false; switchToBrowserVoice(); } } } }
-        function startAutoCloseTimer() { closeTimer = setTimeout(function() { if (!userInteracted && widgetOpened) { closeWidget(); } }, CONFIG.autoCloseNoInteraction); }
-        function closeWidget() { const widget = document.querySelector('elevenlabs-convai'); if (widget && widget.shadowRoot && widgetOpened) { const btn = widget.shadowRoot.querySelector('button'); if (btn) { btn.click(); widgetOpened = false; reopenTimer = setTimeout(function() { userInteracted = false; if (elevenLabsWorking) { openElevenLabs(); } else { openBrowserVoice(); } reopenTimer = null; }, CONFIG.reopenAfterClose); } } }
-        function switchToBrowserVoice() { if (browserVoiceActive) return; browserVoiceActive = true; elevenLabsWorking = false; openBrowserVoice(); }
-        function openBrowserVoice() { if (widgetOpened) return; const old = document.getElementById('browserVoicePopup'); if (old) old.remove(); const popup = document.createElement('div'); popup.id = 'browserVoicePopup'; popup.style.cssText = 'position:fixed;bottom:100px;right:20px;z-index:9999;background:linear-gradient(135deg,#1E5FBB,#3B82F6);color:white;padding:15px 20px;border-radius:18px;font-family:Inter,sans-serif;box-shadow:0 15px 40px rgba(0,0,0,0.5);animation:voiceSlideUp 0.4s ease-out;cursor:pointer;max-width:280px;font-size:.85rem;'; popup.innerHTML = '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="font-size:1.8rem;">👨‍💼</span><div><strong style="font-size:0.9rem;">Ahmad Raza</strong><span style="display:block;font-size:0.65rem;color:#6EE7B7;">🟢 Online | Support Team</span></div></div><p style="margin:8px 0;font-size:0.78rem;opacity:0.9;line-height:1.4;">🎤 <strong>Click to talk</strong> ya call karo<br>📞 <strong>0322 3619827</strong></p><div style="display:flex;gap:8px;margin-top:10px;"><button onclick="event.stopPropagation();window.open(\'tel:+923223619827\')" style="flex:1;background:white;color:#1E5FBB;border:none;padding:8px;border-radius:25px;font-weight:700;font-size:.75rem;cursor:pointer;">📞 Call</button><button onclick="event.stopPropagation();window.open(\'https://wa.me/923223619827\')" style="flex:1;background:#25D366;color:white;border:none;padding:8px;border-radius:25px;font-weight:700;font-size:.75rem;cursor:pointer;">💬 WhatsApp</button></div>'; popup.onclick = function(e) { if (e.target.tagName === 'BUTTON') return; speakMessage('Assalam-o-Alaikum! Main Power Tech Generators ki support team se hoon. Aap generator price, rental, ya maintenance ke baare mein pooch sakte hain.'); popup.remove(); browserVoiceActive = false; widgetOpened = false; setTimeout(function() { userInteracted = false; openBrowserVoice(); }, CONFIG.reopenAfterClose); }; document.body.appendChild(popup); widgetOpened = true; setTimeout(function() { speakMessage('Welcome to Power Tech Generators. How can I help you today?'); }, 1000); closeTimer = setTimeout(function() { if (!userInteracted && popup.parentNode) { popup.remove(); browserVoiceActive = false; widgetOpened = false; setTimeout(function() { userInteracted = false; openBrowserVoice(); }, CONFIG.reopenAfterClose); } }, CONFIG.autoCloseNoInteraction); if (!document.getElementById('voiceAnimStyle')) { const style = document.createElement('style'); style.id = 'voiceAnimStyle'; style.textContent = '@keyframes voiceSlideUp{from{transform:translateY(50px);opacity:0}to{transform:translateY(0);opacity:1}}'; document.head.appendChild(style); } }
-        function speakMessage(text) { if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); const msg = new SpeechSynthesisUtterance(text); msg.lang = 'ur-PK'; msg.rate = 0.9; msg.pitch = 1; msg.volume = 1; window.speechSynthesis.speak(msg); } }
-        function checkElevenLabsStatus() { if (elevenLabsWorking) { fetch('https://unpkg.com/@elevenlabs/convai-widget-embed', { method: 'HEAD', mode: 'no-cors' }).catch(() => { elevenLabsWorking = false; switchToBrowserVoice(); }); } }
-        setTimeout(function() { openElevenLabs(); setTimeout(function() { if (!widgetOpened && elevenLabsWorking) { openElevenLabs(); } if (!widgetOpened) { switchToBrowserVoice(); } }, 3000); }, CONFIG.elevenLabsOpenDelay);
-        setInterval(checkElevenLabsStatus, CONFIG.checkInterval);
-        setInterval(function() { if (!elevenLabsWorking && !browserVoiceActive && !widgetOpened) { fetch('https://unpkg.com/@elevenlabs/convai-widget-embed', { method: 'HEAD', mode: 'no-cors' }).then(() => { elevenLabsWorking = true; browserVoiceActive = false; openElevenLabs(); }).catch(() => {}); } }, 60000);
+        let elevenLabsFailed = false, voicePopupOpen = false, voicePopup = null;
+        window.addEventListener('error', function(e) { if (e.target && e.target.src && e.target.src.includes('elevenlabs')) { elevenLabsFailed = true; } }, true);
+        const origError = console.error;
+        console.error = function() { const msg = Array.from(arguments).join(' '); if (msg.includes('quota') || msg.includes('exceed') || msg.includes('429')) { elevenLabsFailed = true; } origError.apply(console, arguments); };
+        
+        function createFreeVoicePopup() {
+            if (voicePopup) return;
+            voicePopup = document.createElement('div');
+            voicePopup.id = 'freeVoicePopup';
+            voicePopup.style.cssText = 'position:fixed;bottom:30px;right:20px;z-index:9999;background:linear-gradient(135deg,#1E5FBB,#3B82F6);color:white;padding:18px 22px;border-radius:20px;font-family:Inter,sans-serif;box-shadow:0 20px 50px rgba(0,0,0,0.5);cursor:pointer;max-width:300px;transition:all 0.3s;display:none;';
+            voicePopup.innerHTML = '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="font-size:2rem;">👨‍💼</span><div><strong style="font-size:1rem;">Ahmad Raza</strong><span style="display:block;font-size:0.7rem;color:#6EE7B7;">🟢 Online | Support Team</span></div><button onclick="event.stopPropagation();closeFreePopup();" style="background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:1rem;margin-left:auto;">✕</button></div><p style="margin:8px 0;font-size:0.8rem;opacity:0.95;line-height:1.5;">🎤 <strong>Click to talk</strong> with our support agent<br>📞 Ya call karo: <strong>0322 3619827</strong></p><div style="display:flex;gap:8px;margin-top:12px;"><button onclick="event.stopPropagation();speakWelcome();" style="flex:1;background:white;color:#1E5FBB;border:none;padding:10px;border-radius:25px;font-weight:700;font-size:0.8rem;cursor:pointer;">🎤 Talk Now</button><button onclick="event.stopPropagation();window.open(\'tel:+923223619827\')" style="flex:1;background:#25D366;color:white;border:none;padding:10px;border-radius:25px;font-weight:700;font-size:0.8rem;cursor:pointer;">📞 Call</button></div>';
+            voicePopup.onclick = function(e) { if (e.target.tagName === 'BUTTON') return; speakWelcome(); };
+            document.body.appendChild(voicePopup);
+            if (!document.getElementById('popupAnimStyle')) { const style = document.createElement('style'); style.id = 'popupAnimStyle'; style.textContent = '@keyframes popupSlideIn{from{transform:translateY(80px);opacity:0}to{transform:translateY(0);opacity:1}}#freeVoicePopup.show{display:block!important;animation:popupSlideIn 0.4s ease-out}'; document.head.appendChild(style); }
+        }
+        
+        function openFreePopup() { if (!voicePopup) createFreeVoicePopup(); voicePopup.classList.add('show'); voicePopupOpen = true; }
+        function closeFreePopup() { if (voicePopup) { voicePopup.classList.remove('show'); voicePopupOpen = false; } if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); } }
+        
+        function speakWelcome() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const msg = new SpeechSynthesisUtterance('Assalam-o-Alaikum! Main Ahmad Raza hoon, Power Tech Generators ki support team se. Hum diesel generator 13 KVA se 1250 KVA tak provide karte hain. Aap sales, rental, maintenance, ya emergency support ke baare mein pooch sakte hain. Urgent help ke liye 0322 3619827 par call karein.');
+                msg.lang = 'ur-PK'; msg.rate = 0.9; msg.pitch = 1; msg.volume = 1;
+                window.speechSynthesis.speak(msg);
+            }
+        }
+        
+        function createFloatingButton() {
+            const btn = document.createElement('div');
+            btn.id = 'voiceFloatingBtn';
+            btn.style.cssText = 'position:fixed;bottom:160px;left:20px;z-index:9998;width:55px;height:55px;background:linear-gradient(135deg,#8B5CF6,#3B82F6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 25px rgba(139,92,246,0.4);transition:all 0.3s;font-size:1.5rem;';
+            btn.innerHTML = '🎤';
+            btn.title = 'Click to talk with support';
+            btn.onclick = function() {
+                if (!elevenLabsFailed) {
+                    const widget = document.querySelector('elevenlabs-convai');
+                    if (widget && widget.shadowRoot) { const widgetBtn = widget.shadowRoot.querySelector('button'); if (widgetBtn) { widgetBtn.click(); return; } }
+                    toggleFreePopup();
+                } else { toggleFreePopup(); }
+            };
+            document.body.appendChild(btn);
+        }
+        
+        function toggleFreePopup() { if (voicePopupOpen) { closeFreePopup(); } else { openFreePopup(); } }
+        function checkElevenLabs() { fetch('https://unpkg.com/@elevenlabs/convai-widget-embed', { method: 'HEAD', mode: 'no-cors' }).then(() => { elevenLabsFailed = false; }).catch(() => { elevenLabsFailed = true; }); }
+        
+        createFloatingButton();
+        createFreeVoicePopup();
+        checkElevenLabs();
+        setInterval(checkElevenLabs, 60000);
+        console.log('✅ Simple Click Voice Agent Ready');
     })();
     </script>
 
