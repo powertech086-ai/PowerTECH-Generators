@@ -21,13 +21,32 @@
         .page-banner{background:linear-gradient(135deg,#060E1A,#0F1F3D);padding:130px 0 50px;text-align:center;border-bottom:1px solid rgba(212,175,55,0.15)}.page-banner h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:2.5rem}.page-banner h1 span{color:var(--golden-light)}
         .section-padding{padding:50px 0}.section-label{color:var(--golden-light);font-weight:700;letter-spacing:3px;font-size:.7rem;text-transform:uppercase}.section-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:2rem}.section-title span{color:var(--golden-light)}
         .filter-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:30px}.filter-tab{padding:10px 22px;border-radius:50px;font-weight:600;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);color:var(--gray);cursor:pointer;transition:var(--transition);font-size:.8rem}.filter-tab:hover,.filter-tab.active{background:var(--gradient-gold);color:var(--dark-navy);border-color:var(--golden)}
-        .product-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:18px;overflow:hidden;transition:var(--transition);height:100%;display:flex;flex-direction:column}.product-card:hover{transform:translateY(-8px);border-color:rgba(212,175,55,0.3);box-shadow:0 15px 40px rgba(0,0,0,0.4)}
+        .product-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:18px;overflow:hidden;transition:var(--transition);height:100%;display:flex;flex-direction:column;cursor:pointer}.product-card:hover{transform:translateY(-8px);border-color:rgba(212,175,55,0.3);box-shadow:0 15px 40px rgba(0,0,0,0.4)}
         .product-image{position:relative;overflow:hidden;aspect-ratio:4/3;background:rgba(0,0,0,0.3)}.product-image img{width:100%;height:100%;object-fit:cover;transition:0.6s}.product-card:hover .product-image img{transform:scale(1.06)}
         .product-badge{position:absolute;top:10px;right:10px;background:var(--gradient-gold);color:var(--dark-navy);padding:4px 12px;border-radius:50px;font-weight:700;font-size:.7rem;z-index:1}.product-brand{position:absolute;top:10px;left:10px;background:rgba(10,22,40,0.9);color:var(--golden-light);padding:4px 12px;border-radius:50px;font-weight:700;font-size:.7rem;z-index:1}
         .product-info{padding:20px;flex:1;display:flex;flex-direction:column}.product-info h4{font-weight:700;margin-bottom:6px;font-size:1.1rem}.product-info .brand-name{color:var(--golden-light);font-weight:600;font-size:.85rem;margin-bottom:10px}.product-specs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:15px}.product-spec{color:var(--gray);font-size:.8rem;display:flex;align-items:center;gap:4px}.product-spec i{color:var(--golden-light)}.product-price{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;color:var(--golden-light);margin-top:auto;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06)}
+        
+        /* ========== FEATURES POPUP ========== */
+        .feature-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(5px)}
+        .feature-overlay.active{display:flex}
+        .feature-popup{background:linear-gradient(135deg,#0F1F3D,#1a2a4a);border:2px solid rgba(212,175,55,0.4);border-radius:24px;padding:40px 30px;max-width:550px;width:90%;position:relative;animation:popupBounce 0.4s ease-out;max-height:85vh;overflow-y:auto}
+        @keyframes popupBounce{0%{transform:scale(0.7);opacity:0}60%{transform:scale(1.05);opacity:1}100%{transform:scale(1);opacity:1}}
+        .feature-close{position:absolute;top:15px;right:15px;background:rgba(255,255,255,0.1);border:none;color:white;width:35px;height:35px;border-radius:50%;cursor:pointer;font-size:1.2rem;transition:0.3s}.feature-close:hover{background:#DC3545}
+        .feature-popup h3{font-family:'Outfit',sans-serif;color:var(--golden-light);font-size:1.5rem;margin-bottom:5px}
+        .feature-popup .brand{color:var(--gray);font-size:.9rem;margin-bottom:20px}
+        .feature-list{list-style:none;padding:0;margin-bottom:25px}
+        .feature-list li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:var(--gray);font-size:.9rem;display:flex;align-items:center;gap:10px}
+        .feature-list li i{color:var(--golden-light);font-size:.8rem;width:20px;text-align:center}
+        .feature-specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:25px}
+        .feature-spec-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:15px;text-align:center}
+        .feature-spec-item .val{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;color:var(--golden-light)}.feature-spec-item .lbl{font-size:.7rem;color:var(--gray);margin-top:3px;text-transform:uppercase;letter-spacing:1px}
+        .feature-popup .btn-row{display:flex;gap:10px}
+        .feature-popup .btn-row .btn-gold{flex:1;justify-content:center}.feature-popup .btn-row .btn-wa{flex:1;justify-content:center;background:#25D366;color:white;padding:12px 24px;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:var(--transition);font-size:.85rem}.feature-popup .btn-row .btn-wa:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,211,102,0.4)}
+        
         .footer{background:#020510;border-top:1px solid rgba(212,175,55,0.1);padding:50px 0 20px}.footer h6{color:var(--golden-light);font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:15px;font-size:.8rem}.footer a{color:var(--gray);text-decoration:none;transition:var(--transition);display:block;padding:3px 0;font-size:.9rem}.footer a:hover{color:var(--golden-light)}.social-links a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;background:rgba(255,255,255,0.03);border-radius:50%;color:var(--white);font-size:1rem;transition:var(--transition);margin-right:8px;text-decoration:none}.social-links a:hover{background:var(--golden);color:var(--dark-navy)}.footer hr{border-color:rgba(255,255,255,0.06);margin:20px 0}
         .float-btn{position:fixed;z-index:998;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 25px rgba(0,0,0,0.4);transition:var(--transition);right:15px;text-decoration:none}.float-wa{bottom:85px;background:#25D366;color:white;font-size:22px}.float-call{bottom:145px;background:var(--accent-blue);color:white;font-size:18px}.float-top{bottom:22px;background:var(--golden);color:#000;font-size:18px;display:none}.float-btn:hover{transform:scale(1.1)}
-        @media(max-width:991px){.navbar-collapse{background:rgba(10,22,40,0.98);backdrop-filter:blur(20px);padding:20px;border-radius:15px;margin-top:10px;border:1px solid rgba(212,175,55,0.2)}.page-banner h1{font-size:1.8rem}}
+        @media(max-width:991px){.navbar-collapse{background:rgba(10,22,40,0.98);backdrop-filter:blur(20px);padding:20px;border-radius:15px;margin-top:10px;border:1px solid rgba(212,175,55,0.2)}.page-banner h1{font-size:1.8rem}.feature-specs{grid-template-columns:1fr 1fr}}
+        @media(max-width:575px){.feature-popup{padding:25px 20px}.feature-specs{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
@@ -37,48 +56,218 @@
 
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar"><div class="container"><a class="brand-logo-link" href="index.html"><img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;width:38px;height:38px;background:var(--gradient-gold);border-radius:10px;align-items:center;justify-content:center;font-size:1.2rem;color:var(--dark-navy);font-weight:900" class="brand-logo-icon">⚡</div><div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"><i class="fas fa-bars"></i></button><div class="collapse navbar-collapse" id="mainMenu"><ul class="navbar-nav mx-auto gap-1"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link active" href="products.html">Generators</a></li><li class="nav-item"><a class="nav-link" href="services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul><a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a></div></div></nav>
 
-    <section class="page-banner"><div class="container"><h1>Our <span>Generators</span></h1><p style="color:var(--gray)">13 KVA to 1250 KVA | Top World Brands</p></div></section>
+    <section class="page-banner"><div class="container"><h1>Our <span>Generators</span></h1><p style="color:var(--gray)">13 KVA to 1250 KVA | Click for Features</p></div></section>
 
-    <section class="section-padding"><div class="container"><div class="text-center mb-4"><span class="section-label">OUR INVENTORY</span><h2 class="section-title mt-2">Generator <span>Catalog</span></h2></div><div class="filter-tabs" data-aos="fade-up"><button class="filter-tab active" onclick="filterProducts('all')">All</button><button class="filter-tab" onclick="filterProducts('perkins')">Perkins</button><button class="filter-tab" onclick="filterProducts('cummins')">Cummins</button><button class="filter-tab" onclick="filterProducts('caterpillar')">Caterpillar</button><button class="filter-tab" onclick="filterProducts('fgwilson')">FG Wilson</button><button class="filter-tab" onclick="filterProducts('denyo')">Denyo</button></div>
+    <section class="section-padding"><div class="container"><div class="text-center mb-4"><span class="section-label">OUR INVENTORY</span><h2 class="section-title mt-2">Generator <span>Catalog</span></h2><p style="color:var(--gray);font-size:.85rem">👆 Click on any generator to view detailed features</p></div><div class="filter-tabs" data-aos="fade-up"><button class="filter-tab active" onclick="filterProducts('all')">All</button><button class="filter-tab" onclick="filterProducts('perkins')">Perkins</button><button class="filter-tab" onclick="filterProducts('cummins')">Cummins</button><button class="filter-tab" onclick="filterProducts('caterpillar')">Caterpillar</button><button class="filter-tab" onclick="filterProducts('fgwilson')">FG Wilson</button><button class="filter-tab" onclick="filterProducts('denyo')">Denyo</button></div>
     <div class="row g-3" id="productsGrid">
-        <div class="col-lg-4 col-md-6 product-item" data-brand="perkins" data-aos="fade-up"><div class="product-card"><div class="product-image"><img src="Images/perkins-20kva.jpg" alt="Perkins 20 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=PERKINS+20+KVA'"><span class="product-badge">In Stock</span><span class="product-brand">Perkins</span></div><div class="product-info"><h4>Perkins 20 KVA</h4><div class="brand-name">Perkins UK</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>20 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><a href="https://wa.me/923223619827?text=Info%20Perkins%2020%20KVA" target="_blank" class="btn-sm-gold mt-2"><i class="fab fa-whatsapp"></i> Inquire</a></div></div></div>
-        <div class="col-lg-4 col-md-6 product-item" data-brand="cummins" data-aos="fade-up" data-aos-delay="100"><div class="product-card"><div class="product-image"><img src="Images/cummins-50kva.jpg" alt="Cummins 50 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=CUMMINS+50+KVA'"><span class="product-badge">Best Seller</span><span class="product-brand">Cummins</span></div><div class="product-info"><h4>Cummins 50 KVA</h4><div class="brand-name">Cummins USA</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>50 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><a href="https://wa.me/923223619827?text=Info%20Cummins%2050%20KVA" target="_blank" class="btn-sm-gold mt-2"><i class="fab fa-whatsapp"></i> Inquire</a></div></div></div>
-        <div class="col-lg-4 col-md-6 product-item" data-brand="caterpillar" data-aos="fade-up" data-aos-delay="200"><div class="product-card"><div class="product-image"><img src="Images/cat-100kva.jpg" alt="CAT 100 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=CAT+100+KVA'"><span class="product-badge">Premium</span><span class="product-brand">CAT</span></div><div class="product-info"><h4>Caterpillar 100 KVA</h4><div class="brand-name">CAT USA</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>100 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><a href="https://wa.me/923223619827?text=Info%20CAT%20100%20KVA" target="_blank" class="btn-sm-gold mt-2"><i class="fab fa-whatsapp"></i> Inquire</a></div></div></div>
-        <div class="col-lg-4 col-md-6 product-item" data-brand="fgwilson" data-aos="fade-up"><div class="product-card"><div class="product-image"><img src="Images/fgwilson-150kva.jpg" alt="FG Wilson 150 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=FG+WILSON+150+KVA'"><span class="product-badge">In Stock</span><span class="product-brand">FG Wilson</span></div><div class="product-info"><h4>FG Wilson 150 KVA</h4><div class="brand-name">FG Wilson UK</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>150 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><a href="https://wa.me/923223619827?text=Info%20FG%20Wilson%20150%20KVA" target="_blank" class="btn-sm-gold mt-2"><i class="fab fa-whatsapp"></i> Inquire</a></div></div></div>
-        <div class="col-lg-4 col-md-6 product-item" data-brand="denyo" data-aos="fade-up" data-aos-delay="100"><div class="product-card"><div class="product-image"><img src="Images/denyo-250kv.jpg" alt="Denyo 250 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=DENYO+250+KVA'"><span class="product-badge">Japan</span><span class="product-brand">Denyo</span></div><div class="product-info"><h4>Denyo 250 KVA</h4><div class="brand-name">Denyo Japan</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>250 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><a href="https://wa.me/923223619827?text=Info%20Denyo%20250%20KVA" target="_blank" class="btn-sm-gold mt-2"><i class="fab fa-whatsapp"></i> Inquire</a></div></div></div>
-        <div class="col-lg-4 col-md-6 product-item" data-brand="perkins" data-aos="fade-up" data-aos-delay="200"><div class="product-card"><div class="product-image"><img src="Images/perkins-500kva.jpg" alt="Perkins 500 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=PERKINS+500+KVA'"><span class="product-badge">Heavy Duty</span><span class="product-brand">Perkins</span></div><div class="product-info"><h4>Perkins 500 KVA</h4><div class="brand-name">Perkins UK</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>500 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><a href="https://wa.me/923223619827?text=Info%20Perkins%20500%20KVA" target="_blank" class="btn-sm-gold mt-2"><i class="fab fa-whatsapp"></i> Inquire</a></div></div></div>
+        <!-- PERKINS 20 KVA -->
+        <div class="col-lg-4 col-md-6 product-item" data-brand="perkins" data-aos="fade-up"><div class="product-card" onclick="openFeaturePopup('perkins20')"><div class="product-image"><img src="Images/perkins-20kva.jpg" alt="Perkins 20 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=PERKINS+20+KVA'"><span class="product-badge">In Stock</span><span class="product-brand">Perkins</span></div><div class="product-info"><h4>Perkins 20 KVA</h4><div class="brand-name">Perkins UK</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>20 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><small style="color:var(--golden-light);margin-top:5px">👆 Click for features</small></div></div></div>
+        <!-- CUMMINS 50 KVA -->
+        <div class="col-lg-4 col-md-6 product-item" data-brand="cummins" data-aos="fade-up" data-aos-delay="100"><div class="product-card" onclick="openFeaturePopup('cummins50')"><div class="product-image"><img src="Images/cummins-50kva.jpg" alt="Cummins 50 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=CUMMINS+50+KVA'"><span class="product-badge">Best Seller</span><span class="product-brand">Cummins</span></div><div class="product-info"><h4>Cummins 50 KVA</h4><div class="brand-name">Cummins USA</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>50 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><small style="color:var(--golden-light);margin-top:5px">👆 Click for features</small></div></div></div>
+        <!-- CAT 100 KVA -->
+        <div class="col-lg-4 col-md-6 product-item" data-brand="caterpillar" data-aos="fade-up" data-aos-delay="200"><div class="product-card" onclick="openFeaturePopup('cat100')"><div class="product-image"><img src="Images/cat-100kva.jpg" alt="CAT 100 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=CAT+100+KVA'"><span class="product-badge">Premium</span><span class="product-brand">CAT</span></div><div class="product-info"><h4>Caterpillar 100 KVA</h4><div class="brand-name">CAT USA</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>100 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><small style="color:var(--golden-light);margin-top:5px">👆 Click for features</small></div></div></div>
+        <!-- FG WILSON 150 KVA -->
+        <div class="col-lg-4 col-md-6 product-item" data-brand="fgwilson" data-aos="fade-up"><div class="product-card" onclick="openFeaturePopup('fgwilson150')"><div class="product-image"><img src="Images/fgwilson-150kva.jpg" alt="FG Wilson 150 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=FG+WILSON+150+KVA'"><span class="product-badge">In Stock</span><span class="product-brand">FG Wilson</span></div><div class="product-info"><h4>FG Wilson 150 KVA</h4><div class="brand-name">FG Wilson UK</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>150 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><small style="color:var(--golden-light);margin-top:5px">👆 Click for features</small></div></div></div>
+        <!-- DENYO 250 KVA -->
+        <div class="col-lg-4 col-md-6 product-item" data-brand="denyo" data-aos="fade-up" data-aos-delay="100"><div class="product-card" onclick="openFeaturePopup('denyo250')"><div class="product-image"><img src="Images/denyo-250kv.jpg" alt="Denyo 250 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=DENYO+250+KVA'"><span class="product-badge">Japan</span><span class="product-brand">Denyo</span></div><div class="product-info"><h4>Denyo 250 KVA</h4><div class="brand-name">Denyo Japan</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>250 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><small style="color:var(--golden-light);margin-top:5px">👆 Click for features</small></div></div></div>
+        <!-- PERKINS 500 KVA -->
+        <div class="col-lg-4 col-md-6 product-item" data-brand="perkins" data-aos="fade-up" data-aos-delay="200"><div class="product-card" onclick="openFeaturePopup('perkins500')"><div class="product-image"><img src="Images/perkins-500kva.jpg" alt="Perkins 500 KVA" onerror="this.src='https://placehold.co/600x450/1a2332/D4AF37?text=PERKINS+500+KVA'"><span class="product-badge">Heavy Duty</span><span class="product-brand">Perkins</span></div><div class="product-info"><h4>Perkins 500 KVA</h4><div class="brand-name">Perkins UK</div><div class="product-specs"><span class="product-spec"><i class="fas fa-bolt"></i>500 KVA</span><span class="product-spec"><i class="fas fa-gas-pump"></i>Diesel</span></div><div class="product-price">Contact for Price</div><small style="color:var(--golden-light);margin-top:5px">👆 Click for features</small></div></div></div>
     </div></div></section>
 
-    <section style="background:rgba(0,0,0,0.2);padding:40px 0"><div class="container text-center"><h2 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.8rem">Need a <span style="color:#D4AF37">Generator?</span></h2><div class="d-flex justify-content-center flex-wrap gap-2 mt-3"><a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a><a href="https://wa.me/923223619827" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div></section>
+    <!-- ========== FEATURES POPUP OVERLAY ========== -->
+    <div class="feature-overlay" id="featureOverlay" onclick="closeFeaturePopup(event)">
+        <div class="feature-popup" id="featurePopup" onclick="event.stopPropagation()">
+            <button class="feature-close" onclick="closeFeaturePopup()">✕</button>
+            <div id="featureContent"></div>
+        </div>
+    </div>
+
+    <section style="background:rgba(0,0,0,0.2);padding:40px 0"><div class="container text-center"><h2 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.8rem">Need a <span style="color:#D4AF37">Generator?</span></h2><div class="d-flex justify-content-center flex-wrap gap-2 mt-3"><a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> 0322 3619827</a><a href="https://wa.me/923223619827?text=I%20need%20a%20generator%20quote" target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div></section>
 
     <footer class="footer"><div class="container"><div class="row g-3"><div class="col-lg-4"><div class="brand-logo-link" style="margin-bottom:15px"><img src="Images/logo-icon.png" alt="PT" class="brand-logo-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;width:38px;height:38px;background:var(--gradient-gold);border-radius:10px;align-items:center;justify-content:center;font-size:1.2rem;color:var(--dark-navy);font-weight:900" class="brand-logo-icon">⚡</div><div class="brand-logo-text"><span class="gold">POWER</span> <span class="white">TECH</span><span class="tagline">Generators</span></div></div><p style="color:var(--gray);font-size:.9rem">Pakistan's #1 generator company. Since 1986.</p><div class="social-links mt-2"><a href="https://www.facebook.com/PTGPakistan/" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ptgpakistan/" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.pinterest.com/powertech086/" target="_blank"><i class="fab fa-pinterest"></i></a><a href="https://www.youtube.com/@powertechgenerators" target="_blank"><i class="fab fa-youtube"></i></a></div></div><div class="col-6 col-lg-2"><h6>Links</h6><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Generators</a><a href="contact.html">Contact</a></div><div class="col-6 col-lg-2"><h6>Legal</h6><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms</a><a href="sales-agreement.html">Sales Agreement</a><a href="rental-agreement.html">Rental</a><a href="amc-contract.html">AMC Contract</a></div><div class="col-lg-4"><h6>Contact</h6><p style="color:var(--gray);font-size:.9rem"><i class="fas fa-phone-alt me-2" style="color:#D4AF37"></i>0322 3619827</p><p style="color:var(--gray);font-size:.9rem"><i class="fas fa-envelope me-2" style="color:#D4AF37"></i>powertech086@gmail.com</p></div></div><hr><p style="color:var(--gray);text-align:center;margin:0;font-size:.8rem">© 2025 Power Tech Generators. All Rights Reserved.</p></div></footer>
 
-    <!-- ========== CLICK VOICE AGENT ========== -->
+    <!-- VOICE AGENT + WHATSAPP POPUP -->
     <elevenlabs-convai agent-id="agent_5101kz1prewdemm95hmhhd5wxnah"></elevenlabs-convai>
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     <script>
-    (function() {
-        let freePopupOpen = false, freePopup = null, elevenLabsOpen = false;
-        function createFloatingButton() { const oldBtn = document.getElementById('voiceFloatingBtn'); if (oldBtn) oldBtn.remove(); const btn = document.createElement('div'); btn.id = 'voiceFloatingBtn'; btn.style.cssText = 'position:fixed;bottom:160px;left:20px;z-index:9998;width:55px;height:55px;background:linear-gradient(135deg,#8B5CF6,#3B82F6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 25px rgba(139,92,246,0.4);transition:all 0.3s;font-size:1.5rem;user-select:none;'; btn.innerHTML = '🎤'; btn.title = 'Click to talk with support'; btn.onclick = function(e) { e.preventDefault(); e.stopPropagation(); if (freePopupOpen) { closeFreePopup(); } else if (elevenLabsOpen) { closeElevenLabs(); } else { openVoiceAgent(); } }; document.body.appendChild(btn); }
-        function openVoiceAgent() { const widget = document.querySelector('elevenlabs-convai'); if (widget && widget.shadowRoot) { const widgetBtn = widget.shadowRoot.querySelector('button'); if (widgetBtn) { widgetBtn.click(); elevenLabsOpen = true; updateButtonState(); setTimeout(function() { if (!elevenLabsOpen) { openFreePopup(); } }, 2000); return; } } openFreePopup(); }
-        function closeElevenLabs() { const widget = document.querySelector('elevenlabs-convai'); if (widget && widget.shadowRoot && elevenLabsOpen) { const widgetBtn = widget.shadowRoot.querySelector('button'); if (widgetBtn) { widgetBtn.click(); elevenLabsOpen = false; updateButtonState(); } } }
-        function updateButtonState() { const btn = document.getElementById('voiceFloatingBtn'); if (!btn) return; if (freePopupOpen || elevenLabsOpen) { btn.innerHTML = '✕'; btn.style.background = 'linear-gradient(135deg,#EF4444,#DC2626)'; } else { btn.innerHTML = '🎤'; btn.style.background = 'linear-gradient(135deg,#8B5CF6,#3B82F6)'; } }
-        function createFreePopup() { if (freePopup) return; freePopup = document.createElement('div'); freePopup.id = 'freeVoicePopup'; freePopup.style.cssText = 'position:fixed;bottom:100px;right:20px;z-index:9999;background:linear-gradient(135deg,#1E5FBB,#3B82F6);color:white;padding:18px 22px;border-radius:20px;font-family:Inter,sans-serif;box-shadow:0 20px 50px rgba(0,0,0,0.5);max-width:300px;display:none;'; freePopup.innerHTML = '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="font-size:2rem;">👨‍💼</span><div><strong style="font-size:1rem;">Ahmad Raza</strong><span style="display:block;font-size:0.7rem;color:#6EE7B7;">🟢 Online | Support Team</span></div><button id="closePopupBtn" style="background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:1rem;margin-left:auto;">✕</button></div><p style="margin:8px 0;font-size:0.8rem;opacity:0.95;line-height:1.5;">🎤 <strong>Talk Now</strong> button dabao aur baat karo<br>📞 Ya call karo: <strong>0322 3619827</strong></p><div style="display:flex;gap:8px;margin-top:12px;"><button id="talkNowBtn" style="flex:1;background:white;color:#1E5FBB;border:none;padding:10px;border-radius:25px;font-weight:700;font-size:0.8rem;cursor:pointer;">🎤 Talk Now</button><button id="callNowBtn" style="flex:1;background:#25D366;color:white;border:none;padding:10px;border-radius:25px;font-weight:700;font-size:0.8rem;cursor:pointer;">📞 Call</button></div>'; document.body.appendChild(freePopup); document.getElementById('closePopupBtn').addEventListener('click', function(e) { e.stopPropagation(); closeFreePopup(); }); document.getElementById('talkNowBtn').addEventListener('click', function(e) { e.stopPropagation(); speakMessage('Assalam-o-Alaikum! Humare paas Perkins, Cummins, aur Caterpillar generators 13 KVA se 1250 KVA tak available hain. Apni requirement batayein.'); }); document.getElementById('callNowBtn').addEventListener('click', function(e) { e.stopPropagation(); window.open('tel:+923223619827'); }); if (!document.getElementById('popupAnimStyle')) { const style = document.createElement('style'); style.id = 'popupAnimStyle'; style.textContent = '@keyframes popupSlideIn{from{transform:translateY(80px);opacity:0}to{transform:translateY(0);opacity:1}}#freeVoicePopup.show{display:block!important;animation:popupSlideIn 0.3s ease-out forwards}'; document.head.appendChild(style); } }
-        function openFreePopup() { if (!freePopup) createFreePopup(); freePopup.classList.add('show'); freePopupOpen = true; updateButtonState(); }
-        function closeFreePopup() { if (!freePopup) return; freePopup.classList.remove('show'); freePopupOpen = false; if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); } updateButtonState(); }
-        function speakMessage(text) { if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); const msg = new SpeechSynthesisUtterance(text); msg.lang = 'ur-PK'; msg.rate = 0.9; msg.pitch = 1; msg.volume = 1; window.speechSynthesis.speak(msg); } }
-        document.addEventListener('click', function(e) { if (freePopupOpen) { const popup = document.getElementById('freeVoicePopup'); const btn = document.getElementById('voiceFloatingBtn'); if (popup && !popup.contains(e.target) && btn && !btn.contains(e.target)) { closeFreePopup(); } } });
-        createFloatingButton(); createFreePopup();
-    })();
+    (function() { let freePopupOpen = false, freePopup = null; function createFloatingButton() { const oldBtn = document.getElementById('voiceFloatingBtn'); if (oldBtn) oldBtn.remove(); const btn = document.createElement('div'); btn.id = 'voiceFloatingBtn'; btn.style.cssText = 'position:fixed;bottom:160px;left:20px;z-index:9998;width:55px;height:55px;background:linear-gradient(135deg,#8B5CF6,#3B82F6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 25px rgba(139,92,246,0.4);transition:all 0.3s;font-size:1.5rem;'; btn.innerHTML = '🎤'; btn.onclick = function(e) { e.preventDefault(); if (freePopupOpen) { closeFreePopup(); } else { openFreePopup(); } }; document.body.appendChild(btn); } function createFreePopup() { if (freePopup) return; freePopup = document.createElement('div'); freePopup.id = 'freeVoicePopup'; freePopup.style.cssText = 'position:fixed;bottom:100px;right:20px;z-index:9999;background:linear-gradient(135deg,#1E5FBB,#3B82F6);color:white;padding:18px 22px;border-radius:20px;font-family:Inter,sans-serif;box-shadow:0 20px 50px rgba(0,0,0,0.5);max-width:300px;display:none;'; freePopup.innerHTML = '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="font-size:2rem;">👨‍💼</span><div><strong>Ahmad Raza</strong><span style="display:block;font-size:0.7rem;color:#6EE7B7;">🟢 Online | Support</span></div><button id="closePopupBtn" style="background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:1rem;margin-left:auto;">✕</button></div><p style="margin:8px 0;font-size:0.8rem;line-height:1.5;">🎤 <strong>Talk Now</strong> ya call karo<br>📞 <strong>0322 3619827</strong></p><div style="display:flex;gap:8px;margin-top:12px;"><button id="talkNowBtn" style="flex:1;background:white;color:#1E5FBB;border:none;padding:10px;border-radius:25px;font-weight:700;font-size:0.8rem;cursor:pointer;">🎤 Talk</button><button id="callNowBtn" style="flex:1;background:#25D366;color:white;border:none;padding:10px;border-radius:25px;font-weight:700;font-size:0.8rem;cursor:pointer;">📞 Call</button></div>'; document.body.appendChild(freePopup); document.getElementById('closePopupBtn').onclick = function(e) { e.stopPropagation(); closeFreePopup(); }; document.getElementById('talkNowBtn').onclick = function(e) { e.stopPropagation(); if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); const m = new SpeechSynthesisUtterance('Humare paas Perkins, Cummins, aur Caterpillar generators available hain. Click karein features dekhne ke liye.'); m.lang = 'ur-PK'; m.rate = 0.9; window.speechSynthesis.speak(m); } }; document.getElementById('callNowBtn').onclick = function(e) { e.stopPropagation(); window.open('tel:+923223619827'); }; } function openFreePopup() { if (!freePopup) createFreePopup(); freePopup.classList.add('show'); freePopupOpen = true; const btn = document.getElementById('voiceFloatingBtn'); if (btn) { btn.innerHTML = '✕'; btn.style.background = 'linear-gradient(135deg,#EF4444,#DC2626)'; } } function closeFreePopup() { if (!freePopup) return; freePopup.classList.remove('show'); freePopupOpen = false; if ('speechSynthesis' in window) window.speechSynthesis.cancel(); const btn = document.getElementById('voiceFloatingBtn'); if (btn) { btn.innerHTML = '🎤'; btn.style.background = 'linear-gradient(135deg,#8B5CF6,#3B82F6)'; } } document.addEventListener('click', function(e) { if (freePopupOpen) { const popup = document.getElementById('freeVoicePopup'); const btn = document.getElementById('voiceFloatingBtn'); if (popup && !popup.contains(e.target) && btn && !btn.contains(e.target)) { closeFreePopup(); } } }); if (!document.getElementById('popupAnim')) { const s = document.createElement('style'); s.id = 'popupAnim'; s.textContent = '@keyframes popIn{from{transform:translateY(80px);opacity:0}to{transform:translateY(0);opacity:1}}#freeVoicePopup.show{display:block!important;animation:popIn 0.3s ease-out forwards}'; document.head.appendChild(s); } createFloatingButton(); createFreePopup(); })();
     </script>
-
-    <!-- ========== GOOGLE SHEET AUTO LEAD ========== -->
-    <script>
-    (function() { const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwQqhLV521j3ALlZIOVacMThs1Xv_ZewSXMsJOkIE7cHq1jawy7FD5nAFjD4HA1W9FeFw/exec'; setTimeout(async function() { const data = { name: 'Visitor', phone: 'N/A', email: 'N/A', subject: 'Auto Lead - Products', message: 'Page: ' + window.location.href, source: 'Auto', page: window.location.href, time: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' }) }; try { await fetch(SCRIPT_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }); } catch(e) {} }, 30000); })();
-    </script>
+    <style>.wa-auto-popup{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:9999;background:#25D366;color:white;padding:15px 28px;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;box-shadow:0 15px 40px rgba(37,211,102,0.5);animation:waBounce 0.6s ease-out 30s both;display:flex;align-items:center;gap:10px;text-decoration:none;white-space:nowrap}@keyframes waBounce{0%{transform:translateX(-50%) translateY(100px);opacity:0}60%{transform:translateX(-50%) translateY(-15px);opacity:1}100%{transform:translateX(-50%) translateY(0);opacity:1}}.wa-auto-popup .close-wa{background:rgba(255,255,255,0.3);border:none;color:white;width:24px;height:24px;border-radius:50%;cursor:pointer;font-size:.8rem;margin-left:10px}</style>
+    <a href="https://wa.me/923223619827?text=Assalam-o-Alaikum!%20I%20need%20generator%20price%20details." target="_blank" class="wa-auto-popup" id="waAutoPopup"><i class="fab fa-whatsapp" style="font-size:1.5rem;"></i>Need Help? Chat on WhatsApp!<button class="close-wa" onclick="event.preventDefault();event.stopPropagation();document.getElementById('waAutoPopup').style.display='none'">✕</button></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({duration:800,once:true});window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);document.getElementById('backToTop').style.display=window.scrollY>500?'flex':'none'});function filterProducts(brand){document.querySelectorAll('.filter-tab').forEach(tab=>tab.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('.product-item').forEach(item=>{item.style.display=(brand==='all'||item.getAttribute('data-brand')===brand)?'block':'none'})}</script>
+    
+    <!-- ========== FEATURES POPUP SCRIPT ========== -->
+    <script>
+    // Generator Features Database
+    const generatorFeatures = {
+        'perkins20': {
+            name: 'Perkins 20 KVA Generator',
+            brand: 'Perkins Engines UK',
+            specs: [
+                {val:'20 KVA',lbl:'Power Capacity'},
+                {val:'Diesel',lbl:'Fuel Type'},
+                {val:'3 Phase',lbl:'Phase'},
+                {val:'1500 RPM',lbl:'Speed'}
+            ],
+            features: [
+                'Perkins 403D-15G Engine',
+                'Fuel efficient - Low consumption',
+                'Automatic Voltage Regulator (AVR)',
+                'Deep Sea 7320 Controller',
+                'Soundproof canopy available',
+                'Ideal for small business & homes',
+                '1 Year manufacturer warranty',
+                'Free installation in Karachi'
+            ]
+        },
+        'cummins50': {
+            name: 'Cummins 50 KVA Generator',
+            brand: 'Cummins Inc. USA',
+            specs: [
+                {val:'50 KVA',lbl:'Power Capacity'},
+                {val:'Diesel',lbl:'Fuel Type'},
+                {val:'3 Phase',lbl:'Phase'},
+                {val:'1500 RPM',lbl:'Speed'}
+            ],
+            features: [
+                'Cummins 4BT3.9 Engine',
+                'Best fuel economy in class',
+                'Digital control panel',
+                'Automatic start/stop',
+                'Sound attenuated enclosure',
+                'Ideal for medium business',
+                '2 Years manufacturer warranty',
+                '24/7 emergency support'
+            ]
+        },
+        'cat100': {
+            name: 'Caterpillar 100 KVA Generator',
+            brand: 'Caterpillar Inc. USA',
+            specs: [
+                {val:'100 KVA',lbl:'Power Capacity'},
+                {val:'Diesel',lbl:'Fuel Type'},
+                {val:'3 Phase',lbl:'Phase'},
+                {val:'1500 RPM',lbl:'Speed'}
+            ],
+            features: [
+                'CAT C4.4 Engine',
+                'Heavy-duty industrial design',
+                'EMCP 4.4 Control Panel',
+                'Remote monitoring capable',
+                'Super silent operation',
+                'Ideal for factories & hospitals',
+                '1 Year warranty + AMC option',
+                'Priority emergency response'
+            ]
+        },
+        'fgwilson150': {
+            name: 'FG Wilson 150 KVA Generator',
+            brand: 'FG Wilson UK',
+            specs: [
+                {val:'150 KVA',lbl:'Power Capacity'},
+                {val:'Diesel',lbl:'Fuel Type'},
+                {val:'3 Phase',lbl:'Phase'},
+                {val:'1500 RPM',lbl:'Speed'}
+            ],
+            features: [
+                'Perkins 1106A Engine',
+                'Low noise operation',
+                'Advanced control system',
+                'Weather protective enclosure',
+                'Extended fuel tank option',
+                'Ideal for large facilities',
+                '1 Year warranty',
+                'Free load testing'
+            ]
+        },
+        'denyo250': {
+            name: 'Denyo 250 KVA Generator',
+            brand: 'Denyo Japan',
+            specs: [
+                {val:'250 KVA',lbl:'Power Capacity'},
+                {val:'Diesel',lbl:'Fuel Type'},
+                {val:'3 Phase',lbl:'Phase'},
+                {val:'1500 RPM',lbl:'Speed'}
+            ],
+            features: [
+                'Japanese Isuzu Engine',
+                'Ultra quiet technology',
+                'Digital AVR system',
+                'Parallel operation ready',
+                'Full weather protection',
+                'Ideal for industrial use',
+                '1 Year warranty',
+                'Remote monitoring system'
+            ]
+        },
+        'perkins500': {
+            name: 'Perkins 500 KVA Generator',
+            brand: 'Perkins Engines UK',
+            specs: [
+                {val:'500 KVA',lbl:'Power Capacity'},
+                {val:'Diesel',lbl:'Fuel Type'},
+                {val:'3 Phase',lbl:'Phase'},
+                {val:'1500 RPM',lbl:'Speed'}
+            ],
+            features: [
+                'Perkins 2806A Engine',
+                'Heavy-duty industrial grade',
+                'Synchronization panel ready',
+                'Auto transfer switch compatible',
+                'Soundproof enclosure',
+                'Ideal for large industries',
+                '2 Years warranty',
+                '24/7 dedicated support team'
+            ]
+        }
+    };
+
+    function openFeaturePopup(genId) {
+        const gen = generatorFeatures[genId];
+        if (!gen) return;
+        
+        const overlay = document.getElementById('featureOverlay');
+        const content = document.getElementById('featureContent');
+        
+        // Build specs HTML
+        let specsHTML = '';
+        gen.specs.forEach(spec => {
+            specsHTML += `<div class="feature-spec-item"><div class="val">${spec.val}</div><div class="lbl">${spec.lbl}</div></div>`;
+        });
+        
+        // Build features HTML
+        let featuresHTML = '';
+        gen.features.forEach(feat => {
+            featuresHTML += `<li><i class="fas fa-check-circle"></i> ${feat}</li>`;
+        });
+        
+        content.innerHTML = `
+            <h3>${gen.name}</h3>
+            <div class="brand">${gen.brand}</div>
+            <div class="feature-specs">${specsHTML}</div>
+            <h4 style="color:var(--golden-light);margin-bottom:12px;font-size:1rem;">✨ Key Features</h4>
+            <ul class="feature-list">${featuresHTML}</ul>
+            <div class="btn-row">
+                <a href="tel:+923223619827" class="btn-gold"><i class="fas fa-phone-alt"></i> Call Now</a>
+                <a href="https://wa.me/923223619827?text=Info%20${encodeURIComponent(gen.name)}" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        `;
+        
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeFeaturePopup(event) {
+        if (event && event.target !== document.getElementById('featureOverlay')) return;
+        document.getElementById('featureOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    AOS.init({duration:800,once:true});
+    window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);document.getElementById('backToTop').style.display=window.scrollY>500?'flex':'none'});
+    function filterProducts(brand){document.querySelectorAll('.filter-tab').forEach(tab=>tab.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('.product-item').forEach(item=>{item.style.display=(brand==='all'||item.getAttribute('data-brand')===brand)?'block':'none'})}
+    </script>
 </body>
 </html>
