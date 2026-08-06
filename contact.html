@@ -17,6 +17,7 @@
         .nav-link{font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:1px;padding:8px 12px!important;color:var(--gray)!important;transition:var(--transition)}.nav-link:hover,.nav-link.active{color:var(--golden-light)!important}
         .navbar-toggler{border:2px solid var(--golden);padding:6px 8px;border-radius:8px}.navbar-toggler i{color:var(--golden);font-size:1.2rem}
         .btn-gold{background:var(--gradient-gold);color:var(--dark-navy);padding:12px 24px;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:var(--transition);border:none;cursor:pointer;font-size:.85rem}.btn-gold:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold)}
+        .btn-wa{background:#25D366;color:white;padding:12px 24px;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:var(--transition);border:none;cursor:pointer;font-size:.85rem}.btn-wa:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,211,102,0.4)}
         .page-banner{background:linear-gradient(135deg,#060E1A,#0F1F3D);padding:130px 0 50px;text-align:center;border-bottom:1px solid rgba(212,175,55,0.15)}.page-banner h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:2.5rem}.page-banner h1 span{color:var(--golden-light)}
         .section-padding{padding:50px 0}.section-label{color:var(--golden-light);font-weight:700;letter-spacing:3px;font-size:.7rem;text-transform:uppercase}.section-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:2rem}.section-title span{color:var(--golden-light)}
         .contact-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:18px;padding:30px 20px;text-align:center;transition:var(--transition);height:100%}.contact-card:hover{background:rgba(212,175,55,0.04);border-color:rgba(212,175,55,0.3);transform:translateY(-5px)}.contact-icon{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 15px}.contact-card h5{font-weight:700;margin-bottom:8px;font-size:1rem}.contact-card p,.contact-card a{color:var(--gray);text-decoration:none;font-size:.9rem}.contact-card a:hover{color:var(--golden-light)}
@@ -47,21 +48,24 @@
     <!-- CONTACT FORM + MAP -->
     <section class="section-padding"><div class="container"><div class="row g-4"><div class="col-lg-7" data-aos="fade-right"><div class="contact-form"><span class="section-label">SEND MESSAGE</span><h3 style="font-family:'Outfit',sans-serif;font-weight:700;margin-top:6px">Request <span style="color:var(--golden-light)">Free Quote</span></h3><p style="color:var(--gray);margin-bottom:20px;font-size:.9rem">Our team will respond within 1 hour.</p>
 
-    <!-- ========== FORMSUBMIT FORM (DIRECT EMAIL) ========== -->
-    <form action="https://formsubmit.co/powertech086@gmail.com" method="POST">
+    <!-- ========== DUAL FORM: EMAIL + WHATSAPP ========== -->
+    <form id="dualForm" onsubmit="handleDualSubmit(event)">
         <input type="hidden" name="_subject" value="🔔 New Lead - Power Tech Generators!">
-        <input type="hidden" name="_next" value="https://powertech086-ai.github.io/PowerTECH-Generators/thank-you.html">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         
         <div class="row g-3">
-            <div class="col-md-6"><label>Full Name *</label><input type="text" name="Name" class="form-control" placeholder="Your name" required></div>
-            <div class="col-md-6"><label>Phone Number *</label><input type="tel" name="Phone" class="form-control" placeholder="03XX-XXXXXXX" required></div>
-            <div class="col-md-6"><label>Email Address</label><input type="email" name="Email" class="form-control" placeholder="email@example.com"></div>
-            <div class="col-md-6"><label>Subject *</label><select name="Subject" class="form-select" required><option value="">Select Subject</option><option>Generator Sales Inquiry</option><option>Generator Rental</option><option>AMC / Maintenance</option><option>Emergency Breakdown</option><option>Other</option></select></div>
-            <div class="col-12"><label>Message *</label><textarea name="Message" class="form-control" rows="3" placeholder="Tell us your requirements..." required></textarea></div>
-            <div class="col-12"><button type="submit" class="btn-gold w-100 justify-content-center" style="padding:16px;"><i class="fas fa-paper-plane"></i> Send Message (Reply in 1 Hour)</button></div>
-            <div class="col-12 text-center"><small style="color:var(--gray);">📧 We'll reply to your email within 1 hour</small></div>
+            <div class="col-md-6"><label>Full Name *</label><input type="text" id="leadName" name="Name" class="form-control" placeholder="Your name" required></div>
+            <div class="col-md-6"><label>Phone Number *</label><input type="tel" id="leadPhone" name="Phone" class="form-control" placeholder="03XX-XXXXXXX" required></div>
+            <div class="col-md-6"><label>Email Address</label><input type="email" id="leadEmail" name="Email" class="form-control" placeholder="email@example.com"></div>
+            <div class="col-md-6"><label>Subject *</label><select id="leadSubject" name="Subject" class="form-select" required><option value="">Select Subject</option><option>Generator Sales Inquiry</option><option>Generator Rental</option><option>AMC / Maintenance</option><option>Emergency Breakdown</option><option>Other</option></select></div>
+            <div class="col-12"><label>Message *</label><textarea id="leadMessage" name="Message" class="form-control" rows="3" placeholder="Tell us your requirements..." required></textarea></div>
+            <div class="col-12">
+                <button type="submit" class="btn-gold w-100 justify-content-center" style="padding:16px;" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i> Send Message (Email + WhatsApp)
+                </button>
+            </div>
+            <div class="col-12 text-center"><small style="color:var(--gray);">📧 Email + 📱 WhatsApp dono par lead jayegi</small></div>
         </div>
     </form></div></div>
     
@@ -87,6 +91,55 @@
         if (!document.getElementById('popupAnim')) { const s = document.createElement('style'); s.id = 'popupAnim'; s.textContent = '@keyframes popIn{from{transform:translateY(80px);opacity:0}to{transform:translateY(0);opacity:1}}#freeVoicePopup.show{display:block!important;animation:popIn 0.3s ease-out forwards}'; document.head.appendChild(s); }
         createFloatingButton(); createFreePopup();
     })();
+    </script>
+
+    <!-- ========== DUAL SUBMIT: EMAIL + WHATSAPP ========== -->
+    <script>
+    async function handleDualSubmit(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('leadName').value;
+        const phone = document.getElementById('leadPhone').value;
+        const email = document.getElementById('leadEmail').value || 'Not provided';
+        const subject = document.getElementById('leadSubject').value;
+        const message = document.getElementById('leadMessage').value;
+        
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        
+        // 1. SEND TO EMAIL (FormSubmit)
+        try {
+            await fetch('https://formsubmit.co/ajax/powertech086@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    Name: name,
+                    Phone: phone,
+                    Email: email,
+                    Subject: subject,
+                    Message: message
+                })
+            });
+        } catch(e) {}
+        
+        // 2. SEND TO WHATSAPP
+        const waText = `🔔 *NEW LEAD - Power Tech Generators*%0A%0A` +
+                       `👤 *Name:* ${name}%0A` +
+                       `📞 *Phone:* ${phone}%0A` +
+                       `📧 *Email:* ${email}%0A` +
+                       `📌 *Subject:* ${subject}%0A` +
+                       `💬 *Message:* ${message}`;
+        
+        window.open(`https://wa.me/923223619827?text=${waText}`, '_blank');
+        
+        // Success
+        alert('✅ Thank you ' + name + '!\n\n📧 Lead sent to Email\n📱 Lead sent to WhatsApp\n\nWe will contact you within 1 hour!');
+        document.getElementById('dualForm').reset();
+        
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message (Email + WhatsApp)';
+    }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
